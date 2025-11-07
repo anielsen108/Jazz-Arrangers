@@ -1,0 +1,3 @@
+# Billy Byers (1927-1996)
+
+William Mitchell "Billy" Byers was born in California and became one of New York's most respected trombonist-arrangers. He worked with Count Basie, Quincy Jones, and countless studio sessions. Byers's arrangements featured sophisticated voicings with strong swing feeling. His style balanced modern harmonies with traditional big band values. Byers was a consummate professional whose arrangements elevated every project. His work with Basie and others demonstrated that sophisticated arranging and hard swinging weren't mutually exclusive, maintaining the highest musical standards throughout his career.

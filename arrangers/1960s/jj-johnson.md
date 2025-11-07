@@ -1,0 +1,3 @@
+# J.J. Johnson (1924-2001)
+
+James Louis "J.J." Johnson was born in Indiana and revolutionized jazz trombone while becoming an important composer and arranger. He played with various bands before leading his own groups. Johnson's arrangements featured bebop sophistication with excellent brass writing. He moved to film and television scoring in the 1970s. Johnson's compositions like "Lament" became standards. His arranging style combined technical excellence with emotional depth, demonstrating that virtuosity and feeling weren't mutually exclusive. Johnson's work elevated jazz trombone and arranging to new levels of sophistication.

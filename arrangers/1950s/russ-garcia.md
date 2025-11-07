@@ -1,0 +1,3 @@
+# Russ Garcia (1916-2011)
+
+Russell "Russ" Garcia was born in California and became a versatile arranger working in jazz, film, and television. He arranged for Stan Kenton, Anita O'Day, and others while scoring films and television including "The Time Tunnel." Garcia's jazz arrangements featured sophisticated voicings and modern harmonies. His work bridged jazz and commercial music successfully, maintaining high standards across contexts. Albums like "Fantastica" demonstrate his gift for creating imaginative, colorful arrangements. Garcia's versatility represented the best of West Coast studio arranging.

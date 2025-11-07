@@ -1,0 +1,3 @@
+# David Amram (b. 1930)
+
+David Amram was born in Philadelphia and became a versatile composer-arranger working in jazz, classical, and world music. He played French horn and arranged for Dizzy Gillespie, Lionel Hampton, and others. Amram scored films including "The Manchurian Candidate" and "Splendor in the Grass." His arrangements incorporate world music influences with jazz and classical elements. Amram's eclectic approach demonstrates that arrangers can work across multiple genres while maintaining artistic integrity. His long career spans bebop to contemporary music, showing sustained creativity.
