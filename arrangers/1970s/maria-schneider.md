@@ -1,0 +1,3 @@
+# Maria Schneider (b. 1960)
+
+Maria Lynn Schneider was born in Minnesota and studied at Eastman and University of Miami. She studied with Gil Evans and has led her own orchestra since 1992, creating some of contemporary jazz's most acclaimed arrangements. Schneider's style features cinematic scope, sophisticated orchestration, and careful attention to instrumental color. Her arrangements tell stories through purely instrumental means. Albums like "Concert in the Garden" (Grammy-winning) showcase her remarkable gifts. Schneider has pioneered internet-based distribution while creating arrangements that rank among jazz's finest.
