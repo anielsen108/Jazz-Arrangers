@@ -1,0 +1,3 @@
+# Michael Gibbs (b. 1937)
+
+Michael Gibbs was born in Zimbabwe and studied at Berklee and at Tanglewood. He arranged for Gary Burton, John McLaughlin, and others while leading his own projects. Gibbs's arrangements feature sophisticated harmonies incorporating jazz, rock, and classical influences. His style is distinctively European in sensibility while embracing American jazz traditions. Albums like "The Only Chrome Waterfall Orchestra" demonstrate his unique voice. Gibbs influenced ECM Records aesthetic and European jazz arranging, showing that jazz could incorporate diverse influences while maintaining coherence.

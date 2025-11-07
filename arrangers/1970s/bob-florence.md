@@ -1,0 +1,3 @@
+# Bob Florence (1932-2008)
+
+Bob Florence was born in California and led one of Los Angeles's finest big bands while working extensively in studios. His arrangements combined traditional big band values with contemporary approaches. Florence won Grammy Awards and influenced West Coast arranging significantly. His style featured sophisticated voicings with strong swing feeling. Albums like "Westlake" showcase his gifts. Florence represented the best of professional studio arranging combined with artistic ambition, maintaining the highest standards throughout his career while keeping big band tradition alive on the West Coast.

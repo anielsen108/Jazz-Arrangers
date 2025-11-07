@@ -1,0 +1,3 @@
+# Jimmy Heath (1926-2020)
+
+James Edward "Jimmy" Heath was born in Philadelphia and became one of hard bop's important saxophonists and arrangers. He played and arranged for Miles Davis, Dizzy Gillespie, and others before forming the Heath Brothers. Heath's arrangements combined bebop sophistication with blues roots. His compositions like "C.T.A." and "Gingerbread Boy" became standards. Heath's arranging style featured clear structures with exciting harmonic movement. His work demonstrated Philadelphia's hard bop tradition's depth, maintaining high artistic standards throughout a seven-decade career.

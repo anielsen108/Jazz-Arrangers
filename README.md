@@ -1,17 +1,17 @@
 # Jazz Arrangers: A Historical Overview
 
-A comprehensive repository documenting the greatest jazz arrangers throughout history, from the big band era to contemporary jazz.
+A comprehensive repository documenting 160 of the greatest jazz arrangers throughout history, from the big band era to contemporary jazz.
 
 ## Table of Contents
 
-- [1920s-1930s: The Big Band Era Begins](#1920s-1930s-the-big-band-era-begins)
-- [1940s: Swing Peaks and Bebop Emerges](#1940s-swing-peaks-and-bebop-emerges)
-- [1950s: Cool Jazz and Hard Bop](#1950s-cool-jazz-and-hard-bop)
-- [1960s: Modal Jazz and Free Jazz](#1960s-modal-jazz-and-free-jazz)
-- [1970s: Fusion and Jazz-Funk](#1970s-fusion-and-jazz-funk)
-- [1980s: Contemporary Jazz](#1980s-contemporary-jazz)
-- [1990s: Neo-Traditional and Experimental](#1990s-neo-traditional-and-experimental)
-- [2000s-Present: Modern Jazz Arrangers](#2000s-present-modern-jazz-arrangers)
+- [1920s-1930s: The Big Band Era Begins](#1920s-1930s-the-big-band-era-begins) (20 arrangers)
+- [1940s: Swing Peaks and Bebop Emerges](#1940s-swing-peaks-and-bebop-emerges) (20 arrangers)
+- [1950s: Cool Jazz and Hard Bop](#1950s-cool-jazz-and-hard-bop) (20 arrangers)
+- [1960s: Modal Jazz and Free Jazz](#1960s-modal-jazz-and-free-jazz) (20 arrangers)
+- [1970s: Fusion and Jazz-Funk](#1970s-fusion-and-jazz-funk) (20 arrangers)
+- [1980s: Contemporary Jazz](#1980s-contemporary-jazz) (20 arrangers)
+- [1990s: Neo-Traditional and Experimental](#1990s-neo-traditional-and-experimental) (20 arrangers)
+- [2000s-Present: Modern Jazz Arrangers](#2000s-present-modern-jazz-arrangers) (20 arrangers)
 
 ---
 
@@ -34,6 +34,11 @@ This era saw the birth of jazz arranging as a distinct art form, with arrangers 
 13. [Glenn Miller](arrangers/1920s-1930s/glenn-miller.md) - Creator of the Miller sound
 14. [Horace Henderson](arrangers/1920s-1930s/horace-henderson.md) - Fletcher's younger brother
 15. [Andy Kirk](arrangers/1920s-1930s/andy-kirk.md) - Kansas City sound architect
+16. [Jelly Roll Morton](arrangers/1920s-1930s/jelly-roll-morton.md) - Early jazz composer and arranger
+17. [Gene Gifford](arrangers/1920s-1930s/gene-gifford.md) - Casa Loma Orchestra architect
+18. [Isham Jones](arrangers/1920s-1930s/isham-jones.md) - Sophisticated sweet swing
+19. [Luis Russell](arrangers/1920s-1930s/luis-russell.md) - New Orleans meets swing
+20. [Larry Clinton](arrangers/1920s-1930s/larry-clinton.md) - Classical themes in swing
 
 ---
 
@@ -56,6 +61,11 @@ The 1940s saw swing reach its commercial peak while bebop revolutionized jazz ha
 13. [Gerald Wilson](arrangers/1940s/gerald-wilson.md) - West Coast big band master
 14. [Gil Fuller](arrangers/1940s/gil-fuller.md) - Dizzy Gillespie's arranger
 15. [Chico O'Farrill](arrangers/1940s/chico-ofarrill.md) - Afro-Cuban jazz pioneer
+16. [Melba Liston](arrangers/1940s/melba-liston.md) - Pioneering female trombonist-arranger
+17. [Buster Harding](arrangers/1940s/buster-harding.md) - Swing to bebop transition
+18. [Johnny Carisi](arrangers/1940s/johnny-carisi.md) - Birth of the Cool contributor
+19. [Ray Conniff](arrangers/1940s/ray-conniff.md) - Sophisticated swing arranger
+20. [Andy Gibson](arrangers/1940s/andy-gibson.md) - Hard-swinging arrangements
 
 ---
 
@@ -78,6 +88,11 @@ The 1950s brought cool jazz sophistication and hard bop's raw energy, with arran
 13. [Bill Russo](arrangers/1950s/bill-russo.md) - Third stream explorer
 14. [André Previn](arrangers/1950s/andre-previn.md) - Jazz meets classical
 15. [George Russell](arrangers/1950s/george-russell.md) - Lydian Chromatic Concept creator
+16. [Benny Golson](arrangers/1950s/benny-golson.md) - Hard bop composer-arranger
+17. [Russ Garcia](arrangers/1950s/russ-garcia.md) - West Coast studio arranger
+18. [Billy Byers](arrangers/1950s/billy-byers.md) - Consummate professional
+19. [Jimmy Heath](arrangers/1950s/jimmy-heath.md) - Philadelphia hard bop
+20. [Van Alexander](arrangers/1950s/van-alexander.md) - Multi-generational arranger
 
 ---
 
@@ -100,6 +115,11 @@ The 1960s saw modal jazz expand harmonic possibilities while free jazz broke all
 13. [Claus Ogerman](arrangers/1960s/claus-ogerman.md) - Elegant European touch
 14. [Gary Burton](arrangers/1960s/gary-burton.md) - Four-mallet vibes arranger
 15. [Sun Ra](arrangers/1960s/sun-ra.md) - Cosmic jazz architect
+16. [Don Ellis](arrangers/1960s/don-ellis.md) - Odd-meter pioneer
+17. [Gunther Schuller](arrangers/1960s/gunther-schuller.md) - Third stream architect
+18. [J.J. Johnson](arrangers/1960s/jj-johnson.md) - Bebop trombone master
+19. [Hank Levy](arrangers/1960s/hank-levy.md) - Complex time signatures specialist
+20. [David Amram](arrangers/1960s/david-amram.md) - Eclectic composer-arranger
 
 ---
 
@@ -115,13 +135,18 @@ The 1970s saw jazz embrace rock and funk rhythms, with arrangers creating new el
 6. [Bob Mintzer](arrangers/1970s/bob-mintzer.md) - Contemporary big band leader
 7. [Bill Mays](arrangers/1970s/bill-mays.md) - Sophisticated harmonist
 8. [Frank Foster](arrangers/1970s/frank-foster.md) - Count Basie legacy
-9. [Slide Hampton](arrangers/1970s/slide-hamptonmd) - Trombone virtuoso arranger
+9. [Slide Hampton](arrangers/1970s/slide-hampton.md) - Trombone virtuoso arranger
 10. [Maria Schneider](arrangers/1970s/maria-schneider.md) - Cinematic jazz visionary
 11. [Jim McNeely](arrangers/1970s/jim-mcneely.md) - Vanguard Jazz Orchestra
 12. [Vince Mendoza](arrangers/1970s/vince-mendoza.md) - Grammy-winning arranger
 13. [John Clayton](arrangers/1970s/john-clayton.md) - Clayton Brothers architect
 14. [Tom Kubis](arrangers/1970s/tom-kubis.md) - Big band tradition continues
 15. [Patrick Williams](arrangers/1970s/patrick-williams.md) - Film and jazz crossover
+16. [Bob Florence](arrangers/1970s/bob-florence.md) - West Coast big band excellence
+17. [Michael Gibbs](arrangers/1970s/michael-gibbs.md) - European jazz sophistication
+18. [Louie Bellson](arrangers/1970s/louie-bellson.md) - Drummer-leader-arranger
+19. [Tom Scott](arrangers/1970s/tom-scott.md) - L.A. fusion leader
+20. [Bill Watrous](arrangers/1970s/bill-watrous.md) - Trombone virtuoso
 
 ---
 
@@ -144,6 +169,11 @@ The 1980s brought renewed interest in acoustic jazz while maintaining fusion's i
 13. [Ed Partyka](arrangers/1980s/ed-partyka.md) - European big band specialist
 14. [Mike Tomaro](arrangers/1980s/mike-tomaro.md) - Educator and arranger
 15. [Alan Broadbent](arrangers/1980s/alan-broadbent.md) - Piano and orchestral arranger
+16. [Conrad Herwig](arrangers/1980s/conrad-herwig.md) - Latin jazz specialist
+17. [Jeff Beal](arrangers/1980s/jeff-beal.md) - Film and television composer
+18. [Greg Hopkins](arrangers/1980s/greg-hopkins.md) - Contemporary big band arranger
+19. [John Fedchock](arrangers/1980s/john-fedchock.md) - Trombone-led big band
+20. [Rob McConnell](arrangers/1980s/rob-mccconnell.md) - Boss Brass leader
 
 ---
 
@@ -166,6 +196,11 @@ The 1990s saw both a return to jazz traditions and continued experimentation wit
 13. [Ryan Truesdell](arrangers/1990s/ryan-truesdell.md) - Historical jazz project curator
 14. [Doug Beavers](arrangers/1990s/doug-beavers.md) - Contemporary large ensemble
 15. [Alan Ferber](arrangers/1990s/alan-ferber.md) - Modern big band trombonist
+16. [Gary Smulyan](arrangers/1990s/gary-smulyan.md) - Baritone sax master
+17. [Matt Harris](arrangers/1990s/matt-harris.md) - Contemporary jazz trombonist
+18. [Scott Whitfield](arrangers/1990s/scott-whitfield.md) - Traditional jazz advocate
+19. [Bill Cunliffe](arrangers/1990s/bill-cunliffe.md) - Grammy-winning pianist-arranger
+20. [Ed Palermo](arrangers/1990s/ed-palermo.md) - Frank Zappa interpreter
 
 ---
 
@@ -186,12 +221,19 @@ Contemporary arrangers continue to push boundaries, incorporating global influen
 11. [Satoko Fujii](arrangers/2000s-present/satoko-fujii.md) - Avant-garde Japanese pianist
 12. [David Weiss](arrangers/2000s-present/david-weiss.md) - New Jazz Composers Octet
 13. [Jihye Lee](arrangers/2000s-present/jihye-lee.md) - Korean-American orchestrator
+14. [Kamasi Washington](arrangers/2000s-present/kamasi-washington.md) - Spiritual jazz revivalist
+15. [Christian McBride](arrangers/2000s-present/christian-mcbride.md) - Big band bassist-leader
+16. [Brian Lynch](arrangers/2000s-present/brian-lynch.md) - Afro-Cuban jazz master
+17. [Miguel Zenón](arrangers/2000s-present/miguel-zenon.md) - Puerto Rican jazz innovator
+18. [Shai Maestro](arrangers/2000s-present/shai-maestro.md) - Israeli pianist-composer
+19. [Jacob Collier](arrangers/2000s-present/jacob-collier.md) - Multi-Grammy winner
+20. [Ambrose Akinmusire](arrangers/2000s-present/ambrose-akinmusire.md) - Contemporary trumpeter-composer
 
 ---
 
 ## About This Repository
 
-This repository documents over 100 jazz arrangers spanning a century of jazz history. Each arranger has their own detailed page with biographical information, style analysis, and their most important albums.
+This repository documents 160 jazz arrangers spanning over a century of jazz history. Each arranger has their own detailed page with biographical information, style analysis, and their most important albums.
 
 ### Contributing
 

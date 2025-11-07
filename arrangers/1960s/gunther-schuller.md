@@ -1,0 +1,3 @@
+# Gunther Schuller (1925-2015)
+
+Gunther Schuller was born in New York and became the principal theorist and practitioner of "third stream" music fusing jazz and classical. He played French horn with Metropolitan Opera before focusing on composing and arranging. Schuller arranged for Miles Davis, John Lewis, and others while composing symphonies, operas, and chamber works. His arrangements incorporated advanced classical techniques into jazz contexts. Schuller also worked as educator, writer, and music publisher. His influence on contemporary classical-jazz fusion was immense, demonstrating that jazz and classical music could genuinely merge rather than simply coexist.

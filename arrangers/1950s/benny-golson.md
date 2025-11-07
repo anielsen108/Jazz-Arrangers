@@ -1,0 +1,3 @@
+# Benny Golson (b. 1929)
+
+Benny Golson was born in Philadelphia and became one of hard bop's premier composers and arrangers. He played tenor saxophone with Dizzy Gillespie, Art Blakey's Jazz Messengers, and others while composing standards like "I Remember Clifford," "Killer Joe," and "Along Came Betty." Golson co-founded The Jazztet with Art Farmer. His arrangements combine bebop sophistication with memorable melodies and blues feeling. Golson's work represents peak hard bop arranging, demonstrating that sophistication and accessibility coexist. Albums like "Groovin' with Golson" showcase his arranging gifts balancing ensemble writing and improvisation.

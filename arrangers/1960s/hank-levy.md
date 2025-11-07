@@ -1,0 +1,3 @@
+# Hank Levy (1927-2001)
+
+Hank Levy was born in Maryland and became known for sophisticated arrangements in complex time signatures. He arranged for Stan Kenton and Don Ellis, specializing in odd meters and polyrhythmic structures. Levy also taught at Towson University, influencing generations of arrangers. His compositions like "Whiplash" (in 7/4) became modern jazz standards. Levy's arranging style featured mathematical precision combined with swing feeling, demonstrating that complex meters could groove. His work influenced progressive jazz and contemporary arranging, showing that intellectual rigor and emotional impact coexist.
