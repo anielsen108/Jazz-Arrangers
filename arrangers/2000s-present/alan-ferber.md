@@ -6,6 +6,10 @@ Alan Ferber's big band and nonet have produced acclaimed albums during the 2000s
 ## 2000s-Present Highlights
 During this period, Ferber emerged as one of New York's leading big band arrangers, releasing multiple acclaimed albums and establishing regular performance venues. His work maintains tradition while pushing boundaries, demonstrating that sophisticated large ensemble jazz continues thriving.
 
+## Orchestration Techniques
+
+Ferber's orchestration approach demonstrates mastery of contemporary big band writing, employing sophisticated voicing structures including polychordal superimpositions, quartal harmony stacks, and stratified textures where brass and saxophone sections occupy independent harmonic territories. His sectional writing features both traditional soli passages and contemporary fragmented approaches where motivic material passes between instruments in hocket-like fashion. For complete technical analysis of his voicing techniques, contrapuntal methods, register exploitation, and signature orchestral devices, consult his main entry in the 1990s section.
+
 ## Major 2000s-Present Albums
 ### Alan Ferber Big Band - "March Sublime" (2013)
 Ferber's arrangements feature complex structures with rich orchestration. His composition "Flatiron" demonstrates his gift for memorable themes with sophisticated development.

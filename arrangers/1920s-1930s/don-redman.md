@@ -8,6 +8,10 @@ Don Redman was born in Piedmont, West Virginia, and was a child prodigy who play
 
 Redman pioneered the call-and-response pattern between brass and reed sections that became fundamental to swing arranging. His innovations included dividing the orchestra into sections with distinct voices, using riffs as building blocks, and creating dramatic tension through instrumental dialogue. He was among the first to write jazz arrangements that went beyond simple orchestrations of solos, creating cohesive ensemble pieces with sophisticated harmonies. His writing was characterized by clarity, swing feel, and a perfect balance between arranged passages and improvised solos. Redman's work laid the foundation for the entire swing era that followed.
 
+## Orchestration Techniques
+
+Redman's sectional writing established the fundamental big band texture: brass (typically 3 trumpets, 1-2 trombones) against reeds (3 saxophones doubling clarinets). His voicings predominantly employed close position in the saxophones with parallel movement, often in thirds or sixths, while brass punctuated with block chords in cup-mute or open configurations. He pioneered the "choir" approach where each section functions as an independent voice in call-and-response counterpoint—brass stating a riff answered by reeds, or vice versa. His clarinet trio voicings, voiced in close harmony at the octave above the melody, became a signature texture. Redman utilized tutti passages sparingly for climactic effect, preferring sectional dialogue that created conversational energy. His bass lines were typically two-beat (tuba or string bass), with the piano providing rhythmic and harmonic punctuation rather than continuous comping. Background figures under solos were usually sustained whole-note pads in the opposing section or simple riff figures, allowing the soloist prominence while maintaining ensemble momentum.
+
 ## Top Albums
 
 ### Fletcher Henderson - "The Fletcher Henderson Story" (1923-1936, recorded)
