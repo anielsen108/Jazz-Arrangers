@@ -6,6 +6,10 @@ Darcy James Argue's Secret Society represents cutting-edge large ensemble jazz i
 ## 2000s-Present Achievements
 During this period, Argue established himself as major voice in contemporary big band jazz through ambitious conceptual projects that prove the music can engage serious themes while maintaining artistic quality.
 
+## Orchestration Techniques
+
+Argue's orchestration demonstrates synthesis of traditional big band power with contemporary classical sophistication, employing extended tertian voicings, strategic use of electronics alongside acoustic instruments, and cinematic textural approaches that serve narrative purposes. His sectional writing features independence between choirs rather than conventional block harmony, with contrapuntal techniques including metric modulation and polyrhythmic layering. For comprehensive technical analysis of his voicing strategies, instrumental combinations, rhythmic devices, and signature orchestral innovations, consult his main entry in the 1980s section.
+
 ## Major 2000s-Present Albums
 ### Secret Society - "Brooklyn Babylon" (2013) & "Real Enemies" (2016)
 Argue's arrangements address contemporary social themes through sophisticated musical means. His charts feature cinematic scope with multimedia integration, demonstrating big band jazz's continued relevance for contemporary storytelling.

@@ -6,6 +6,10 @@ Miho Hazama conducts major orchestras worldwide while leading m_unit during the 
 ## 2000s-Present Achievements
 During this period, Hazama emerged as major international conductor and arranger, working with world's finest big bands and establishing herself as leading voice in contemporary jazz through sophisticated cross-cultural work.
 
+## Orchestration Techniques
+
+Hazama's orchestration integrates Japanese traditional music elements (particularly scales derived from gagaku and hogaku) with Western jazz big band writing, employing hybrid voicing structures where pentatonic modes combine with extended tertian harmony. Her sectional writing demonstrates both classical orchestral precision and jazz ensemble flexibility, with careful attention to timbral blend between Eastern and Western instruments. For comprehensive technical analysis of her voicing approaches, contrapuntal techniques, register exploitation, and signature cross-cultural orchestral innovations, consult her main entry in the 1990s section.
+
 ## Major 2000s-Present Work
 ### m_unit Albums & International Conducting
 Hazama's Grammy-nominated albums showcase her distinctive cross-cultural synthesis. Her conducting work with Danish Radio Big Band, WDR Big Band, and Metropole Orchestra demonstrates her standing among contemporary jazz's elite.
