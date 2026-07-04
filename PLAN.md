@@ -11,7 +11,7 @@ big band ensemble (instrumentation) visualizations.
 | Decision | Recommendation | Why |
 |---|---|---|
 | Framework | **Astro** (static site generator) | Native Markdown "content collections" — the 160 existing `.md` files become pages with almost no rewriting; ships zero JS by default, adds islands of interactivity only where needed (carousel, ensemble viz) |
-| Hosting | **GitHub Pages** via GitHub Actions | Repo is already on GitHub; free, automatic deploy on push |
+| Hosting | **Netlify**, built and deployed by GitHub Actions | User publishes everything to Netlify; Actions runs tests + build, then pushes `dist/` via Netlify CLI (Netlify's own CI stays off) |
 | Interactivity | Vanilla JS/Svelte islands + **SVG** for the ensemble diagrams | No heavy chart library needed; SVG stage plots are small, accessible, and themeable |
 | Video | `lite-youtube-embed` style facade components | Embedding 160+ pages of raw YouTube iframes would be slow; facades load the player only on click |
 | Testing | Vitest (data-schema validation + component tests) | Tests written before each feature, per project convention |
@@ -130,7 +130,7 @@ An SVG **stage plot** — the standard big band seating chart musicians already 
 
 | Phase | Deliverable | Size |
 |---|---|---|
-| **0. Scaffold** | Astro project in repo, existing Markdown rendering as styled pages, GitHub Actions deploy to Pages | Small |
+| **0. Scaffold** | Astro project in repo, existing Markdown rendering as styled pages, GitHub Actions build + Netlify deploy | Small |
 | **1. Data schema** | Frontmatter schema + `ensembles.schema.json`, validation tests, 5 fully-curated pilot arrangers (e.g., Ellington, Thad Jones, Gil Evans, Maria Schneider, Kamasi Washington — one per era, diverse instrumentations) | Small |
 | **2. Ensemble diagram** | Tests + `<EnsembleDiagram>` SVG component, live on the 5 pilot pages | Medium |
 | **3. Video embeds** | Tests + click-to-load YouTube component on pilot pages | Small |
@@ -143,10 +143,9 @@ Pilot-first (phases 1–4 on 5 arrangers) proves the whole design before committ
 
 ## 5. Open questions
 
-1. **Hosting** — GitHub Pages assumed; fine, or do you have a domain/host in mind?
-2. **Ensemble data depth** — instrumentation per *piece* (as planned), or is per-*album* /
-   per-arranger-typical-band enough? Per-piece is more accurate but roughly triples curation work.
+1. **Hosting** — ~~GitHub Pages assumed~~ **Decided: Netlify**, with GitHub Actions doing the build.
+2. **Ensemble data depth** — ~~per piece or per album?~~ **Decided: per piece.**
 3. **Personnel** — should ensemble diagrams eventually name the actual players (Snooky Young on
    lead trumpet…)? Affects the schema now even if filled in later.
-4. **Curation automation** — OK to use research subagents to batch-draft photo sources, video
-   IDs, and instrumentation data for human review, decade by decade?
+4. **Curation automation** — ~~OK to use research subagents?~~ **Decided: yes**, batch-draft
+   photo sources, video IDs, and instrumentation data for human review, decade by decade.
