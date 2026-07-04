@@ -1,3 +1,74 @@
+---
+photo:
+  src: /images/arrangers/maria-schneider.jpg
+  credit: 'Marek Lazarski, Toronto Jazz Festival 2009, via Wikimedia Commons'
+  license: 'CC BY-SA 4.0'
+  source: 'https://commons.wikimedia.org/wiki/File:Maria_Schneider_DSC0108c.jpg'
+videos:
+  - id: TVEtSIhFyIA
+    title: 'Hang Gliding — Maria Schneider Orchestra (Jazz à Vienne 2008)'
+    piece: hang-gliding
+  - id: jJXT6RoDTRU
+    title: 'Data Lords — Maria Schneider Orchestra'
+    piece: data-lords
+  - id: 6H1EI2ivOQY
+    title: 'Maria Schneider Orchestra — Jazz à Vienne 2008 (full set)'
+pieces:
+  - slug: hang-gliding
+    title: 'Hang Gliding'
+    album: 'Allégresse'
+    year: 2000
+    note: 'Five reed chairs double soprano, clarinets, flutes, oboe, and English horn; five trumpets all double flugelhorn — Ingrid Jensen takes the famous flugelhorn solo.'
+    ensemble:
+      soprano-sax: 1
+      alto-sax: 1
+      tenor-sax: 2
+      baritone-sax: 1
+      trumpet: 5
+      trombone: 3
+      bass-trombone: 1
+      guitar: 1
+      piano: 1
+      upright-bass: 1
+      drums: 1
+      percussion: 1
+  - slug: concert-in-the-garden
+    title: 'Concert in the Garden'
+    album: 'Concert in the Garden'
+    year: 2004
+    note: 'Gary Versace''s accordion and Luciana Souza''s wordless voice color the standard sections — the album that won Schneider her first Grammy.'
+    ensemble:
+      alto-sax: 2
+      tenor-sax: 2
+      baritone-sax: 1
+      trumpet: 4
+      trombone: 3
+      bass-trombone: 1
+      accordion: 1
+      voice: 1
+      guitar: 1
+      piano: 1
+      upright-bass: 1
+      drums: 1
+  - slug: data-lords
+    title: 'Data Lords'
+    album: 'Data Lords'
+    year: 2020
+    note: 'Ben Monder''s guitar and Gary Versace''s accordion are central to the dark title track; the baritone chair also covers bass and contrabass clarinets.'
+    ensemble:
+      alto-sax: 2
+      tenor-sax: 2
+      baritone-sax: 1
+      trumpet: 4
+      trombone: 3
+      bass-trombone: 1
+      accordion: 1
+      guitar: 1
+      piano: 1
+      upright-bass: 1
+      drums: 1
+---
+
 # Maria Schneider (b. 1960)
 
 ## Biography

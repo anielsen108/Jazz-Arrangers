@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
+import TimelineCarousel from '../components/TimelineCarousel.astro';
 import {
   DECADES,
   decadeFromId,
@@ -19,9 +20,15 @@ const cards = entries
       decade: decadeFromId(entry.id),
       name: name ?? entry.id,
       years: lifespanLabel(born, died),
+      born,
+      photoSrc: entry.data.photo?.src,
     };
   })
   .sort((a, b) => a.name.localeCompare(b.name));
+
+const timelineItems = cards
+  .filter((c) => c.born !== null)
+  .map((c) => ({ ...c, born: c.born as number }));
 
 const byDecade = DECADES.map((decade) => ({
   ...decade,
@@ -33,10 +40,13 @@ const byDecade = DECADES.map((decade) => ({
   <h1>Jazz Arrangers: A Historical Overview</h1>
   <p>
     A repository documenting {cards.length} of the greatest jazz arrangers
-    throughout history, from the big band era to contemporary jazz. Browse by
-    era below — each arranger has a detailed page covering their biography,
-    musical style, orchestration techniques, and essential albums.
+    throughout history, from the big band era to contemporary jazz. Scroll the
+    timeline or browse by era — each arranger has a detailed page covering
+    their biography, musical style, orchestration techniques, and essential
+    albums.
   </p>
+
+  <TimelineCarousel items={timelineItems} />
 
   {
     byDecade.map((decade) => (
@@ -48,7 +58,7 @@ const byDecade = DECADES.map((decade) => ({
             <li class="arranger-card">
               <a href={`${base}/arrangers/${a.id}/`}>
                 <span class="name">{a.name}</span>
-                <span class="years">{a.years || ' '}</span>
+                <span class="years">{a.years || ' '}</span>
               </a>
             </li>
           ))}

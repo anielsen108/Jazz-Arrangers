@@ -1,3 +1,71 @@
+---
+photo:
+  src: /images/arrangers/thad-jones.jpg
+  credit: 'Perfoto, at Jazzhus Montmartre, Copenhagen, via Wikimedia Commons'
+  license: 'CC BY-SA 4.0'
+  source: 'https://commons.wikimedia.org/wiki/File:Thad_Jones_2b.jpg'
+videos:
+  - id: ngWlnJn3Tog
+    title: 'Three and One (1966)'
+    piece: three-and-one
+  - id: mwwu0WPpPw0
+    title: 'Big Dipper — Thad Jones/Mel Lewis Jazz Orchestra'
+    piece: big-dipper
+  - id: '-M2ADUgffFE'
+    title: 'A Child Is Born — Thad Jones/Mel Lewis Jazz Orchestra'
+    piece: a-child-is-born
+pieces:
+  - slug: three-and-one
+    title: 'Three and One'
+    album: 'Presenting Thad Jones/Mel Lewis and the Jazz Orchestra'
+    year: 1966
+    note: 'Thad on flugelhorn out front of the classic lineup; the five reeds all double flutes and clarinets; Hank Jones on piano.'
+    ensemble:
+      flugelhorn: 1
+      trumpet: 4
+      trombone: 3
+      bass-trombone: 1
+      alto-sax: 2
+      tenor-sax: 2
+      baritone-sax: 1
+      piano: 1
+      guitar: 1
+      upright-bass: 1
+      drums: 1
+  - slug: big-dipper
+    title: 'Big Dipper'
+    album: 'All My Yesterdays: The Debut 1966 Recordings at the Village Vanguard'
+    year: 1966
+    note: 'Opening night at the Village Vanguard, February 7, 1966 — no guitar on the bandstand that night; Richard Davis on bass, Mel Lewis on drums.'
+    ensemble:
+      flugelhorn: 1
+      trumpet: 4
+      trombone: 3
+      bass-trombone: 1
+      alto-sax: 2
+      tenor-sax: 2
+      baritone-sax: 1
+      piano: 1
+      upright-bass: 1
+      drums: 1
+  - slug: a-child-is-born
+    title: 'A Child Is Born'
+    album: 'Consummation'
+    year: 1970
+    note: 'The reeds double flutes and alto flutes for the ballad texture; Roland Hanna on piano, Thad''s flugelhorn carrying the melody.'
+    ensemble:
+      flugelhorn: 1
+      trumpet: 4
+      trombone: 3
+      bass-trombone: 1
+      alto-sax: 2
+      tenor-sax: 2
+      baritone-sax: 1
+      piano: 1
+      upright-bass: 1
+      drums: 1
+---
+
 # Thad Jones (1923-1986)
 
 ## Biography

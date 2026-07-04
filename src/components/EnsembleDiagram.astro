@@ -1,0 +1,39 @@
+---
+import { stageRows } from '../lib/ensemble';
+
+interface Props {
+  ensemble: Record<string, number>;
+  ghostStandard?: boolean;
+}
+
+const { ensemble, ghostStandard = true } = Astro.props;
+const rows = stageRows(ensemble, { ghostStandard });
+const hasGhosts = rows.some((r) => r.seats.some((s) => s.ghost));
+---
+
+<figure class="stage">
+  {
+    rows.map((row) => (
+      <div class="stage-row" data-row={row.row}>
+        <span class="stage-row-title">{row.title}</span>
+        <span class="stage-seats">
+          {row.seats.map((seat) => (
+            <span
+              class:list={['seat', { ghost: seat.ghost }]}
+              title={seat.ghost ? `${seat.label} — standard big band chair, not used here` : seat.label}
+            >
+              {seat.abbr}
+            </span>
+          ))}
+        </span>
+      </div>
+    ))
+  }
+  {
+    hasGhosts && (
+      <figcaption class="stage-legend">
+        Faded seats are standard big band chairs this piece doesn't use.
+      </figcaption>
+    )
+  }
+</figure>

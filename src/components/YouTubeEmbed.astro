@@ -1,0 +1,37 @@
+---
+// Click-to-load facade: renders only a thumbnail; the YouTube iframe (and all
+// its JS) loads when the user clicks play.
+interface Props {
+  id: string;
+  title: string;
+}
+
+const { id, title } = Astro.props;
+---
+
+<button class="yt-facade" type="button" data-yt-id={id} data-yt-title={title}>
+  <img
+    src={`https://i.ytimg.com/vi/${id}/hqdefault.jpg`}
+    alt=""
+    loading="lazy"
+    width="480"
+    height="360"
+  />
+  <span class="yt-play" aria-hidden="true">▶</span>
+  <span class="yt-title">{title}</span>
+</button>
+
+<script>
+  document.addEventListener('click', (event) => {
+    const button = (event.target as HTMLElement).closest<HTMLButtonElement>('.yt-facade');
+    if (!button) return;
+    const iframe = document.createElement('iframe');
+    iframe.className = 'yt-iframe';
+    iframe.src = `https://www.youtube-nocookie.com/embed/${button.dataset.ytId}?autoplay=1`;
+    iframe.title = button.dataset.ytTitle ?? 'YouTube video';
+    iframe.allow =
+      'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+    iframe.allowFullscreen = true;
+    button.replaceWith(iframe);
+  });
+</script>

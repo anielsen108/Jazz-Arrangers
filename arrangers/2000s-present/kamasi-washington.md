@@ -1,3 +1,75 @@
+---
+photo:
+  src: /images/arrangers/kamasi-washington.jpg
+  credit: 'Steven Pisano, 2015, via Wikimedia Commons'
+  license: 'CC BY 2.0'
+  source: 'https://commons.wikimedia.org/wiki/File:Kamasi_Washington_(2015).jpg'
+videos:
+  - id: rtW1S5EbHgU
+    title: "Truth (Director's Cut)"
+    piece: truth
+  - id: LdyabrdFMC8
+    title: 'Street Fighter Mas'
+    piece: street-fighter-mas
+  - id: x8WTPgeVPjg
+    title: 'Kamasi Washington: Tiny Desk Concert'
+pieces:
+  - slug: the-rhapsody
+    title: 'The Rhapsody'
+    album: 'The Epic'
+    year: 2015
+    note: 'The West Coast Get Down double rhythm section — Thundercat electric plus Miles Mosley upright bass, two drummers — under a 9-piece string section and 13-voice choir.'
+    ensemble:
+      tenor-sax: 1
+      trumpet: 1
+      trombone: 1
+      piano: 1
+      synthesizer: 1
+      upright-bass: 1
+      electric-bass: 1
+      drums: 2
+      voice: 1
+      strings: 1
+      choir: 1
+  - slug: truth
+    title: 'Truth'
+    album: 'Harmony of Difference'
+    year: 2017
+    note: 'The suite finale layers all five prior movements: 8-piece strings, 9-voice choir, Rickey Washington''s flute, twin drummers and twin basses.'
+    ensemble:
+      tenor-sax: 1
+      alto-sax: 1
+      trumpet: 2
+      trombone: 1
+      flute: 1
+      piano: 1
+      synthesizer: 1
+      guitar: 1
+      vibraphone: 1
+      upright-bass: 1
+      electric-bass: 1
+      drums: 2
+      strings: 1
+      choir: 1
+  - slug: street-fighter-mas
+    title: 'Street Fighter Mas'
+    album: 'Heaven and Earth'
+    year: 2018
+    note: 'Core band with double drums and both bass chairs; a wordless choir carries the hook over the orchestra.'
+    ensemble:
+      tenor-sax: 1
+      trumpet: 1
+      trombone: 1
+      piano: 1
+      synthesizer: 1
+      upright-bass: 1
+      electric-bass: 1
+      drums: 2
+      percussion: 1
+      strings: 1
+      choir: 1
+---
+
 # Kamasi Washington (b. 1981)
 
 ## Biography

@@ -1,6 +1,8 @@
 ---
 import { getCollection, render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
+import EnsembleDiagram from '../../components/EnsembleDiagram.astro';
+import YouTubeEmbed from '../../components/YouTubeEmbed.astro';
 import {
   DECADES,
   decadeFromId,
@@ -24,6 +26,11 @@ const { name, born, died } = parseArrangerHeading(entry.body ?? '');
 const decadeSlug = decadeFromId(entry.id);
 const decade = DECADES.find((d) => d.slug === decadeSlug);
 
+const { photo, videos = [], pieces = [] } = entry.data;
+const pieceSlugs = new Set(pieces.map((p) => p.slug));
+const videosFor = (slug: string) => videos.filter((v) => v.piece === slug);
+const generalVideos = videos.filter((v) => !v.piece || !pieceSlugs.has(v.piece));
+
 // Prev/next within the same decade, alphabetical by display name.
 const siblings = (await getCollection('arrangers'))
   .filter((e) => decadeFromId(e.id) === decadeSlug)
@@ -44,8 +51,54 @@ const title = `${name ?? entry.id} (${lifespanLabel(born, died) || 'jazz arrange
     <a href={`${base}/`}>All arrangers</a> › {decade?.label ?? decadeSlug}
   </nav>
   <article class="prose">
+    {
+      photo && (
+        <figure class="portrait">
+          <img src={`${base}${photo.src}`} alt={`Portrait of ${name}`} />
+          <figcaption>
+            {photo.credit} · {photo.license}
+          </figcaption>
+        </figure>
+      )
+    }
     <Content />
   </article>
+
+  {
+    pieces.length > 0 && (
+      <section class="pieces">
+        <h2>Pieces &amp; Ensembles</h2>
+        {pieces.map((piece) => (
+          <div class="piece">
+            <h3>
+              {piece.title}
+              <span class="piece-meta">
+                {piece.album && ` — ${piece.album}`}
+                {piece.year && ` (${piece.year})`}
+              </span>
+            </h3>
+            <EnsembleDiagram ensemble={piece.ensemble} />
+            {piece.note && <p class="piece-note">{piece.note}</p>}
+            {videosFor(piece.slug).map((v) => (
+              <YouTubeEmbed id={v.id} title={v.title} />
+            ))}
+          </div>
+        ))}
+      </section>
+    )
+  }
+
+  {
+    generalVideos.length > 0 && (
+      <section class="pieces">
+        <h2>Listen</h2>
+        {generalVideos.map((v) => (
+          <YouTubeEmbed id={v.id} title={v.title} />
+        ))}
+      </section>
+    )
+  }
+
   <nav class="pager">
     <span>
       {prev && <a href={`${base}/arrangers/${prev.id}/`}>← {prev.name}</a>}

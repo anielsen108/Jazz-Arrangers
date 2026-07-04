@@ -1,0 +1,52 @@
+---
+// Horizontal scroll-snap timeline of arranger portrait cards, ordered by
+// birth year with decade markers. Pure CSS scrolling — works without JS.
+interface Item {
+  id: string;
+  name: string;
+  years: string;
+  born: number;
+  photoSrc?: string;
+}
+
+interface Props {
+  items: Item[];
+}
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const items = [...Astro.props.items].sort((a, b) => a.born - b.born);
+
+const initials = (name: string) =>
+  name
+    .split(/\s+/)
+    .map((w) => w[0])
+    .slice(0, 2)
+    .join('');
+
+const birthDecade = (born: number) => Math.floor(born / 10) * 10;
+---
+
+<section class="timeline" aria-label="Arrangers by birth year">
+  <div class="timeline-track">
+    {
+      items.map((item, i) => (
+        <>
+          {(i === 0 || birthDecade(items[i - 1].born) !== birthDecade(item.born)) && (
+            <span class="timeline-marker">{birthDecade(item.born)}s</span>
+          )}
+          <a class="tcard" href={`${base}/arrangers/${item.id}/`}>
+            {item.photoSrc ? (
+              <img src={`${base}${item.photoSrc}`} alt={item.name} loading="lazy" />
+            ) : (
+              <span class="tcard-placeholder" aria-hidden="true">
+                {initials(item.name)}
+              </span>
+            )}
+            <span class="tcard-name">{item.name}</span>
+            <span class="tcard-years">{item.years}</span>
+          </a>
+        </>
+      ))
+    }
+  </div>
+</section>

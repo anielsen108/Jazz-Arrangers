@@ -1,3 +1,71 @@
+---
+photo:
+  src: /images/arrangers/duke-ellington.jpg
+  credit: 'Publicity portrait c. 1940, photographer unknown, via Wikimedia Commons'
+  license: 'Public domain'
+  source: 'https://commons.wikimedia.org/wiki/File:Duke_Ellington_-_publicity.JPG'
+videos:
+  - id: PBWyqZauBzQ
+    title: 'Ko-Ko (1940)'
+    piece: ko-ko
+  - id: cb2w2m1JmCY
+    title: "Take the 'A' Train"
+    piece: take-the-a-train
+  - id: wIX7fnYANak
+    title: 'Diminuendo and Crescendo in Blue — Ellington at Newport 1956'
+    piece: diminuendo-and-crescendo-in-blue
+pieces:
+  - slug: ko-ko
+    title: 'Ko-Ko'
+    album: 'Victor single (The Blanton-Webster Band)'
+    year: 1940
+    note: 'Blanton-Webster band: Rex Stewart on cornet, Juan Tizol''s valve trombone counted with the trombones, Barney Bigard''s clarinet chair, Harry Carney''s baritone anchoring the reeds.'
+    ensemble:
+      trumpet: 2
+      cornet: 1
+      trombone: 3
+      alto-sax: 2
+      tenor-sax: 1
+      clarinet: 1
+      baritone-sax: 1
+      piano: 1
+      guitar: 1
+      upright-bass: 1
+      drums: 1
+  - slug: take-the-a-train
+    title: "Take the 'A' Train"
+    album: 'Victor single (The Blanton-Webster Band)'
+    year: 1941
+    note: 'Same band as Ko-Ko with Ray Nance — of the famous trumpet solo — replacing Cootie Williams.'
+    ensemble:
+      trumpet: 2
+      cornet: 1
+      trombone: 3
+      alto-sax: 2
+      tenor-sax: 1
+      clarinet: 1
+      baritone-sax: 1
+      piano: 1
+      guitar: 1
+      upright-bass: 1
+      drums: 1
+  - slug: diminuendo-and-crescendo-in-blue
+    title: 'Diminuendo and Crescendo in Blue'
+    album: 'Ellington at Newport'
+    year: 1956
+    note: 'Live at Newport, July 7, 1956 — Paul Gonsalves'' legendary 27-chorus tenor solo; Jimmy Hamilton''s clarinet chair; no guitar in the 1950s band.'
+    ensemble:
+      trumpet: 4
+      trombone: 3
+      alto-sax: 2
+      tenor-sax: 1
+      clarinet: 1
+      baritone-sax: 1
+      piano: 1
+      upright-bass: 1
+      drums: 1
+---
+
 # Duke Ellington (1899-1974)
 
 ## Biography

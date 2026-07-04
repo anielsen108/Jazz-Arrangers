@@ -1,3 +1,71 @@
+---
+photo:
+  src: /images/arrangers/gil-evans.jpg
+  credit: 'Thomas Huther, via Wikimedia Commons'
+  license: 'CC BY-SA 4.0'
+  source: 'https://commons.wikimedia.org/wiki/File:Gil_Evans_1978_1.jpg'
+videos:
+  - id: r-gOVGLe-dA
+    title: 'Boplicity — Miles Davis, Birth of the Cool'
+    piece: boplicity
+  - id: g7oFAYru2nU
+    title: 'Summertime (from "Porgy & Bess")'
+    piece: summertime
+  - id: mpRXA3lFrqM
+    title: 'Concierto de Aranjuez: Adagio — Miles Davis, Sketches of Spain'
+    piece: concierto-de-aranjuez
+pieces:
+  - slug: boplicity
+    title: 'Boplicity'
+    album: 'Miles Davis — Birth of the Cool'
+    year: 1949
+    note: 'The famous nonet, April 1949: Davis, J.J. Johnson, Sandy Siegelstein on french horn, Bill Barber on tuba, Konitz, Mulligan, John Lewis, Nelson Boyd, Kenny Clarke.'
+    ensemble:
+      trumpet: 1
+      trombone: 1
+      french-horn: 1
+      tuba: 1
+      alto-sax: 1
+      baritone-sax: 1
+      piano: 1
+      upright-bass: 1
+      drums: 1
+  - slug: summertime
+    title: 'Summertime'
+    album: 'Miles Davis — Porgy and Bess'
+    year: 1958
+    note: 'Davis on muted trumpet over flutes, french horns, and Danny Bank''s bass clarinet — and no piano anywhere in the orchestra.'
+    ensemble:
+      trumpet: 5
+      trombone: 4
+      french-horn: 3
+      tuba: 1
+      flute: 2
+      alto-sax: 1
+      bass-clarinet: 1
+      upright-bass: 1
+      drums: 1
+  - slug: concierto-de-aranjuez
+    title: 'Concierto de Aranjuez (Adagio)'
+    album: 'Miles Davis — Sketches of Spain'
+    year: 1959
+    note: 'Davis on solo flugelhorn over oboes, bassoon, harp, and castanets — Evans'' orchestra at its most symphonic; again no piano.'
+    ensemble:
+      flugelhorn: 1
+      trumpet: 4
+      trombone: 2
+      french-horn: 3
+      tuba: 1
+      flute: 2
+      oboe: 2
+      bassoon: 1
+      bass-clarinet: 1
+      harp: 1
+      upright-bass: 1
+      drums: 1
+      percussion: 2
+---
+
 # Gil Evans (1912-1988)
 
 ## Biography
