@@ -1,3 +1,63 @@
+---
+photo:
+  src: /images/arrangers/wayne-shorter.jpg
+  credit: 'Tom Beetz, via Wikimedia Commons'
+  license: 'CC BY 2.0'
+  source: 'https://commons.wikimedia.org/wiki/File:Wayne_Shorter.jpg'
+videos:
+  - id: Vdc3KJVopU4
+    title: 'Speak No Evil (Rudy Van Gelder Edition)'
+    piece: speak-no-evil
+  - id: 7xWa8Sj9b7o
+    title: 'Palladium — Weather Report'
+    piece: palladium
+  - id: 45rOTojN6Es
+    title: 'Pegasus — Wayne Shorter Quartet with Orpheus Chamber Orchestra'
+    piece: pegasus
+pieces:
+  - slug: speak-no-evil
+    title: 'Speak No Evil'
+    album: 'Speak No Evil (Blue Note)'
+    year: 1964
+    note: 'The classic Blue Note quintet, December 1964: Shorter, Freddie Hubbard, Herbie Hancock, Ron Carter, Elvin Jones.'
+    ensemble:
+      tenor-sax: 1
+      trumpet: 1
+      piano: 1
+      upright-bass: 1
+      drums: 1
+  - slug: palladium
+    title: 'Palladium'
+    album: 'Weather Report — Heavy Weather'
+    year: 1977
+    note: 'Zawinul''s synthesizers replace the piano chair entirely; Jaco Pastorius on electric bass (overdubbing steel drums), Alex Acuña drums, Manolo Badrena percussion.'
+    ensemble:
+      tenor-sax: 1
+      synthesizer: 1
+      electric-bass: 1
+      drums: 1
+      percussion: 1
+  - slug: pegasus
+    title: 'Pegasus'
+    album: 'Emanon (Blue Note)'
+    year: 2018
+    note: 'Shorter''s quartet (he doubles soprano) plus the Orpheus Chamber Orchestra — 20 strings, winds and brass in pairs, timpani.'
+    ensemble:
+      tenor-sax: 1
+      piano: 1
+      upright-bass: 1
+      drums: 1
+      flute: 2
+      oboe: 2
+      clarinet: 2
+      bassoon: 2
+      french-horn: 2
+      trumpet: 2
+      trombone: 1
+      percussion: 1
+      strings: 1
+---
+
 # Wayne Shorter (1933-2023)
 
 ## Biography

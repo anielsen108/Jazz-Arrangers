@@ -1,3 +1,11 @@
+---
+photo:
+  src: /images/arrangers/darcy-james-argue.jpg
+  credit: 'Michael Hoefner, moers festival 2009, via Wikimedia Commons'
+  license: 'CC BY-SA 3.0'
+  source: 'https://commons.wikimedia.org/wiki/File:Darcy_James_Argue_06N5508.jpg'
+---
+
 # Darcy James Argue (b. 1975)
 
 ## Biography

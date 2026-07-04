@@ -1,3 +1,74 @@
+---
+photo:
+  src: /images/arrangers/don-ellis.jpg
+  credit: 'Holton trumpet advertisement, DownBeat magazine, January 1968, via Wikimedia Commons'
+  license: 'Public domain'
+  source: 'https://commons.wikimedia.org/wiki/File:Don_Ellis_Holton_trumpet.jpg'
+videos:
+  - id: l8Qy7YhFeeQ
+    title: 'Indian Lady — Live at Tanglewood'
+    piece: indian-lady
+  - id: HvmA_TskDTU
+    title: 'Turkish Bath'
+    piece: turkish-bath
+pieces:
+  - slug: indian-lady
+    title: 'Indian Lady'
+    album: 'Electric Bath'
+    year: 1967
+    note: 'The famous 5/4 chart with THREE bassists (one doubling sitar); reeds double soprano, flutes, piccolo, and clarinets; vibes, timbales, and bongos in the percussion section.'
+    ensemble:
+      trumpet: 5
+      trombone: 2
+      bass-trombone: 1
+      alto-sax: 2
+      tenor-sax: 2
+      baritone-sax: 1
+      piano: 1
+      upright-bass: 3
+      drums: 1
+      percussion: 2
+      congas: 1
+  - slug: turkish-bath
+    title: 'Turkish Bath'
+    album: 'Electric Bath'
+    year: 1967
+    note: 'Ellis''s quarter-tone trumpet through a ring modulator over the same three-bass, four-percussion rhythm section, with sitar coloring the vamp.'
+    ensemble:
+      trumpet: 5
+      trombone: 2
+      bass-trombone: 1
+      alto-sax: 2
+      tenor-sax: 2
+      baritone-sax: 1
+      piano: 1
+      upright-bass: 3
+      drums: 1
+      percussion: 2
+      congas: 1
+  - slug: strawberry-soup
+    title: 'Strawberry Soup'
+    album: 'Tears of Joy (live)'
+    year: 1971
+    note: 'The 1971 band adds a string quartet, french horn, and tuba; the reed section doubles as a woodwind quartet (oboe, clarinet, flute); two drummers plus congas.'
+    ensemble:
+      trumpet: 4
+      french-horn: 1
+      trombone: 1
+      bass-trombone: 1
+      tuba: 1
+      alto-sax: 2
+      tenor-sax: 1
+      baritone-sax: 1
+      violin: 2
+      viola: 1
+      cello: 1
+      piano: 1
+      electric-bass: 1
+      drums: 2
+      congas: 1
+---
+
 # Don Ellis (1934-1978)
 
 ## Biography
