@@ -1,0 +1,59 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import {
+  DECADES,
+  decadeFromId,
+  lifespanLabel,
+  parseArrangerHeading,
+} from '../lib/arrangers';
+
+const entries = await getCollection('arrangers');
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const cards = entries
+  .map((entry) => {
+    const { name, born, died } = parseArrangerHeading(entry.body ?? '');
+    return {
+      id: entry.id,
+      decade: decadeFromId(entry.id),
+      name: name ?? entry.id,
+      years: lifespanLabel(born, died),
+    };
+  })
+  .sort((a, b) => a.name.localeCompare(b.name));
+
+const byDecade = DECADES.map((decade) => ({
+  ...decade,
+  arrangers: cards.filter((c) => c.decade === decade.slug),
+}));
+---
+
+<Base title="Jazz Arrangers: A Historical Overview">
+  <h1>Jazz Arrangers: A Historical Overview</h1>
+  <p>
+    A repository documenting {cards.length} of the greatest jazz arrangers
+    throughout history, from the big band era to contemporary jazz. Browse by
+    era below — each arranger has a detailed page covering their biography,
+    musical style, orchestration techniques, and essential albums.
+  </p>
+
+  {
+    byDecade.map((decade) => (
+      <section class="decade-section">
+        <h2>{decade.label}</h2>
+        <p class="decade-blurb">{decade.blurb}</p>
+        <ul class="arranger-grid">
+          {decade.arrangers.map((a) => (
+            <li class="arranger-card">
+              <a href={`${base}/arrangers/${a.id}/`}>
+                <span class="name">{a.name}</span>
+                <span class="years">{a.years || ' '}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))
+  }
+</Base>

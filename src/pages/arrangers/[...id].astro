@@ -1,0 +1,57 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import {
+  DECADES,
+  decadeFromId,
+  lifespanLabel,
+  parseArrangerHeading,
+} from '../../lib/arrangers';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('arrangers');
+  return entries.map((entry) => ({
+    params: { id: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const { name, born, died } = parseArrangerHeading(entry.body ?? '');
+const decadeSlug = decadeFromId(entry.id);
+const decade = DECADES.find((d) => d.slug === decadeSlug);
+
+// Prev/next within the same decade, alphabetical by display name.
+const siblings = (await getCollection('arrangers'))
+  .filter((e) => decadeFromId(e.id) === decadeSlug)
+  .map((e) => ({
+    id: e.id,
+    name: parseArrangerHeading(e.body ?? '').name ?? e.id,
+  }))
+  .sort((a, b) => a.name.localeCompare(b.name));
+const index = siblings.findIndex((s) => s.id === entry.id);
+const prev = index > 0 ? siblings[index - 1] : null;
+const next = index < siblings.length - 1 ? siblings[index + 1] : null;
+
+const title = `${name ?? entry.id} (${lifespanLabel(born, died) || 'jazz arranger'}) — Jazz Arrangers`;
+---
+
+<Base title={title} description={`Biography, musical style, and essential albums of jazz arranger ${name}.`}>
+  <nav class="breadcrumb">
+    <a href={`${base}/`}>All arrangers</a> › {decade?.label ?? decadeSlug}
+  </nav>
+  <article class="prose">
+    <Content />
+  </article>
+  <nav class="pager">
+    <span>
+      {prev && <a href={`${base}/arrangers/${prev.id}/`}>← {prev.name}</a>}
+    </span>
+    <span>
+      {next && <a href={`${base}/arrangers/${next.id}/`}>{next.name} →</a>}
+    </span>
+  </nav>
+</Base>
