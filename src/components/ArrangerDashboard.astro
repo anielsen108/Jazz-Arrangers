@@ -28,6 +28,10 @@ const { photo, videos = [], pieces = [] } = entry.data;
 const pieceSlugs = new Set(pieces.map((piece) => piece.slug));
 const videosFor = (slug: string) => videos.filter((video) => video.piece === slug);
 const generalVideos = videos.filter((video) => !video.piece || !pieceSlugs.has(video.piece));
+const youtubeSearch = (...terms: Array<string | undefined>) => {
+  const query = terms.filter((term): term is string => Boolean(term?.trim())).join(' ');
+  return `https://www.youtube.com/results?search_query=${encodeURIComponent(query)}`;
+};
 const life = lifespanLabel(born, died) || 'dates unavailable';
 
 const nameParts = name.trim().split(/\s+/);
@@ -235,6 +239,14 @@ const instrumentLabels = (ensemble: Record<string, number>) =>
                       <span aria-hidden="true">▶</span> Play listening example
                     </button>
                   )}
+                  {!pieceVideos[0] && (
+                    <a
+                      class="piece-listen search-listen"
+                      href={youtubeSearch(name, piece.title, piece.album)}
+                      target="_blank"
+                      rel="noreferrer"
+                    ><span aria-hidden="true">↗</span> Find listening example on YouTube</a>
+                  )}
                 </div>
                 <figure class="ensemble-viz">
                   <figcaption><strong>{Object.keys(piece.ensemble).length}</strong> distinct chair colors</figcaption>
@@ -294,6 +306,12 @@ const instrumentLabels = (ensemble: Record<string, number>) =>
                 <h3>{score.title}</h3>
                 <p class="piece-note">{score.note}</p>
                 <p class="listen-cue"><span aria-hidden="true">◎</span><strong>Listen for</strong>{score.cue}</p>
+                <a
+                  class="piece-listen search-listen"
+                  href={youtubeSearch(name, score.title, score.album)}
+                  target="_blank"
+                  rel="noreferrer"
+                ><span aria-hidden="true">↗</span> Find listening example on YouTube</a>
               </div>
               <figure class="ensemble-viz">
                 <figcaption>Comparative orchestral profile</figcaption>

@@ -204,7 +204,7 @@
 .listen-cue { max-width: 27rem; margin: 2rem 0; padding-top: 1rem; display: grid; grid-template-columns: auto 1fr; column-gap: 0.6rem; border-top: 1px solid var(--lab-line); color: var(--lab-muted); font-size: 0.78rem; }
 .listen-cue span { grid-row: 1 / 3; color: var(--lab-accent); font-size: 1.5rem; line-height: 1; }
 .listen-cue strong { color: var(--lab-ink); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.08em; }
-.piece-listen { margin-top: auto; padding: 0.8rem 1rem; border: 1px solid var(--lab-ink); background: transparent; font-size: 0.75rem; font-weight: 800; cursor: pointer; }
+.piece-listen { margin-top: auto; padding: 0.8rem 1rem; display: inline-block; align-self: flex-start; border: 1px solid var(--lab-ink); background: transparent; color: var(--lab-ink); font-size: 0.75rem; font-weight: 800; text-decoration: none; cursor: pointer; }
 .piece-listen:hover { color: var(--lab-paper); background: var(--lab-ink); }
 .piece-listen span { color: var(--lab-accent); margin-right: 0.45rem; }
 .lab-video { width: 100%; aspect-ratio: 16 / 9; margin-top: auto; border: 0; }
