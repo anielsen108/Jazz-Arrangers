@@ -1,6 +1,6 @@
 # Jazz Arrangers: A Historical Overview
 
-A comprehensive repository documenting 160 of the greatest jazz arrangers throughout history, from the big band era to contemporary jazz.
+A comprehensive repository documenting 159 of the greatest jazz arrangers throughout history, from the big band era to contemporary jazz.
 
 ## Table of Contents
 
@@ -11,7 +11,7 @@ A comprehensive repository documenting 160 of the greatest jazz arrangers throug
 - [1970s: Fusion and Jazz-Funk](#1970s-fusion-and-jazz-funk) (20 arrangers)
 - [1980s: Contemporary Jazz](#1980s-contemporary-jazz) (20 arrangers)
 - [1990s: Neo-Traditional and Experimental](#1990s-neo-traditional-and-experimental) (20 arrangers)
-- [2000s-Present: Modern Jazz Arrangers](#2000s-present-modern-jazz-arrangers) (20 arrangers)
+- [2000s-Present: Modern Jazz Arrangers](#2000s-present-modern-jazz-arrangers) (19 arrangers)
 
 ---
 
@@ -226,14 +226,13 @@ Contemporary arrangers continue to push boundaries, incorporating global influen
 16. [Brian Lynch](arrangers/2000s-present/brian-lynch.md) - Afro-Cuban jazz master
 17. [Miguel Zenón](arrangers/2000s-present/miguel-zenon.md) - Puerto Rican jazz innovator
 18. [Shai Maestro](arrangers/2000s-present/shai-maestro.md) - Israeli pianist-composer
-19. [Jacob Collier](arrangers/2000s-present/jacob-collier.md) - Multi-Grammy winner
-20. [Ambrose Akinmusire](arrangers/2000s-present/ambrose-akinmusire.md) - Contemporary trumpeter-composer
+19. [Ambrose Akinmusire](arrangers/2000s-present/ambrose-akinmusire.md) - Contemporary trumpeter-composer
 
 ---
 
 ## About This Repository
 
-This repository documents 160 jazz arrangers spanning over a century of jazz history. Each arranger has their own detailed page with biographical information, style analysis, and their most important albums.
+This repository documents 159 jazz arrangers spanning over a century of jazz history. Each arranger has their own detailed page with biographical information, style analysis, and their most important albums.
 
 ### Contributing
 

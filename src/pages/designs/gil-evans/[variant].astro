@@ -1,0 +1,21 @@
+---
+import Base from '../../../layouts/Base.astro';
+import GilEvansLab from '../../../components/GilEvansLab.astro';
+import { gilEvansVariants } from '../../../lib/gilEvansLab';
+
+export function getStaticPaths() {
+  return gilEvansVariants.map((variant) => ({
+    params: { variant: variant.slug },
+    props: { variant },
+  }));
+}
+
+const { variant } = Astro.props;
+---
+
+<Base
+  title={`${variant.name} — Gil Evans design lab`}
+  description={`Alternative arranger-page design: ${variant.description}`}
+>
+  <GilEvansLab variant={variant} />
+</Base>

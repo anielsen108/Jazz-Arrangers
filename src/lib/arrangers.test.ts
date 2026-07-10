@@ -128,6 +128,6 @@ describe('repository content', () => {
         expect(name, `${dir.name}/${file} has no parseable H1`).toBeTruthy();
       }
     }
-    expect(pageCount).toBeGreaterThanOrEqual(160);
+    expect(pageCount).toBe(159);
   });
 });

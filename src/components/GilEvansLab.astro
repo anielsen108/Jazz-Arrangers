@@ -1,0 +1,308 @@
+---
+import '../styles/gil-evans-lab.css';
+import {
+  albums,
+  gilEvansBio,
+  gilEvansVariants,
+  pieces,
+  soundDNA,
+  techniques,
+  type GilEvansVariant,
+} from '../lib/gilEvansLab';
+
+interface Props {
+  variant: GilEvansVariant;
+}
+
+const { variant } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const activeIndex = gilEvansVariants.findIndex((item) => item.slug === variant.slug);
+const previous = gilEvansVariants[(activeIndex + gilEvansVariants.length - 1) % gilEvansVariants.length];
+const next = gilEvansVariants[(activeIndex + 1) % gilEvansVariants.length];
+
+const radarCenter = 100;
+const radarRadius = 72;
+const pointAt = (value: number, index: number) => {
+  const angle = -Math.PI / 2 + (Math.PI * 2 * index) / soundDNA.length;
+  const radius = radarRadius * (value / 100);
+  return `${radarCenter + Math.cos(angle) * radius},${radarCenter + Math.sin(angle) * radius}`;
+};
+const radarPoints = soundDNA.map((item, index) => pointAt(item.value, index)).join(' ');
+const axisPoints = soundDNA.map((_, index) => pointAt(100, index));
+---
+
+<div class="lab-shell" data-variant={variant.slug}>
+  <nav class="lab-topbar" aria-label="Design alternatives">
+    <a class="lab-index-link" href={`${base}/designs/gil-evans/`}>
+      <span aria-hidden="true">←</span> All concepts
+    </a>
+    <div class="lab-variant-links">
+      {
+        gilEvansVariants.map((item) => (
+          <a
+            class:list={['lab-variant-link', { active: item.slug === variant.slug }]}
+            href={`${base}/designs/gil-evans/${item.slug}/`}
+            aria-label={`Concept ${item.number}: ${item.name}`}
+            aria-current={item.slug === variant.slug ? 'page' : undefined}
+          >
+            {item.number}
+          </a>
+        ))
+      }
+    </div>
+    <span class="lab-concept-name">Concept {variant.number} / 10 · {variant.name}</span>
+  </nav>
+
+  <article class="arranger-concept">
+    <header class="concept-hero">
+      <div class="hero-copy">
+        <p class="concept-kicker">The sound of the orchestra, recomposed</p>
+        <h1>Gil <span>Evans</span></h1>
+        <p class="lifespan">1912—1988 <i aria-hidden="true"></i> arranger · composer · colorist</p>
+        <p class="hero-thesis">He didn’t make the band bigger. He made every color matter.</p>
+        <div class="hero-tags" aria-label="Signature traits">
+          <span>orchestral color</span><span>open voicings</span><span>elastic form</span>
+        </div>
+      </div>
+
+      <figure class="hero-portrait">
+        <div class="portrait-orbit" aria-hidden="true">
+          <i></i><i></i><i></i>
+        </div>
+        <img src={`${base}/images/arrangers/gil-evans.jpg`} alt="Gil Evans conducting" />
+        <figcaption>Gil Evans, 1978 · Thomas Huther</figcaption>
+      </figure>
+
+      <dl class="hero-facts">
+        <div><dt>Origin</dt><dd>Toronto → California</dd></div>
+        <div><dt>Key partner</dt><dd>Miles Davis</dd></div>
+        <div><dt>Signature</dt><dd>Color before section</dd></div>
+      </dl>
+    </header>
+
+    <section class="bio-strip" aria-labelledby="bio-title">
+      <div class="section-number">00</div>
+      <div>
+        <p class="section-label" id="bio-title">Bio · 32 words</p>
+        <p>{gilEvansBio}</p>
+      </div>
+    </section>
+
+    <section class="dna-section" aria-labelledby="dna-title">
+      <header class="section-heading">
+        <div><p class="section-number">01</p><p class="section-label">Musical style</p></div>
+        <h2 id="dna-title">Sound DNA</h2>
+        <p>Five dimensions describe how the writing feels. The shape can compare any arranger.</p>
+      </header>
+
+      <div class="dna-layout">
+        <figure class="radar-card" aria-label="Sound DNA radar chart">
+          <svg class="radar" viewBox="0 0 200 200" role="img" aria-labelledby="radar-title radar-desc">
+            <title id="radar-title">Gil Evans sound DNA</title>
+            <desc id="radar-desc">Very high color and space, high register width, medium motion, and transparent density.</desc>
+            <polygon class="radar-grid radar-grid-outer" points={axisPoints.join(' ')} />
+            <polygon class="radar-grid" points={soundDNA.map((_, i) => pointAt(66, i)).join(' ')} />
+            <polygon class="radar-grid" points={soundDNA.map((_, i) => pointAt(33, i)).join(' ')} />
+            {axisPoints.map((point) => {
+              const [x, y] = point.split(',');
+              return <line class="radar-axis" x1="100" y1="100" x2={x} y2={y} />;
+            })}
+            <polygon class="radar-shape" points={radarPoints} />
+            {soundDNA.map((item, index) => {
+              const [x, y] = pointAt(item.value, index).split(',');
+              return <circle class="radar-point" cx={x} cy={y} r="3" />;
+            })}
+          </svg>
+          <div class="radar-labels" aria-hidden="true">
+            {soundDNA.map((item) => <span>{item.label}</span>)}
+          </div>
+          <figcaption>Evans favors color and space over sheer density.</figcaption>
+        </figure>
+
+        <div class="dna-cards">
+          {
+            soundDNA.map((item) => (
+              <article class="dna-card" style={`--dna-level:${item.value}%`}>
+                <div class="dna-card-top"><span>{item.label}</span><strong>{item.value}</strong></div>
+                <div class="dna-meter" aria-hidden="true"><i></i></div>
+                <h3>{item.word}</h3>
+                <p>{item.description}</p>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="technique-section" aria-labelledby="technique-title">
+      <header class="section-heading">
+        <div><p class="section-number">02</p><p class="section-label">Orchestration</p></div>
+        <h2 id="technique-title">Technique deck</h2>
+        <p>Select a card to spotlight one device. Each card pairs a visual pattern with a listening cue.</p>
+      </header>
+
+      <div class="technique-grid" data-technique-grid>
+        {
+          techniques.map((technique, index) => (
+            <button
+              class:list={['technique-card', { active: index === 0 }]}
+              type="button"
+              aria-pressed={index === 0 ? 'true' : 'false'}
+              data-technique-card
+            >
+              <span class="technique-index">{technique.number}</span>
+              <span class={`technique-glyph glyph-${technique.glyph}`} aria-hidden="true">
+                <i></i><i></i><i></i><i></i><i></i>
+              </span>
+              <span class="technique-title">{technique.title}</span>
+              <span class="technique-description">{technique.description}</span>
+              <span class="technique-cue"><i aria-hidden="true">↗</i>{technique.cue}</span>
+            </button>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="piece-section" aria-labelledby="piece-title">
+      <header class="section-heading">
+        <div><p class="section-number">03</p><p class="section-label">Music first</p></div>
+        <h2 id="piece-title">Three scores, three orchestras</h2>
+        <p>Switch recordings to see how Evans rebuilds the ensemble around the musical idea.</p>
+      </header>
+
+      <div class="piece-tabs" role="tablist" aria-label="Featured scores">
+        {
+          pieces.map((piece, index) => (
+            <button
+              type="button"
+              role="tab"
+              class:list={['piece-tab', { active: index === 0 }]}
+              aria-selected={index === 0 ? 'true' : 'false'}
+              aria-controls={`piece-${piece.slug}`}
+              id={`tab-${piece.slug}`}
+              data-piece-tab={piece.slug}
+            >
+              <span>{piece.year}</span>{piece.title}
+            </button>
+          ))
+        }
+      </div>
+
+      <div class="piece-panels">
+        {
+          pieces.map((piece, index) => (
+            <section
+              class:list={['piece-panel', { active: index === 0 }]}
+              role="tabpanel"
+              id={`piece-${piece.slug}`}
+              aria-labelledby={`tab-${piece.slug}`}
+              hidden={index !== 0}
+              data-piece-panel={piece.slug}
+            >
+              <div class="piece-story">
+                <p class="piece-album">{piece.album} · {piece.year}</p>
+                <h3>{piece.title}</h3>
+                <p class="piece-note">{piece.note}</p>
+                <p class="listen-cue"><span aria-hidden="true">◎</span><strong>Listen for</strong>{piece.cue}</p>
+                <button
+                  class="piece-listen"
+                  type="button"
+                  data-video-id={piece.videoId}
+                  data-video-title={piece.videoTitle}
+                >
+                  <span aria-hidden="true">▶</span> Play listening example
+                </button>
+              </div>
+
+              <figure class="ensemble-viz">
+                <figcaption><strong>{piece.instruments.length}</strong> distinct chair colors</figcaption>
+                <div class="family-bars">
+                  {piece.families.map((family) => (
+                    <div class={`family-row family-${family.color}`}>
+                      <span>{family.label}</span>
+                      <i style={`--family-level:${Math.round((family.value / 13) * 100)}%`}><b>{family.value}</b></i>
+                    </div>
+                  ))}
+                </div>
+                <div class="instrument-cloud" aria-label="Instrumentation">
+                  {piece.instruments.map((instrument) => <span>{instrument}</span>)}
+                </div>
+              </figure>
+            </section>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="albums-section" aria-labelledby="albums-title">
+      <header class="section-heading">
+        <div><p class="section-number">04</p><p class="section-label">Start here</p></div>
+        <h2 id="albums-title">Three essential albums</h2>
+        <p>One line each. Enough context to choose the next listen.</p>
+      </header>
+
+      <ol class="album-list">
+        {
+          albums.map((album, index) => (
+            <li>
+              <span class="album-number">0{index + 1}</span>
+              <span class="album-year">{album.year}</span>
+              <span class="album-title"><strong>{album.title}</strong><small>{album.artist}</small></span>
+              <span class="album-line">{album.line}</span>
+              <span class="album-arrow" aria-hidden="true">↗</span>
+            </li>
+          ))
+        }
+      </ol>
+    </section>
+
+    <footer class="concept-footer">
+      <a href={`${base}/designs/gil-evans/${previous.slug}/`}>← <span>{previous.name}</span></a>
+      <div><span>{variant.number}</span><i></i><span>10</span></div>
+      <a href={`${base}/designs/gil-evans/${next.slug}/`}><span>{next.name}</span> →</a>
+    </footer>
+  </article>
+</div>
+
+<script>
+  document.addEventListener('click', (event) => {
+    const target = event.target as HTMLElement;
+
+    const techniqueCard = target.closest<HTMLButtonElement>('[data-technique-card]');
+    if (techniqueCard) {
+      const grid = techniqueCard.closest('[data-technique-grid]');
+      grid?.querySelectorAll<HTMLButtonElement>('[data-technique-card]').forEach((card) => {
+        const active = card === techniqueCard;
+        card.classList.toggle('active', active);
+        card.setAttribute('aria-pressed', String(active));
+      });
+    }
+
+    const pieceTab = target.closest<HTMLButtonElement>('[data-piece-tab]');
+    if (pieceTab) {
+      const shell = pieceTab.closest('.piece-section');
+      const slug = pieceTab.dataset.pieceTab;
+      shell?.querySelectorAll<HTMLButtonElement>('[data-piece-tab]').forEach((tab) => {
+        const active = tab === pieceTab;
+        tab.classList.toggle('active', active);
+        tab.setAttribute('aria-selected', String(active));
+      });
+      shell?.querySelectorAll<HTMLElement>('[data-piece-panel]').forEach((panel) => {
+        const active = panel.dataset.piecePanel === slug;
+        panel.classList.toggle('active', active);
+        panel.hidden = !active;
+      });
+    }
+
+    const listenButton = target.closest<HTMLButtonElement>('[data-video-id]');
+    if (listenButton) {
+      const iframe = document.createElement('iframe');
+      iframe.className = 'lab-video';
+      iframe.src = `https://www.youtube-nocookie.com/embed/${listenButton.dataset.videoId}?autoplay=1`;
+      iframe.title = listenButton.dataset.videoTitle ?? 'Listening example';
+      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+      iframe.allowFullscreen = true;
+      listenButton.replaceWith(iframe);
+    }
+  });
+</script>

@@ -1,8 +1,7 @@
 ---
-import { getCollection, render } from 'astro:content';
+import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
-import EnsembleDiagram from '../../components/EnsembleDiagram.astro';
-import YouTubeEmbed from '../../components/YouTubeEmbed.astro';
+import ArrangerDashboard from '../../components/ArrangerDashboard.astro';
 import {
   DECADES,
   decadeFromId,
@@ -12,99 +11,35 @@ import {
 
 export async function getStaticPaths() {
   const entries = await getCollection('arrangers');
-  return entries.map((entry) => ({
-    params: { id: entry.id },
-    props: { entry },
-  }));
+  return entries.map((entry) => ({ params: { id: entry.id }, props: { entry } }));
 }
 
 const { entry } = Astro.props;
-const { Content } = await render(entry);
-const base = import.meta.env.BASE_URL.replace(/\/$/, '');
-
 const { name, born, died } = parseArrangerHeading(entry.body ?? '');
+const displayName = name ?? entry.id;
 const decadeSlug = decadeFromId(entry.id);
-const decade = DECADES.find((d) => d.slug === decadeSlug);
-
-const { photo, videos = [], pieces = [] } = entry.data;
-const pieceSlugs = new Set(pieces.map((p) => p.slug));
-const videosFor = (slug: string) => videos.filter((v) => v.piece === slug);
-const generalVideos = videos.filter((v) => !v.piece || !pieceSlugs.has(v.piece));
-
-// Prev/next within the same decade, alphabetical by display name.
+const decade = DECADES.find((item) => item.slug === decadeSlug);
 const siblings = (await getCollection('arrangers'))
-  .filter((e) => decadeFromId(e.id) === decadeSlug)
-  .map((e) => ({
-    id: e.id,
-    name: parseArrangerHeading(e.body ?? '').name ?? e.id,
-  }))
+  .filter((item) => decadeFromId(item.id) === decadeSlug)
+  .map((item) => ({ id: item.id, name: parseArrangerHeading(item.body ?? '').name ?? item.id }))
   .sort((a, b) => a.name.localeCompare(b.name));
-const index = siblings.findIndex((s) => s.id === entry.id);
+const index = siblings.findIndex((sibling) => sibling.id === entry.id);
 const prev = index > 0 ? siblings[index - 1] : null;
 const next = index < siblings.length - 1 ? siblings[index + 1] : null;
-
-const title = `${name ?? entry.id} (${lifespanLabel(born, died) || 'jazz arranger'}) — Jazz Arrangers`;
+const title = `${displayName} (${lifespanLabel(born, died) || 'jazz arranger'}) — Jazz Arrangers`;
 ---
 
-<Base title={title} description={`Biography, musical style, and essential albums of jazz arranger ${name}.`}>
-  <nav class="breadcrumb">
-    <a href={`${base}/`}>All arrangers</a> › {decade?.label ?? decadeSlug}
-  </nav>
-  <article class="prose">
-    {
-      photo && (
-        <figure class="portrait">
-          <img src={`${base}${photo.src}`} alt={`Portrait of ${name}`} />
-          <figcaption>
-            {photo.credit} · {photo.license}
-          </figcaption>
-        </figure>
-      )
-    }
-    <Content />
-  </article>
-
-  {
-    pieces.length > 0 && (
-      <section class="pieces">
-        <h2>Pieces &amp; Ensembles</h2>
-        {pieces.map((piece) => (
-          <div class="piece">
-            <h3>
-              {piece.title}
-              <span class="piece-meta">
-                {piece.album && ` — ${piece.album}`}
-                {piece.year && ` (${piece.year})`}
-              </span>
-            </h3>
-            <EnsembleDiagram ensemble={piece.ensemble} />
-            {piece.note && <p class="piece-note">{piece.note}</p>}
-            {videosFor(piece.slug).map((v) => (
-              <YouTubeEmbed id={v.id} title={v.title} />
-            ))}
-          </div>
-        ))}
-      </section>
-    )
-  }
-
-  {
-    generalVideos.length > 0 && (
-      <section class="pieces">
-        <h2>Listen</h2>
-        {generalVideos.map((v) => (
-          <YouTubeEmbed id={v.id} title={v.title} />
-        ))}
-      </section>
-    )
-  }
-
-  <nav class="pager">
-    <span>
-      {prev && <a href={`${base}/arrangers/${prev.id}/`}>← {prev.name}</a>}
-    </span>
-    <span>
-      {next && <a href={`${base}/arrangers/${next.id}/`}>{next.name} →</a>}
-    </span>
-  </nav>
+<Base
+  title={title}
+  description={`A concise visual guide to the musical style, orchestration techniques, and essential albums of ${displayName}.`}
+>
+  <ArrangerDashboard
+    entry={entry}
+    name={displayName}
+    born={born}
+    died={died}
+    decadeLabel={decade?.label ?? decadeSlug}
+    prev={prev}
+    next={next}
+  />
 </Base>

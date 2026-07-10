@@ -1,0 +1,411 @@
+/* Gil Evans design lab: one compact content model, ten visual systems. */
+.lab-shell {
+  --lab-bg: #e9edf0;
+  --lab-paper: #f8fafb;
+  --lab-ink: #17212a;
+  --lab-muted: #68727a;
+  --lab-accent: #e35a32;
+  --lab-accent-2: #2f738f;
+  --lab-line: #cad2d7;
+  --lab-soft: #e7eef1;
+  --lab-display: Inter, ui-sans-serif, system-ui, sans-serif;
+  --lab-body: Inter, ui-sans-serif, system-ui, sans-serif;
+  width: min(82rem, calc(100vw - 1.5rem));
+  margin: -1rem 0 0 50%;
+  transform: translateX(-50%);
+  color: var(--lab-ink);
+  background: var(--lab-bg);
+  border-radius: 1.25rem;
+  overflow: hidden;
+  font-family: var(--lab-body);
+  line-height: 1.45;
+  box-shadow: 0 1.5rem 5rem rgb(23 33 42 / 0.14);
+}
+
+.lab-shell * { box-sizing: border-box; }
+.lab-shell button, .lab-shell a { font: inherit; }
+.lab-shell button { color: inherit; }
+
+.lab-topbar {
+  min-height: 4rem;
+  padding: 0.75rem 1.4rem;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1.5rem;
+  border-bottom: 1px solid var(--lab-line);
+  background: color-mix(in srgb, var(--lab-paper) 92%, transparent);
+  position: relative;
+  z-index: 5;
+}
+
+.lab-index-link,
+.lab-variant-link {
+  color: var(--lab-ink);
+  text-decoration: none;
+}
+
+.lab-index-link { font-size: 0.78rem; font-weight: 750; letter-spacing: 0.02em; }
+.lab-index-link span { color: var(--lab-accent); margin-right: 0.25rem; }
+.lab-variant-links { display: flex; justify-content: center; gap: 0.35rem; }
+.lab-variant-link {
+  width: 1.8rem;
+  height: 1.8rem;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--lab-line);
+  border-radius: 50%;
+  font-size: 0.68rem;
+  font-weight: 800;
+}
+.lab-variant-link:hover,
+.lab-variant-link.active { color: var(--lab-paper); border-color: var(--lab-accent); background: var(--lab-accent); }
+.lab-concept-name { color: var(--lab-muted); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; }
+
+.arranger-concept { background: var(--lab-paper); }
+.concept-hero {
+  min-height: 38rem;
+  padding: clamp(2rem, 5vw, 5rem);
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(17rem, 0.8fr);
+  grid-template-rows: 1fr auto;
+  gap: 2rem 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-copy { align-self: center; position: relative; z-index: 2; }
+.concept-kicker,
+.section-label,
+.piece-album {
+  margin: 0;
+  color: var(--lab-accent);
+  font-size: 0.7rem;
+  font-weight: 850;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.hero-copy h1 {
+  margin: 0.15rem 0 0;
+  font-family: var(--lab-display);
+  font-size: clamp(4.2rem, 11vw, 9.5rem);
+  line-height: 0.8;
+  letter-spacing: -0.075em;
+  font-weight: 900;
+}
+.hero-copy h1 span { color: var(--lab-accent); display: block; }
+.lifespan { display: flex; align-items: center; gap: 0.7rem; color: var(--lab-muted); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; }
+.lifespan i { width: 2.5rem; height: 1px; background: var(--lab-accent); }
+.hero-thesis { max-width: 34rem; margin: 2.5rem 0 1.25rem; font-family: var(--lab-display); font-size: clamp(1.35rem, 2.5vw, 2.2rem); line-height: 1.08; font-weight: 650; }
+.hero-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.hero-tags span { padding: 0.4rem 0.7rem; border: 1px solid var(--lab-line); border-radius: 999px; color: var(--lab-muted); font-size: 0.72rem; }
+
+.hero-portrait { margin: 0; min-height: 27rem; position: relative; align-self: stretch; }
+.hero-portrait img { width: 100%; height: 100%; min-height: 27rem; object-fit: cover; object-position: center; filter: grayscale(100%) contrast(1.05); border-radius: 10rem 10rem 0.8rem 0.8rem; position: relative; z-index: 1; }
+.hero-portrait figcaption { margin-top: 0.4rem; color: var(--lab-muted); font-size: 0.62rem; text-align: right; }
+.portrait-orbit { position: absolute; inset: -2rem; display: grid; place-items: center; }
+.portrait-orbit i { position: absolute; width: 100%; aspect-ratio: 1; border: 1px solid var(--lab-line); border-radius: 50%; }
+.portrait-orbit i:nth-child(2) { width: 78%; }
+.portrait-orbit i:nth-child(3) { width: 55%; border-color: var(--lab-accent); }
+
+.hero-facts { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(3, 1fr); margin: 0; border-top: 1px solid var(--lab-line); }
+.hero-facts div { padding: 1rem 1.5rem 0 0; }
+.hero-facts div + div { padding-left: 1.5rem; border-left: 1px solid var(--lab-line); }
+.hero-facts dt { color: var(--lab-muted); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; }
+.hero-facts dd { margin: 0.25rem 0 0; font-weight: 750; }
+
+.bio-strip {
+  padding: 2.2rem clamp(2rem, 7vw, 6rem);
+  display: grid;
+  grid-template-columns: 4rem 1fr;
+  gap: 2rem;
+  align-items: start;
+  color: var(--lab-paper);
+  background: var(--lab-ink);
+}
+.bio-strip .section-number { color: var(--lab-accent); }
+.bio-strip p:last-child { max-width: 62rem; margin: 0.45rem 0 0; font-family: var(--lab-display); font-size: clamp(1.1rem, 2vw, 1.6rem); line-height: 1.35; }
+.section-number { margin: 0; font-size: 0.7rem; font-weight: 900; letter-spacing: 0.1em; }
+
+.dna-section,
+.technique-section,
+.piece-section,
+.albums-section { padding: clamp(4rem, 8vw, 7rem) clamp(2rem, 7vw, 6rem); border-top: 1px solid var(--lab-line); }
+.section-heading { display: grid; grid-template-columns: 8rem minmax(14rem, 1fr) minmax(16rem, 0.7fr); gap: 2rem; align-items: start; margin-bottom: 3rem; }
+.section-heading h2 { margin: -0.2rem 0 0; font-family: var(--lab-display); font-size: clamp(2.3rem, 5vw, 4.8rem); line-height: 0.95; letter-spacing: -0.045em; }
+.section-heading > p { max-width: 26rem; margin: 0; color: var(--lab-muted); font-size: 0.88rem; }
+.section-heading .section-label { margin-top: 0.35rem; }
+
+.dna-layout { display: grid; grid-template-columns: minmax(18rem, 0.85fr) minmax(25rem, 1.15fr); gap: clamp(2rem, 5vw, 5rem); align-items: center; }
+.radar-card { margin: 0; padding: 2rem; border: 1px solid var(--lab-line); background: var(--lab-soft); position: relative; }
+.radar { display: block; width: min(100%, 25rem); margin: auto; overflow: visible; }
+.radar-grid, .radar-axis { fill: none; stroke: var(--lab-line); stroke-width: 1; }
+.radar-grid-outer { stroke: var(--lab-muted); }
+.radar-shape { fill: color-mix(in srgb, var(--lab-accent) 28%, transparent); stroke: var(--lab-accent); stroke-width: 2.5; }
+.radar-point { fill: var(--lab-paper); stroke: var(--lab-accent); stroke-width: 2; }
+.radar-labels { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.2rem; margin-top: 1rem; }
+.radar-labels span { font-size: 0.58rem; font-weight: 800; text-align: center; text-transform: uppercase; letter-spacing: 0.04em; }
+.radar-card figcaption { margin-top: 1rem; color: var(--lab-muted); font-size: 0.75rem; text-align: center; }
+.dna-cards { display: grid; grid-template-columns: repeat(2, 1fr); }
+.dna-card { padding: 1.35rem; border: 1px solid var(--lab-line); margin: -1px 0 0 -1px; min-height: 10.5rem; }
+.dna-card:first-child { grid-column: 1 / -1; }
+.dna-card-top { display: flex; justify-content: space-between; color: var(--lab-muted); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.08em; }
+.dna-card-top strong { color: var(--lab-accent); }
+.dna-meter { height: 0.3rem; margin: 0.7rem 0 1.4rem; background: var(--lab-soft); overflow: hidden; }
+.dna-meter i { display: block; width: var(--dna-level); height: 100%; background: var(--lab-accent); transform-origin: left; transition: transform 500ms ease; }
+.dna-card:hover .dna-meter i { transform: scaleX(0.88); }
+.dna-card h3 { margin: 0; font-size: 1.05rem; }
+.dna-card p { max-width: 21rem; margin: 0.35rem 0 0; color: var(--lab-muted); font-size: 0.78rem; }
+
+.technique-section { background: var(--lab-soft); }
+.technique-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.85rem; }
+.technique-card { min-height: 19rem; padding: 1.25rem; display: flex; flex-direction: column; text-align: left; border: 1px solid var(--lab-line); background: var(--lab-paper); cursor: pointer; transition: transform 180ms ease, background 180ms ease, color 180ms ease; }
+.technique-card:hover { transform: translateY(-0.35rem); }
+.technique-card.active { color: var(--lab-paper); border-color: var(--lab-accent); background: var(--lab-accent); }
+.technique-index { font-size: 0.62rem; font-weight: 900; }
+.technique-glyph { height: 7rem; margin: 1.5rem 0; display: flex; align-items: center; justify-content: center; gap: 0.35rem; position: relative; }
+.technique-glyph i { display: block; width: 1.35rem; height: 1.35rem; border: 2px solid var(--lab-accent); border-radius: 50%; transition: all 250ms ease; }
+.active .technique-glyph i { border-color: var(--lab-paper); }
+.glyph-blend i:nth-child(odd) { margin-top: -1.5rem; }
+.glyph-blend i:nth-child(even) { margin-left: -0.8rem; }
+.glyph-spread { gap: 0.65rem; }
+.glyph-spread i:nth-child(1), .glyph-spread i:nth-child(5) { width: 0.55rem; height: 0.55rem; }
+.glyph-spread i:nth-child(2), .glyph-spread i:nth-child(4) { width: 0.9rem; height: 0.9rem; }
+.glyph-pedal { align-items: flex-end; }
+.glyph-pedal::after { content: ''; position: absolute; left: 10%; right: 10%; bottom: 0.55rem; height: 0.35rem; background: var(--lab-accent); }
+.active .glyph-pedal::after { background: var(--lab-paper); }
+.glyph-pedal i { border-radius: 0; border-width: 0 0 2px; height: calc(1rem + var(--i, 0)); }
+.glyph-pedal i:nth-child(2) { margin-bottom: 1rem; }.glyph-pedal i:nth-child(3) { margin-bottom: 2rem; }.glyph-pedal i:nth-child(4) { margin-bottom: 3rem; }
+.glyph-crescendo i:nth-child(1) { width: 0.45rem; height: 0.45rem; }.glyph-crescendo i:nth-child(2) { width: 0.8rem; height: 0.8rem; }.glyph-crescendo i:nth-child(3) { width: 1.15rem; height: 1.15rem; }.glyph-crescendo i:nth-child(4) { width: 1.6rem; height: 1.6rem; }.glyph-crescendo i:nth-child(5) { width: 2rem; height: 2rem; }
+.glyph-mute::before, .glyph-mute::after { content: ''; width: 4rem; height: 4rem; position: absolute; border: 2px solid var(--lab-accent); transform: rotate(45deg); }
+.glyph-mute::after { width: 2rem; height: 2rem; }
+.active .glyph-mute::before, .active .glyph-mute::after { border-color: var(--lab-paper); }
+.glyph-mute i { display: none; }
+.glyph-gravity { align-items: flex-start; }
+.glyph-gravity i { border-radius: 0 0 50% 50%; border-width: 0 2px 2px; height: 3rem; }
+.glyph-gravity i:nth-child(even) { height: 5rem; }
+.technique-title { font-family: var(--lab-display); font-size: 1.15rem; font-weight: 850; }
+.technique-description { margin-top: 0.45rem; color: var(--lab-muted); font-size: 0.78rem; }
+.active .technique-description { color: color-mix(in srgb, var(--lab-paper) 78%, transparent); }
+.technique-cue { margin-top: auto; padding-top: 1rem; display: flex; gap: 0.5rem; font-size: 0.67rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; }
+
+.piece-tabs { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--lab-line); }
+.piece-tab { padding: 1rem; border: 0; border-right: 1px solid var(--lab-line); background: transparent; font-weight: 800; cursor: pointer; }
+.piece-tab:last-child { border-right: 0; }
+.piece-tab span { display: block; color: var(--lab-muted); font-size: 0.62rem; font-weight: 700; }
+.piece-tab.active { color: var(--lab-paper); background: var(--lab-accent); }
+.piece-tab.active span { color: inherit; opacity: 0.75; }
+.piece-panel { min-height: 28rem; grid-template-columns: minmax(18rem, 0.8fr) minmax(24rem, 1.2fr); border: 1px solid var(--lab-line); border-top: 0; }
+.piece-panel.active { display: grid; }
+.piece-story { padding: clamp(2rem, 5vw, 4rem); display: flex; flex-direction: column; align-items: flex-start; background: var(--lab-soft); }
+.piece-story h3 { margin: 0.3rem 0 0; font-family: var(--lab-display); font-size: clamp(2.2rem, 5vw, 4rem); line-height: 0.95; letter-spacing: -0.04em; }
+.piece-note { max-width: 27rem; margin: 1rem 0 0; font-size: 1rem; }
+.listen-cue { max-width: 27rem; margin: 2rem 0; padding-top: 1rem; display: grid; grid-template-columns: auto 1fr; column-gap: 0.6rem; border-top: 1px solid var(--lab-line); color: var(--lab-muted); font-size: 0.78rem; }
+.listen-cue span { grid-row: 1 / 3; color: var(--lab-accent); font-size: 1.5rem; line-height: 1; }
+.listen-cue strong { color: var(--lab-ink); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.08em; }
+.piece-listen { margin-top: auto; padding: 0.8rem 1rem; border: 1px solid var(--lab-ink); background: transparent; font-size: 0.75rem; font-weight: 800; cursor: pointer; }
+.piece-listen:hover { color: var(--lab-paper); background: var(--lab-ink); }
+.piece-listen span { color: var(--lab-accent); margin-right: 0.45rem; }
+.lab-video { width: 100%; aspect-ratio: 16 / 9; margin-top: auto; border: 0; }
+.ensemble-viz { margin: 0; padding: clamp(2rem, 5vw, 4rem); }
+.ensemble-viz figcaption { color: var(--lab-muted); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; }
+.ensemble-viz figcaption strong { color: var(--lab-accent); font-size: 2rem; margin-right: 0.5rem; }
+.family-bars { margin: 2rem 0; }
+.family-row { display: grid; grid-template-columns: 7rem 1fr; align-items: center; gap: 1rem; margin: 0.65rem 0; font-size: 0.68rem; font-weight: 750; }
+.family-row > i { display: block; height: 2.15rem; background: var(--lab-soft); font-style: normal; }
+.family-row > i::before { content: ''; display: block; width: var(--family-level); height: 100%; background: var(--lab-accent); }
+.family-row b { float: right; margin: -1.72rem 0.6rem 0 0; position: relative; }
+.family-reeds > i::before { background: var(--lab-accent-2); }
+.family-rhythm > i::before { background: var(--lab-ink); }
+.instrument-cloud { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+.instrument-cloud span { padding: 0.38rem 0.55rem; border: 1px solid var(--lab-line); color: var(--lab-muted); font-size: 0.65rem; }
+
+.albums-section { background: var(--lab-ink); color: var(--lab-paper); }
+.albums-section .section-heading > p { color: color-mix(in srgb, var(--lab-paper) 55%, transparent); }
+.album-list { list-style: none; padding: 0; margin: 0; border-top: 1px solid color-mix(in srgb, var(--lab-paper) 25%, transparent); }
+.album-list li { min-height: 6rem; display: grid; grid-template-columns: 3rem 4rem minmax(13rem, 0.7fr) minmax(18rem, 1.3fr) 2rem; gap: 1rem; align-items: center; border-bottom: 1px solid color-mix(in srgb, var(--lab-paper) 25%, transparent); }
+.album-number, .album-year { color: color-mix(in srgb, var(--lab-paper) 50%, transparent); font-size: 0.65rem; }
+.album-title { display: flex; flex-direction: column; }
+.album-title strong { font-family: var(--lab-display); font-size: 1.15rem; }
+.album-title small { color: color-mix(in srgb, var(--lab-paper) 50%, transparent); font-size: 0.63rem; }
+.album-line { color: color-mix(in srgb, var(--lab-paper) 78%, transparent); font-size: 0.78rem; }
+.album-arrow { color: var(--lab-accent); font-size: 1.25rem; }
+
+.concept-footer { padding: 2rem clamp(2rem, 7vw, 6rem); display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 2rem; border-top: 1px solid var(--lab-line); }
+.concept-footer > a { color: var(--lab-ink); text-decoration: none; font-size: 0.72rem; font-weight: 800; }
+.concept-footer > a:last-child { text-align: right; }
+.concept-footer > a:hover span { color: var(--lab-accent); }
+.concept-footer div { display: flex; align-items: center; gap: 0.6rem; color: var(--lab-muted); font-size: 0.6rem; }
+.concept-footer div i { width: 4rem; height: 2px; background: linear-gradient(to right, var(--lab-accent) calc(var(--progress, 10) * 10%), var(--lab-line) 0); }
+
+/* 02 — pigment, translucency, and overlapping fields */
+.lab-shell[data-variant^='02-'] { --lab-bg: #121735; --lab-paper: #171c3e; --lab-ink: #f5f0dc; --lab-muted: #aaa9bd; --lab-accent: #ff6d6d; --lab-accent-2: #50d9d2; --lab-line: #343a65; --lab-soft: #20264e; }
+.lab-shell[data-variant^='02-'] .concept-hero { background: radial-gradient(circle at 75% 35%, rgb(80 217 210 / 0.25), transparent 25%), radial-gradient(circle at 67% 50%, rgb(255 109 109 / 0.25), transparent 33%), var(--lab-paper); }
+.lab-shell[data-variant^='02-'] .hero-copy h1 span { display: inline; color: var(--lab-ink); }
+.lab-shell[data-variant^='02-'] .hero-portrait img { border-radius: 50%; mix-blend-mode: luminosity; }
+.lab-shell[data-variant^='02-'] .radar-card { border-radius: 50%; }
+.lab-shell[data-variant^='02-'] .dna-card { background: linear-gradient(135deg, color-mix(in srgb, var(--lab-accent) 15%, var(--lab-paper)), var(--lab-paper)); }
+.lab-shell[data-variant^='02-'] .technique-card { border-radius: 1.5rem; }
+.lab-shell[data-variant^='02-'] .technique-card.active { background: linear-gradient(145deg, var(--lab-accent), #8e4aff); }
+
+/* 03 — manuscript paper, staves, and editorial serif */
+.lab-shell[data-variant^='03-'] { --lab-bg: #d8d0bb; --lab-paper: #f4efdf; --lab-ink: #27241d; --lab-muted: #746e61; --lab-accent: #8a3025; --lab-accent-2: #6d7251; --lab-line: #c9c0aa; --lab-soft: #ebe4d1; --lab-display: 'Iowan Old Style', 'Palatino Linotype', Georgia, serif; --lab-body: Georgia, serif; }
+.lab-shell[data-variant^='03-'] .arranger-concept { background-image: repeating-linear-gradient(to bottom, transparent 0 22px, rgb(39 36 29 / 0.055) 23px 24px); }
+.lab-shell[data-variant^='03-'] .concept-hero { grid-template-columns: 0.85fr 1.15fr; }
+.lab-shell[data-variant^='03-'] .hero-portrait { grid-column: 1; grid-row: 1; }
+.lab-shell[data-variant^='03-'] .hero-copy { grid-column: 2; }
+.lab-shell[data-variant^='03-'] .hero-copy h1 { letter-spacing: -0.04em; font-weight: 500; font-style: italic; }
+.lab-shell[data-variant^='03-'] .hero-copy h1 span { display: inline; }
+.lab-shell[data-variant^='03-'] .hero-portrait img { border-radius: 0; border: 1rem solid var(--lab-paper); outline: 1px solid var(--lab-line); }
+.lab-shell[data-variant^='03-'] .technique-grid { grid-template-columns: 1fr 1fr; }
+.lab-shell[data-variant^='03-'] .technique-card { min-height: 12rem; display: grid; grid-template-columns: 2rem 8rem 1fr; column-gap: 1rem; }
+.lab-shell[data-variant^='03-'] .technique-glyph { grid-column: 2; grid-row: 1 / 5; margin: 0; }
+
+/* 04 — star atlas */
+.lab-shell[data-variant^='04-'] { --lab-bg: #050713; --lab-paper: #090c1b; --lab-ink: #eef1ff; --lab-muted: #8b94b3; --lab-accent: #8c79ff; --lab-accent-2: #55d9ff; --lab-line: #252a48; --lab-soft: #10152a; }
+.lab-shell[data-variant^='04-'] .arranger-concept { background-image: radial-gradient(circle, rgb(255 255 255 / 0.35) 0 1px, transparent 1.5px); background-size: 47px 47px; }
+.lab-shell[data-variant^='04-'] .concept-hero { min-height: 46rem; }
+.lab-shell[data-variant^='04-'] .hero-copy h1 { font-weight: 300; letter-spacing: -0.055em; }
+.lab-shell[data-variant^='04-'] .hero-portrait img { clip-path: polygon(50% 0, 92% 20%, 100% 72%, 65% 100%, 15% 85%, 0 30%); border-radius: 0; opacity: 0.8; }
+.lab-shell[data-variant^='04-'] .radar-card { background: rgb(9 12 27 / 0.75); box-shadow: 0 0 4rem rgb(140 121 255 / 0.18); }
+.lab-shell[data-variant^='04-'] .radar-point { filter: drop-shadow(0 0 5px var(--lab-accent)); }
+.lab-shell[data-variant^='04-'] .technique-card { background: rgb(16 21 42 / 0.86); border-radius: 50% 50% 0 0; }
+
+/* 05 — studio console */
+.lab-shell[data-variant^='05-'] { --lab-bg: #171a18; --lab-paper: #232724; --lab-ink: #ecf1e8; --lab-muted: #9da79e; --lab-accent: #a5ef61; --lab-accent-2: #ffb54a; --lab-line: #424843; --lab-soft: #2d322e; --lab-display: 'Arial Narrow', Arial, sans-serif; }
+.lab-shell[data-variant^='05-'] .concept-hero { min-height: 34rem; background-image: linear-gradient(90deg, transparent 49.8%, rgb(165 239 97 / 0.08) 50%, transparent 50.2%); background-size: 6rem 100%; }
+.lab-shell[data-variant^='05-'] .hero-copy h1 { text-transform: uppercase; letter-spacing: -0.06em; }
+.lab-shell[data-variant^='05-'] .hero-portrait img { border-radius: 0.5rem; filter: grayscale(1) contrast(1.2) sepia(0.15); }
+.lab-shell[data-variant^='05-'] .dna-cards { grid-template-columns: repeat(5, 1fr); }
+.lab-shell[data-variant^='05-'] .dna-card, .lab-shell[data-variant^='05-'] .dna-card:first-child { grid-column: auto; min-height: 20rem; }
+.lab-shell[data-variant^='05-'] .dna-meter { width: 1rem; height: 9rem; margin: 1.5rem auto; display: flex; align-items: flex-end; }
+.lab-shell[data-variant^='05-'] .dna-meter i { width: 100%; height: var(--dna-level); }
+.lab-shell[data-variant^='05-'] .technique-card { border-radius: 0.5rem; box-shadow: inset 0 0 0 0.35rem #1b1e1c; }
+.lab-shell[data-variant^='05-'] .technique-card.active { color: #10150d; box-shadow: 0 0 2rem rgb(165 239 97 / 0.18); }
+
+/* 06 — drafting table */
+.lab-shell[data-variant^='06-'] { --lab-bg: #082c49; --lab-paper: #0c3a5c; --lab-ink: #e0f6ff; --lab-muted: #93bfd1; --lab-accent: #66e3ff; --lab-accent-2: #ffe18a; --lab-line: #39708b; --lab-soft: #124765; --lab-display: 'Arial Narrow', ui-monospace, monospace; --lab-body: ui-monospace, Consolas, monospace; }
+.lab-shell[data-variant^='06-'] .arranger-concept { background-image: linear-gradient(rgb(102 227 255 / 0.08) 1px, transparent 1px), linear-gradient(90deg, rgb(102 227 255 / 0.08) 1px, transparent 1px); background-size: 2rem 2rem; }
+.lab-shell[data-variant^='06-'] .concept-hero { min-height: 40rem; }
+.lab-shell[data-variant^='06-'] .hero-copy h1 { font-weight: 400; text-transform: uppercase; letter-spacing: -0.05em; }
+.lab-shell[data-variant^='06-'] .hero-portrait img { border-radius: 0; filter: grayscale(1) contrast(1.3) sepia(1) hue-rotate(155deg) saturate(2); opacity: 0.8; }
+.lab-shell[data-variant^='06-'] .radar-card, .lab-shell[data-variant^='06-'] .technique-card, .lab-shell[data-variant^='06-'] .dna-card { background: rgb(12 58 92 / 0.75); }
+.lab-shell[data-variant^='06-'] .technique-card.active { color: #06283d; }
+.lab-shell[data-variant^='06-'] .instrument-cloud span { border-style: dashed; }
+
+/* 07 — a warm listening route */
+.lab-shell[data-variant^='07-'] { --lab-bg: #6f2e22; --lab-paper: #f7e4c2; --lab-ink: #352018; --lab-muted: #80665a; --lab-accent: #d95032; --lab-accent-2: #277f86; --lab-line: #d4b995; --lab-soft: #edd2aa; --lab-display: 'Arial Rounded MT Bold', ui-sans-serif, system-ui, sans-serif; }
+.lab-shell[data-variant^='07-'] .concept-hero { min-height: 43rem; background: linear-gradient(170deg, #f7e4c2 0 55%, #e7ad72 55.2% 70%, #b65840 70.2%); }
+.lab-shell[data-variant^='07-'] .hero-copy h1 { letter-spacing: -0.045em; }
+.lab-shell[data-variant^='07-'] .hero-portrait img { border-radius: 50% 50% 1rem 1rem; filter: sepia(0.35) contrast(1.05); }
+.lab-shell[data-variant^='07-'] .dna-section { background: #f7e4c2; }
+.lab-shell[data-variant^='07-'] .technique-grid { display: flex; overflow-x: auto; padding-bottom: 1rem; scroll-snap-type: x mandatory; }
+.lab-shell[data-variant^='07-'] .technique-card { flex: 0 0 17rem; border-radius: 9rem 9rem 1rem 1rem; scroll-snap-align: start; }
+.lab-shell[data-variant^='07-'] .piece-tabs { border-radius: 999px; overflow: hidden; }
+
+/* 08 — archival cards */
+.lab-shell[data-variant^='08-'] { --lab-bg: #321e25; --lab-paper: #f2e7d2; --lab-ink: #35252a; --lab-muted: #7b6866; --lab-accent: #9d3344; --lab-accent-2: #4f7880; --lab-line: #cdbca3; --lab-soft: #dfceb3; --lab-display: Rockwell, 'Roboto Slab', Georgia, serif; }
+.lab-shell[data-variant^='08-'] .concept-hero { padding: 3rem; grid-template-columns: 1.1fr 0.9fr; background: #cbb798; }
+.lab-shell[data-variant^='08-'] .hero-copy { padding: 3rem; background: var(--lab-paper); transform: rotate(-1.2deg); box-shadow: 0.6rem 0.8rem 0 #9d3344; }
+.lab-shell[data-variant^='08-'] .hero-copy h1 { font-size: clamp(4rem, 9vw, 8rem); }
+.lab-shell[data-variant^='08-'] .hero-portrait { transform: rotate(2deg); }
+.lab-shell[data-variant^='08-'] .hero-portrait img { border-radius: 0; border: 0.8rem solid #fff7e8; box-shadow: 0 1rem 2rem rgb(53 37 42 / 0.25); }
+.lab-shell[data-variant^='08-'] .dna-card, .lab-shell[data-variant^='08-'] .technique-card { border-radius: 0.45rem; box-shadow: 0.35rem 0.45rem 0 var(--lab-line); }
+.lab-shell[data-variant^='08-'] .technique-card:nth-child(even) { transform: rotate(0.8deg); }
+.lab-shell[data-variant^='08-'] .technique-card:nth-child(odd) { transform: rotate(-0.8deg); }
+
+/* 09 — rigid modernist signal */
+.lab-shell[data-variant^='09-'] { --lab-bg: #d8d8d3; --lab-paper: #f5f5f0; --lab-ink: #11110f; --lab-muted: #60605c; --lab-accent: #f02b1d; --lab-accent-2: #1458d2; --lab-line: #11110f; --lab-soft: #deded8; --lab-display: Arial, Helvetica, sans-serif; --lab-body: Arial, Helvetica, sans-serif; }
+.lab-shell[data-variant^='09-'] .concept-hero { min-height: 35rem; grid-template-columns: 1.4fr 0.6fr; padding: 2rem; gap: 2rem; }
+.lab-shell[data-variant^='09-'] .hero-copy h1 { font-size: clamp(5rem, 15vw, 13rem); line-height: 0.68; text-transform: uppercase; letter-spacing: -0.095em; }
+.lab-shell[data-variant^='09-'] .hero-copy h1 span { color: var(--lab-ink); }
+.lab-shell[data-variant^='09-'] .hero-thesis { border-left: 1.2rem solid var(--lab-accent); padding-left: 1rem; }
+.lab-shell[data-variant^='09-'] .hero-portrait img { border-radius: 0; filter: grayscale(1) contrast(1.35); }
+.lab-shell[data-variant^='09-'] .section-heading h2 { text-transform: uppercase; font-weight: 900; }
+.lab-shell[data-variant^='09-'] .technique-grid { gap: 0; }
+.lab-shell[data-variant^='09-'] .technique-card { margin: -1px 0 0 -1px; }
+.lab-shell[data-variant^='09-'] .technique-card.active { color: white; }
+.lab-shell[data-variant^='09-'] .album-list li { grid-template-columns: 4rem 5rem minmax(16rem, 0.8fr) 1.2fr 2rem; }
+
+/* 10 — full-field cinema */
+.lab-shell[data-variant^='10-'] { --lab-bg: #080807; --lab-paper: #11100e; --lab-ink: #f4eee3; --lab-muted: #9d968b; --lab-accent: #d9aa56; --lab-accent-2: #6b8fa3; --lab-line: #34312c; --lab-soft: #1c1a17; --lab-display: 'Iowan Old Style', 'Palatino Linotype', Georgia, serif; --lab-body: Inter, ui-sans-serif, system-ui, sans-serif; }
+.lab-shell[data-variant^='10-'] .concept-hero { min-height: 52rem; grid-template-columns: 1fr; grid-template-rows: 1fr auto; align-items: end; background: #070707; }
+.lab-shell[data-variant^='10-'] .hero-portrait { position: absolute; inset: 0; }
+.lab-shell[data-variant^='10-'] .hero-portrait img { min-height: 100%; border-radius: 0; object-position: center 35%; filter: grayscale(1) contrast(1.15); opacity: 0.52; mask-image: linear-gradient(to bottom, #000 35%, transparent 94%); }
+.lab-shell[data-variant^='10-'] .hero-portrait figcaption { position: absolute; right: 1rem; bottom: 1rem; z-index: 2; }
+.lab-shell[data-variant^='10-'] .hero-copy { align-self: end; }
+.lab-shell[data-variant^='10-'] .hero-copy h1 { font-weight: 400; letter-spacing: -0.04em; }
+.lab-shell[data-variant^='10-'] .hero-copy h1 span { display: inline; }
+.lab-shell[data-variant^='10-'] .hero-thesis { font-style: italic; }
+.lab-shell[data-variant^='10-'] .hero-facts { position: relative; z-index: 2; }
+.lab-shell[data-variant^='10-'] .dna-layout { grid-template-columns: 1fr; }
+.lab-shell[data-variant^='10-'] .radar-card { min-height: 35rem; display: grid; place-items: center; background: radial-gradient(circle, rgb(217 170 86 / 0.15), transparent 55%); }
+.lab-shell[data-variant^='10-'] .radar { max-width: 30rem; }
+.lab-shell[data-variant^='10-'] .dna-cards { grid-template-columns: repeat(5, 1fr); }
+.lab-shell[data-variant^='10-'] .dna-card:first-child { grid-column: auto; }
+.lab-shell[data-variant^='10-'] .technique-grid { grid-template-columns: repeat(2, 1fr); }
+.lab-shell[data-variant^='10-'] .technique-card { min-height: 25rem; background: linear-gradient(145deg, #1d1b17, #0c0c0b); }
+.lab-shell[data-variant^='10-'] .technique-card.active { color: #11100e; background: var(--lab-accent); }
+
+@media (max-width: 62rem) {
+  .lab-concept-name { display: none; }
+  .lab-topbar { grid-template-columns: auto 1fr; }
+  .lab-variant-links { justify-content: flex-end; }
+  .concept-hero { grid-template-columns: 1fr 19rem; gap: 2rem; }
+  .section-heading { grid-template-columns: 5rem 1fr; }
+  .section-heading > p { grid-column: 2; }
+  .technique-grid { grid-template-columns: repeat(2, 1fr); }
+  .lab-shell[data-variant^='05-'] .dna-cards,
+  .lab-shell[data-variant^='10-'] .dna-cards { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 44rem) {
+  .lab-shell { width: calc(100vw - 0.5rem); border-radius: 0.6rem; }
+  .lab-topbar { display: block; }
+  .lab-index-link { display: inline-block; margin-bottom: 0.75rem; }
+  .lab-variant-links { justify-content: flex-start; overflow-x: auto; }
+  .lab-variant-link { flex: 0 0 1.8rem; }
+  .concept-hero,
+  .lab-shell[data-variant^='03-'] .concept-hero,
+  .lab-shell[data-variant^='08-'] .concept-hero,
+  .lab-shell[data-variant^='09-'] .concept-hero { min-height: 0; padding: 2rem 1.2rem; display: flex; flex-direction: column; }
+  .hero-copy { order: 1; }
+  .hero-portrait { order: 2; width: 100%; min-height: 23rem; }
+  .hero-portrait img { min-height: 23rem; }
+  .hero-facts { order: 3; width: 100%; grid-template-columns: 1fr; }
+  .hero-facts div + div { padding-left: 0; border-left: 0; }
+  .hero-copy h1 { font-size: clamp(4rem, 24vw, 7rem); }
+  .bio-strip { grid-template-columns: 2rem 1fr; padding: 2rem 1.2rem; gap: 0.75rem; }
+  .dna-section, .technique-section, .piece-section, .albums-section { padding: 3.5rem 1.2rem; }
+  .section-heading { display: block; }
+  .section-heading h2 { margin: 1rem 0; }
+  .dna-layout { grid-template-columns: 1fr; }
+  .dna-cards { grid-template-columns: 1fr; }
+  .dna-card:first-child { grid-column: auto; }
+  .technique-grid,
+  .lab-shell[data-variant^='03-'] .technique-grid,
+  .lab-shell[data-variant^='10-'] .technique-grid { grid-template-columns: 1fr; }
+  .piece-tabs { display: flex; overflow-x: auto; }
+  .piece-tab { flex: 0 0 12rem; }
+  .piece-panel.active { grid-template-columns: 1fr; }
+  .album-list li { min-height: 0; padding: 1.2rem 0; grid-template-columns: 2rem 3.3rem 1fr 1.5rem; gap: 0.6rem; }
+  .album-line { grid-column: 3 / -1; }
+  .concept-footer { padding: 1.5rem 1.2rem; }
+  .concept-footer a span { display: none; }
+  .lab-shell[data-variant^='03-'] .technique-card { display: flex; }
+  .lab-shell[data-variant^='03-'] .technique-glyph { margin: 1rem 0; }
+  .lab-shell[data-variant^='05-'] .dna-cards,
+  .lab-shell[data-variant^='10-'] .dna-cards { grid-template-columns: 1fr; }
+  .lab-shell[data-variant^='05-'] .dna-card { min-height: 10rem; }
+  .lab-shell[data-variant^='05-'] .dna-meter { width: auto; height: 0.3rem; margin: 1rem 0; }
+  .lab-shell[data-variant^='05-'] .dna-meter i { width: var(--dna-level); height: 100%; }
+  .lab-shell[data-variant^='08-'] .hero-copy { transform: none; }
+  .lab-shell[data-variant^='10-'] .concept-hero { min-height: 42rem; }
+  .lab-shell[data-variant^='10-'] .hero-portrait { position: absolute; min-height: 100%; }
+  .lab-shell[data-variant^='10-'] .hero-copy, .lab-shell[data-variant^='10-'] .hero-facts { position: relative; z-index: 2; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lab-shell *, .lab-shell *::before, .lab-shell *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
+}

@@ -1,0 +1,63 @@
+.dashboard-breadcrumb {
+  width: min(82rem, calc(100vw - 1.5rem));
+  margin: 0 auto 1rem;
+  display: flex;
+  gap: 0.5rem;
+  color: var(--muted);
+  font: 0.75rem/1.4 Inter, ui-sans-serif, system-ui, sans-serif;
+}
+
+.dashboard-breadcrumb a { color: var(--accent); text-decoration: none; }
+.production-dashboard { margin-top: 0; }
+.production-dashboard .concept-hero { padding-top: clamp(2rem, 5vw, 4.5rem); }
+.production-dashboard .hero-copy h1 { font-size: clamp(3.8rem, 10vw, 8.5rem); overflow-wrap: anywhere; }
+.production-dashboard .hero-portrait figcaption a { color: inherit; }
+
+.portrait-placeholder {
+  min-height: 27rem;
+  display: grid;
+  place-items: center;
+  border-radius: 10rem 10rem 0.8rem 0.8rem;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 65% 28%, rgb(255 255 255 / 0.55), transparent 25%),
+    repeating-linear-gradient(135deg, transparent 0 1.25rem, rgb(255 255 255 / 0.18) 1.3rem 1.36rem),
+    linear-gradient(145deg, var(--lab-accent), var(--lab-ink));
+}
+
+.portrait-placeholder > span {
+  position: relative;
+  z-index: 2;
+  color: var(--lab-paper);
+  font-family: var(--lab-display);
+  font-size: clamp(5rem, 11vw, 9rem);
+  font-weight: 900;
+  letter-spacing: -0.09em;
+  text-shadow: 0 0.3rem 2rem rgb(0 0 0 / 0.2);
+}
+
+.portrait-placeholder figcaption {
+  position: absolute;
+  right: 0.6rem;
+  bottom: 0.45rem;
+  z-index: 2;
+  color: rgb(255 255 255 / 0.75);
+}
+
+.production-dashboard .concept-footer > span { min-width: 0; }
+.production-dashboard .concept-footer > span:last-child { text-align: right; }
+.production-dashboard .concept-footer a { color: var(--lab-ink); text-decoration: none; font-size: 0.72rem; }
+.production-dashboard .concept-footer b { font-weight: 800; }
+.production-dashboard .concept-footer a:hover { color: var(--lab-accent); }
+.footer-index-link { text-transform: uppercase; letter-spacing: 0.08em; font-weight: 850; }
+
+.general-listen { margin-top: 2rem; display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.albums-section .general-listen .piece-listen { color: var(--lab-paper); border-color: color-mix(in srgb, var(--lab-paper) 45%, transparent); }
+.albums-section .general-listen .piece-listen:hover { color: var(--lab-ink); background: var(--lab-paper); }
+
+@media (max-width: 44rem) {
+  .dashboard-breadcrumb { width: calc(100vw - 1rem); }
+  .production-dashboard .hero-copy h1 { font-size: clamp(3.5rem, 21vw, 6.5rem); }
+  .portrait-placeholder { min-height: 23rem; }
+  .production-dashboard .concept-footer > span b { display: none; }
+}
