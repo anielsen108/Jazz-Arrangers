@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/gerry-mulligan.jpg
+  credit: 'William P. Gottlieb, via Wikimedia Commons'
+  license: 'Public domain'
+  source: 'https://commons.wikimedia.org/wiki/File:Gerry_Mulligan_(1980s_portrait_by_William_P._Gottlieb).jpg'
+---
 # Gerry Mulligan (1927-1996)
 
 ## Biography

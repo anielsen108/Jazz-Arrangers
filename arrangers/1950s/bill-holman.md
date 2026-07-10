@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/bill-holman.jpg
+  credit: 'Unknown, Taken in 1961, via Wikimedia Commons'
+  license: 'CC BY-SA 4.0'
+  source: 'https://commons.wikimedia.org/wiki/File:Bill_Holman_and_Stan_Kenton.jpg'
+---
 # Bill Holman (b. 1927)
 
 ## Biography

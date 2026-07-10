@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/luis-russell.jpg
+  credit: 'Unknown author Unknown author, via Wikimedia Commons'
+  license: 'Public domain'
+  source: 'https://commons.wikimedia.org/wiki/File:Luis_Russell_1.jpg'
+---
 # Luis Russell (1902-1963)
 
 ## Biography

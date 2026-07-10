@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/ernie-wilkins.jpg
+  credit: 'Tom Marcello Webster, New York, USA, via Wikimedia Commons'
+  license: 'CC BY-SA 2.0'
+  source: 'https://commons.wikimedia.org/wiki/File:Ernie_Wilkins.jpg'
+---
 # Ernie Wilkins (1919-1999)
 
 ## Biography

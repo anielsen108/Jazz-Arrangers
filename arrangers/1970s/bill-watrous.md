@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/bill-watrous.jpg
+  credit: 'John Dugan Portland, OR, United States, via Wikimedia Commons'
+  license: 'CC BY 2.0'
+  source: 'https://commons.wikimedia.org/wiki/File:Bill_Watrous_(profile).jpg'
+---
 # Bill Watrous (1939-2018)
 
 ## Biography

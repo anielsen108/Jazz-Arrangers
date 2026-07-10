@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/alan-broadbent.jpg
+  credit: 'New Zealand Government, Office of the Governor-General, via Wikimedia Commons'
+  license: 'CC BY 4.0'
+  source: 'https://commons.wikimedia.org/wiki/File:Alan_Broadbent_MNZM_(cropped).jpg'
+---
 # Alan Broadbent (b. 1947)
 
 ## Biography

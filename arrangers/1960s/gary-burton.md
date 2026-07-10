@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/gary-burton.jpg
+  credit: 'Tom Beetz @ http://home.hetnet.nl/~tbeetz/index.html, via Wikimedia Commons'
+  license: 'CC BY 2.0'
+  source: 'https://commons.wikimedia.org/wiki/File:Gary_Burton.jpg'
+---
 # Gary Burton (b. 1943)
 
 ## Biography

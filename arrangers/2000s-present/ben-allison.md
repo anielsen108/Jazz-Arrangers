@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/ben-allison.jpg
+  credit: 'Wikimeleon, via Wikimedia Commons'
+  license: 'CC BY-SA 4.0'
+  source: 'https://commons.wikimedia.org/wiki/File:Ben_Allison_bassist_composer.jpg'
+---
 # Ben Allison (b. 1966)
 
 ## Biography

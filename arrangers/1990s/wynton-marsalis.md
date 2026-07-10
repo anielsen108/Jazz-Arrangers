@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/wynton-marsalis.jpg
+  credit: 'Eric Delmar, via Wikimedia Commons'
+  license: 'Public domain'
+  source: 'https://commons.wikimedia.org/wiki/File:Wynton_Marsalis_2009_09_13.jpg'
+---
 # Wynton Marsalis (b. 1961)
 
 ## Biography

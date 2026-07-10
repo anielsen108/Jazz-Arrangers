@@ -1,0 +1,1407 @@
+{
+  "generatedAt": "2026-07-10T22:29:27.874Z",
+  "mode": "dry-run",
+  "documents": 159,
+  "alreadyCurated": 102,
+  "reusedFromDuplicate": 0,
+  "sourced": 0,
+  "updatedDocuments": 0,
+  "unresolved": [
+    {
+      "name": "Bill Challis",
+      "status": "unresolved",
+      "wikipedia": "https://en.wikipedia.org/wiki/Bill_Challis",
+      "candidates": [
+        "Bix Beiderbecke",
+        "Big band",
+        "Jean Goldkette",
+        "Vince Giordano",
+        "List of Bucknell University alumni",
+        "A Study in Frustration: The Fletcher Henderson Story",
+        "Bill Challis",
+        "Deaths in October 1994"
+      ]
+    },
+    {
+      "name": "Don Redman",
+      "status": "unresolved",
+      "wikipedia": "https://en.wikipedia.org/wiki/Don_Redman"
+    },
+    {
+      "name": "Eddie Durham",
+      "status": "unresolved",
+      "wikipedia": "https://en.wikipedia.org/wiki/Eddie_Durham",
+      "candidates": [
+        "Eddie Durham",
+        "Edgar Battle",
+        "The Big Band",
+        "Western Suite",
+        "That Old Feeling (Al Cohn album)",
+        "Shorty Rogers Courts the Count",
+        "1906 in jazz",
+        "Eddie Durham's All-Star Girl Orchestra"
+      ]
+    },
+    {
+      "name": "Edgar Sampson",
+      "status": "unresolved",
+      "wikipedia": "https://en.wikipedia.org/wiki/Edgar_Sampson",
+      "candidates": [
+        "Edgar Sampson",
+        "Charlie Shavers",
+        "One O'Clock Jump (album)",
+        "¡Viva! Vaughan",
+        "When Harry Met Sally... (soundtrack)",
+        "Tropicana Nights",
+        "Contemporary Concepts",
+        "The Fourth Dimension in Sound"
+      ]
+    },
+    {
+      "name": "Gene Gifford",
+      "status": "unresolved",
+      "wikipedia": "https://en.wikipedia.org/wiki/Gene_Gifford",
+      "candidates": [
+        "1933 in music",
+        "1932 in music",
+        "Casa Loma Orchestra",
+        "Lew Stone",
+        "Gene Gifford"
+      ]
+    },
+    {
+      "name": "Jimmy Mundy",
+      "status": "unresolved",
+      "wikipedia": "https://en.wikipedia.org/wiki/Jimmy_Mundy",
+      "candidates": [
+        "Jimmy Mundy",
+        "Sonny Stitt & the Top Brass",
+        "Pennsylvania 6-5000 (song)",
+        "The Soul Explosion",
+        "Little Green Apples (album)",
+        "Come Hither",
+        "Kansas City Revisited",
+        "Baker's Holiday"
+      ]
+    },
+    {
+      "name": "Will Hudson",
+      "status": "unresolved",
+      "candidates": [
+        "A Classy Pair",
+        "Margie Hyams",
+        "You're Mine You",
+        "Gus Bivona",
+        "Cool Christy",
+        "Will Hudson (songwriter)",
+        "10 Trombones Like 2 Pianos",
+        "Songs for Swingers"
+      ]
+    },
+    {
+      "name": "Andy Gibson",
+      "status": "unresolved",
+      "candidates": [
+        "Andy Gibson (trumpeter)",
+        "Unforgettable (Dinah Washington album)",
+        "Ralph Mullins",
+        "Andrew Gibson",
+        "The Count!",
+        "The Sax Section",
+        "Flutes & Reeds",
+        "Quincy Plays for Pussycats"
+      ]
+    },
+    {
+      "name": "Buster Harding",
+      "status": "unresolved",
+      "wikipedia": "https://en.wikipedia.org/wiki/Buster_Harding",
+      "candidates": [
+        "Buster Harding",
+        "1965 in jazz",
+        "1917 in jazz",
+        "Dizzy in Greece",
+        "Dizzy and Strings",
+        "The Big Band",
+        "Basie (album)",
+        "The Count!"
+      ]
+    },
+    {
+      "name": "Chico O'Farrill",
+      "status": "unresolved",
+      "wikipedia": "https://en.wikipedia.org/wiki/Chico_O%27Farrill",
+      "candidates": [
+        "Chico O'Farrill",
+        "Basie's Beatle Bag",
+        "Arturo O'Farrill",
+        "Spanish Rice (album)",
+        "Nine Flags",
+        "Afro-Cuban Jazz Moods",
+        "The Aztec Suite",
+        "The Board of Directors Annual Report"
+      ]
+    },
+    {
+      "name": "Gil Fuller",
+      "status": "unresolved",
+      "wikipedia": "https://en.wikipedia.org/wiki/Gil_Fuller",
+      "candidates": [
+        "Gil Fuller",
+        "Left & Right (album)",
+        "Dizzy Gillespie at Newport",
+        "Manteca (song)",
+        "Phil Moore (jazz musician)",
+        "Gil Fuller & the Monterey Jazz Festival Orchestra featuring Dizzy Gillespie",
+        "Night Flight (Gil Fuller album)",
+        "Afro-Cuban Influence"
+      ]
+    },
+    {
+      "name": "Johnny Carisi",
+      "status": "unresolved",
+      "wikipedia": "https://en.wikipedia.org/wiki/John_Carisi",
+      "candidates": [
+        "John Carisi",
+        "Into the Hot (Gil Evans album)",
+        "Love Songs (Miles Davis album)",
+        "Mr. Music (album)",
+        "Gerry Mulligan Presents a Concert in Jazz"
+      ]
+    },
+    {
+      "name": "Johnny Mandel",
+      "status": "unresolved",
+      "wikipedia": "https://en.wikipedia.org/wiki/Johnny_Mandel",
+      "candidates": [
+        "8th Annual Grammy Awards",
+        "Johnny Mandel",
+        "Shirley Horn",
+        "The Art of Romance",
+        "Chet Baker & Strings",
+        "Dance Session",
+        "Hoagy Sings Carmichael",
+        "I Want to Live! (soundtrack)"
+      ]
+    },
+    {
+      "name": "Bill Russo",
+      "status": "unresolved",
+      "candidates": [
+        "William Russo (musician)",
+        "Bob Curnow",
+        "The West Coast Sound",
+        "Stan Kenton Presents",
+        "Innovations in Modern Music",
+        "Portraits on Standards",
+        "Popular Favorites by Stan Kenton",
+        "The Innovations Orchestra"
+      ]
+    },
+    {
+      "name": "Billy Byers",
+      "status": "unresolved",
+      "wikipedia": "https://en.wikipedia.org/wiki/Billy_Byers",
+      "candidates": [
+        "Billy Byers",
+        "Basie Land",
+        "Dizzy Goes Hollywood",
+        "Shirley Horn with Horns",
+        "Any Number Can Win (album)",
+        "Pop Goes the Basie",
+        "The Jazz Version of \"How to Succeed in Business without Really Trying\"",
+        "Goodies (J. J. Johnson album)"
+      ]
+    },
+    {
+      "name": "George Russell",
+      "status": "unresolved",
+      "wikipedia": "https://en.wikipedia.org/wiki/George_Russell_(composer)",
+      "candidates": [
+        "Bo Stief",
+        "George Russell (composer)",
+        "Chuck Israels",
+        "Gil Fuller",
+        "Electronic Sonata for Souls Loved by Nature",
+        "George Russell Sextet at the Five Spot",
+        "Living Time",
+        "Gerry Mulligan Presents a Concert in Jazz"
+      ]
+    },
+    {
+      "name": "Jimmy Giuffre",
+      "status": "unresolved",
+      "wikipedia": "https://en.wikipedia.org/wiki/Jimmy_Giuffre",
+      "candidates": [
+        "Jimmy Giuffre",
+        "Jimmy Giuffre (album)",
+        "The Jimmy Giuffre Clarinet",
+        "The Easy Way (Jimmy Giuffre album)",
+        "7 Pieces",
+        "Herb Ellis Meets Jimmy Giuffre",
+        "Lee Konitz Meets Jimmy Giuffre",
+        "Dragonfly (Jimmy Giuffre album)"
+      ]
+    },
+    {
+      "name": "Manny Albam",
+      "status": "unresolved",
+      "wikipedia": "https://en.wikipedia.org/wiki/Manny_Albam",
+      "candidates": [
+        "Solid State Records (jazz label)",
+        "Manny Albam",
+        "Jazz Goes to the Movies",
+        "The Big Band",
+        "Brass on Fire",
+        "The Soul of the City",
+        "A Bag Full of Blues",
+        "That Old Feeling (Al Cohn album)"
+      ]
+    },
+    {
+      "name": "Marty Paich",
+      "status": "unresolved",
+      "wikipedia": "https://en.wikipedia.org/wiki/Marty_Paich",
+      "candidates": [
+        "Whisper Not (Ella Fitzgerald album)",
+        "Softly, as I Leave You (album)",
+        "Marty Paich",
+        "Gershwin Live!",
+        "Rosemary Clooney Sings Country Hits from the Heart",
+        "It's a Blue World (Mel Tormé album)",
+        "Lena Like Latin",
+        "The West Coast Sound"
+      ]
+    },
+    {
+      "name": "Shorty Rogers",
+      "status": "unresolved",
+      "wikipedia": "https://en.wikipedia.org/wiki/Shorty_Rogers",
+      "candidates": [
+        "Jimmy Giuffre",
+        "Shorty Rogers",
+        "Shorty Rogers Courts the Count",
+        "Cool and Crazy",
+        "Shorty Rogers and His Giants",
+        "Shorty Rogers Plays Richard Rodgers",
+        "Portrait of Shorty",
+        "Jazz Waltz (Shorty Rogers album)"
+      ]
+    },
+    {
+      "name": "Clare Fischer",
+      "status": "unresolved",
+      "wikipedia": "https://en.wikipedia.org/wiki/Clare_Fischer",
+      "candidates": [
+        "Clare Fischer",
+        "Morning (Clare Fischer composition)",
+        "Thesaurus (album)",
+        "First Time Out (album)",
+        "Surging Ahead",
+        "Extension (Clare Fischer album)",
+        "Só Danço Samba (album)",
+        "Manteca!"
+      ]
+    },
+    {
+      "name": "Claus Ogerman",
+      "status": "unresolved",
+      "wikipedia": "https://en.wikipedia.org/wiki/Claus_Ogerman",
+      "candidates": [
+        "Claus Ogerman",
+        "Comin' Home Baby!",
+        "Amoroso (album)",
+        "Up with Donald Byrd",
+        "Soul Surfin'",
+        "More Brass",
+        "Cityscape (Claus Ogerman and Michael Brecker album)",
+        "Warm Wave"
+      ]
+    },
+    {
+      "name": "Don Sebesky",
+      "status": "unresolved",
+      "wikipedia": "https://en.wikipedia.org/wiki/Don_Sebesky",
+      "candidates": [
+        "Grammy Award for Best Arrangement, Instrumental or A Cappella",
+        "Don Sebesky",
+        "The Sugar Man",
+        "Midnight in San Juan (Earl Klugh album)",
+        "Nightsongs (Earl Klugh album)",
+        "Giant Box",
+        "The Rape of El Morro",
+        "Pastels (album)"
+      ]
+    },
+    {
+      "name": "Duke Pearson",
+      "status": "unresolved",
+      "wikipedia": "https://en.wikipedia.org/wiki/Duke_Pearson",
+      "candidates": [
+        "Duke Pearson",
+        "A Bluish Bag",
+        "Dedication!",
+        "Hush! (Duke Pearson album)",
+        "Wahoo!",
+        "Prairie Dog (album)",
+        "The Right Touch",
+        "Merry Ole Soul"
+      ]
+    },
+    {
+      "name": "Gary McFarland",
+      "status": "unresolved",
+      "wikipedia": "https://en.wikipedia.org/wiki/Gary_McFarland",
+      "candidates": [
+        "Gary McFarland",
+        "The October Suite",
+        "Gloomy Sunday and Other Bright Moments",
+        "The Jazz Version of \"How to Succeed in Business without Really Trying\"",
+        "Gerry Mulligan Presents a Concert in Jazz",
+        "Gerry Mulligan '63",
+        "Soft Samba",
+        "The In Sound (Gary McFarland album)"
+      ]
+    },
+    {
+      "name": "Hank Levy",
+      "status": "unresolved",
+      "wikipedia": "https://en.wikipedia.org/wiki/Hank_Levy",
+      "candidates": [
+        "Stan Kenton",
+        "Hank Levy",
+        "Ken Hanna",
+        "Live at the Royal Festival Hall (Dizzy Gillespie album)",
+        "Don Ellis Orchestra 'Live' at Monterey!",
+        "Soaring (album)",
+        "Connection (Don Ellis album)",
+        "Tears of Joy (album)"
+      ]
+    },
+    {
+      "name": "Oliver Nelson",
+      "status": "unresolved",
+      "wikipedia": "https://en.wikipedia.org/wiki/Oliver_Nelson",
+      "candidates": [
+        "Oliver Nelson",
+        "Oliver Nelson Plays Michelle",
+        "The Spirit of '67 (Oliver Nelson and Pee Wee Russell album)",
+        "The Kennedy Dream",
+        "Live from Los Angeles",
+        "Swiss Suite",
+        "Stolen Moments (Oliver Nelson album)",
+        "Oliver Nelson discography"
+      ]
+    },
+    {
+      "name": "Bill Mays",
+      "status": "unresolved",
+      "wikipedia": "https://en.wikipedia.org/wiki/Bill_Mays",
+      "candidates": [
+        "Bill Mays",
+        "1944 in jazz",
+        "Who Is This Bitch, Anyway?",
+        "Pensativa",
+        "One Day, Forever",
+        "Bruce Eskovitz",
+        "Bop for Kerouac",
+        "Kerouac, Then and Now"
+      ]
+    },
+    {
+      "name": "Bob Florence",
+      "status": "unresolved",
+      "wikipedia": "https://en.wikipedia.org/wiki/Bob_Florence",
+      "candidates": [
+        "8th Annual Grammy Awards",
+        "Grammy Award for Best Arrangement, Instrumental or A Cappella",
+        "Bob Florence",
+        "Kim Richmond",
+        "Rusty Higgins",
+        "A Sign of the Times (Joe Pass album)",
+        "Big Swing Face (Buddy Rich Big Band album)",
+        "1932 in jazz"
+      ]
+    },
+    {
+      "name": "Don Grolnick",
+      "status": "unresolved",
+      "wikipedia": "https://en.wikipedia.org/wiki/Don_Grolnick",
+      "candidates": [
+        "Dreams (band)",
+        "For Sentimental Reasons (Linda Ronstadt album)",
+        "1996 in jazz",
+        "The Main Attraction (album)",
+        "Anything Goes (Ron Carter album)",
+        "The Rape of El Morro",
+        "Yama (album)",
+        "Beck (album)"
+      ]
+    },
+    {
+      "name": "Michael Abene",
+      "status": "unresolved",
+      "wikipedia": "https://en.wikipedia.org/wiki/Mike_Abene",
+      "candidates": [
+        "Grammy Award for Best Arrangement, Instrumental or A Cappella",
+        "Patti Austin",
+        "Klüvers Big Band",
+        "Earl MacDonald",
+        "Very Live at Buddy's Place",
+        "Dave Grusin Presents GRP All-Star Big Band Live!",
+        "Mike Abene",
+        "Annette Sanders"
+      ]
+    },
+    {
+      "name": "Michael Gibbs",
+      "status": "unresolved",
+      "candidates": [
+        "John Surman",
+        "Lou Marini",
+        "Michael Gibbs",
+        "Michael Gibbs (composer)",
+        "Mark Nightingale",
+        "Richard Niles",
+        "1937 in jazz",
+        "Hommage à Eberhard Weber"
+      ]
+    },
+    {
+      "name": "Tom Kubis",
+      "status": "unresolved",
+      "wikipedia": "https://en.wikipedia.org/wiki/Tom_Kubis"
+    },
+    {
+      "name": "Erich Bulling",
+      "status": "unresolved",
+      "candidates": [
+        "The Complete Ella Fitzgerald Song Books",
+        "Agora (Paulinho da Costa album)"
+      ]
+    },
+    {
+      "name": "Greg Hopkins",
+      "status": "unresolved",
+      "candidates": [
+        "Steve Rochinski",
+        "Phil Ivey",
+        "Toni Kitanovski",
+        "Stick It (Buddy Rich album)",
+        "Frank Macchia",
+        "Spirit of Atlanta Drum and Bugle Corps"
+      ]
+    },
+    {
+      "name": "Jeff Beal",
+      "status": "unresolved",
+      "wikipedia": "https://en.wikipedia.org/wiki/Jeff_Beal",
+      "candidates": [
+        "Walter Becker",
+        "List of composers by nationality",
+        "Jason Vieaux",
+        "List of Private Passions episodes (2020–present)",
+        "Atlanta CV Drum and Bugle Corps",
+        "List of Eastman School of Music people",
+        "1963 in jazz",
+        "Varèse Sarabande albums discography"
+      ]
+    },
+    {
+      "name": "John Beasley",
+      "status": "unresolved",
+      "candidates": [
+        "Grammy Award for Best Arrangement, Instrumental or A Cappella",
+        "Walter Becker",
+        "Donna Lee",
+        "1960 in jazz",
+        "60th Annual Grammy Awards",
+        "Latin Grammy Award for Best Arrangement",
+        "Cédric Hanriot",
+        "Rebirth (Sofia Hoffmann album)"
+      ]
+    },
+    {
+      "name": "Mike Tomaro",
+      "status": "unresolved",
+      "candidates": [
+        "Arrangement",
+        "Mary Pappert School of Music",
+        "R.S.V.P. (Rare Songs, Very Personal)",
+        "Barbara Nissman",
+        "Darryl Yokley"
+      ]
+    },
+    {
+      "name": "Ryan Truesdell",
+      "status": "unresolved",
+      "candidates": [
+        "Gil Evans"
+      ]
+    },
+    {
+      "name": "Alan Ferber",
+      "status": "unresolved",
+      "candidates": [
+        "Grammy Award for Best Large Jazz Ensemble Album",
+        "Ike Sturm",
+        "Person to Person: Live at the Blue Note",
+        "Posi-Tone Records",
+        "59th Annual Grammy Awards",
+        "Lovers (Nels Cline album)",
+        "Legacy (Gerald Wilson album)",
+        "Remy Le Boeuf"
+      ]
+    },
+    {
+      "name": "Christine Jensen",
+      "status": "unresolved",
+      "candidates": [
+        "Schulich School of Music",
+        "Caity Gyorgy",
+        "Christine Jensen (musician)"
+      ]
+    },
+    {
+      "name": "Dave Rivello",
+      "status": "unresolved",
+      "candidates": []
+    },
+    {
+      "name": "Doug Beavers",
+      "status": "unresolved",
+      "wikipedia": "https://en.wikipedia.org/wiki/Doug_Beavers",
+      "candidates": [
+        "Candela (American band)",
+        "Pensativa",
+        "60th Annual Grammy Awards",
+        "2017 in Latin music",
+        "Alex Mercado",
+        "Doug Beavers"
+      ]
+    },
+    {
+      "name": "Ed Palermo",
+      "status": "unresolved",
+      "candidates": [
+        "Napoleon Murphy Brock",
+        "Frank Zappa discography",
+        "Ed Palermo Big Band"
+      ]
+    },
+    {
+      "name": "Frank Mantooth",
+      "status": "unresolved",
+      "wikipedia": "https://en.wikipedia.org/wiki/Frank_Mantooth",
+      "candidates": [
+        "So What chord",
+        "Howie Smith",
+        "Frank Mantooth",
+        "1947 in jazz",
+        "Deaths in January 2004",
+        "List of people from Garden City, Kansas",
+        "Invitation (song)",
+        "2004 in jazz"
+      ]
+    },
+    {
+      "name": "Jim Martin",
+      "status": "unresolved",
+      "candidates": [
+        "July 21",
+        "Mike Patton",
+        "List of people from Ohio",
+        "List of people from Pittsburgh",
+        "Emory Remington",
+        "List of people from Oakland, California",
+        "Deaths in October 2002",
+        "My Little Pony: Make Your Mark"
+      ]
+    },
+    {
+      "name": "Kate Reid",
+      "status": "unresolved",
+      "candidates": [
+        "7th Annual Grammy Awards",
+        "August Wilson Theatre",
+        "List of people with brain tumors",
+        "Longacre Theatre"
+      ]
+    },
+    {
+      "name": "Matt Harris",
+      "status": "unresolved",
+      "candidates": [
+        "Leon Russell",
+        "Klüvers Big Band",
+        "Before I Sleep (album)",
+        "Jackie Allen (musician)",
+        "Upside Out",
+        "2021 in music",
+        "2021 in American music"
+      ]
+    },
+    {
+      "name": "Michael Phillip Mossman",
+      "status": "unresolved",
+      "candidates": []
+    },
+    {
+      "name": "Scott Whitfield",
+      "status": "unresolved",
+      "candidates": [
+        "Kenneth Ascher",
+        "Four Seasons of Morita Village",
+        "Monopoly Game",
+        "In a Mist",
+        "Origin Suite"
+      ]
+    },
+    {
+      "name": "Terry Vosbein",
+      "status": "unresolved",
+      "candidates": [
+        "Robert Graettinger"
+      ]
+    },
+    {
+      "name": "Ayn Inserto",
+      "status": "unresolved",
+      "candidates": []
+    },
+    {
+      "name": "Brian Lynch",
+      "status": "unresolved",
+      "candidates": [
+        "Benny Golson",
+        "Brian Lynch (musician)",
+        "Dave Stryker",
+        "Simpático (The Brian Lynch/Eddie Palmieri Project album)",
+        "Mickey Bass",
+        "Roberto Magris",
+        "Pedrito Martinez",
+        "62nd Annual Grammy Awards"
+      ]
+    },
+    {
+      "name": "David Weiss",
+      "status": "unresolved",
+      "candidates": [
+        "David Weiss",
+        "George David Weiss",
+        "Oliver Nelson Plays Michelle",
+        "The Kennedy Dream",
+        "The New Jazz Composers Octet",
+        "Myron Walden",
+        "Anything Goes (Ron Carter album)",
+        "Posi-Tone Records"
+      ]
+    },
+    {
+      "name": "Jihye Lee",
+      "status": "unresolved",
+      "candidates": [
+        "2021 in jazz"
+      ]
+    }
+  ],
+  "results": [
+    {
+      "name": "Bill Challis",
+      "status": "unresolved",
+      "wikipedia": "https://en.wikipedia.org/wiki/Bill_Challis",
+      "candidates": [
+        "Bix Beiderbecke",
+        "Big band",
+        "Jean Goldkette",
+        "Vince Giordano",
+        "List of Bucknell University alumni",
+        "A Study in Frustration: The Fletcher Henderson Story",
+        "Bill Challis",
+        "Deaths in October 1994"
+      ]
+    },
+    {
+      "name": "Don Redman",
+      "status": "unresolved",
+      "wikipedia": "https://en.wikipedia.org/wiki/Don_Redman"
+    },
+    {
+      "name": "Eddie Durham",
+      "status": "unresolved",
+      "wikipedia": "https://en.wikipedia.org/wiki/Eddie_Durham",
+      "candidates": [
+        "Eddie Durham",
+        "Edgar Battle",
+        "The Big Band",
+        "Western Suite",
+        "That Old Feeling (Al Cohn album)",
+        "Shorty Rogers Courts the Count",
+        "1906 in jazz",
+        "Eddie Durham's All-Star Girl Orchestra"
+      ]
+    },
+    {
+      "name": "Edgar Sampson",
+      "status": "unresolved",
+      "wikipedia": "https://en.wikipedia.org/wiki/Edgar_Sampson",
+      "candidates": [
+        "Edgar Sampson",
+        "Charlie Shavers",
+        "One O'Clock Jump (album)",
+        "¡Viva! Vaughan",
+        "When Harry Met Sally... (soundtrack)",
+        "Tropicana Nights",
+        "Contemporary Concepts",
+        "The Fourth Dimension in Sound"
+      ]
+    },
+    {
+      "name": "Gene Gifford",
+      "status": "unresolved",
+      "wikipedia": "https://en.wikipedia.org/wiki/Gene_Gifford",
+      "candidates": [
+        "1933 in music",
+        "1932 in music",
+        "Casa Loma Orchestra",
+        "Lew Stone",
+        "Gene Gifford"
+      ]
+    },
+    {
+      "name": "Jimmy Mundy",
+      "status": "unresolved",
+      "wikipedia": "https://en.wikipedia.org/wiki/Jimmy_Mundy",
+      "candidates": [
+        "Jimmy Mundy",
+        "Sonny Stitt & the Top Brass",
+        "Pennsylvania 6-5000 (song)",
+        "The Soul Explosion",
+        "Little Green Apples (album)",
+        "Come Hither",
+        "Kansas City Revisited",
+        "Baker's Holiday"
+      ]
+    },
+    {
+      "name": "Will Hudson",
+      "status": "unresolved",
+      "candidates": [
+        "A Classy Pair",
+        "Margie Hyams",
+        "You're Mine You",
+        "Gus Bivona",
+        "Cool Christy",
+        "Will Hudson (songwriter)",
+        "10 Trombones Like 2 Pianos",
+        "Songs for Swingers"
+      ]
+    },
+    {
+      "name": "Andy Gibson",
+      "status": "unresolved",
+      "candidates": [
+        "Andy Gibson (trumpeter)",
+        "Unforgettable (Dinah Washington album)",
+        "Ralph Mullins",
+        "Andrew Gibson",
+        "The Count!",
+        "The Sax Section",
+        "Flutes & Reeds",
+        "Quincy Plays for Pussycats"
+      ]
+    },
+    {
+      "name": "Buster Harding",
+      "status": "unresolved",
+      "wikipedia": "https://en.wikipedia.org/wiki/Buster_Harding",
+      "candidates": [
+        "Buster Harding",
+        "1965 in jazz",
+        "1917 in jazz",
+        "Dizzy in Greece",
+        "Dizzy and Strings",
+        "The Big Band",
+        "Basie (album)",
+        "The Count!"
+      ]
+    },
+    {
+      "name": "Chico O'Farrill",
+      "status": "unresolved",
+      "wikipedia": "https://en.wikipedia.org/wiki/Chico_O%27Farrill",
+      "candidates": [
+        "Chico O'Farrill",
+        "Basie's Beatle Bag",
+        "Arturo O'Farrill",
+        "Spanish Rice (album)",
+        "Nine Flags",
+        "Afro-Cuban Jazz Moods",
+        "The Aztec Suite",
+        "The Board of Directors Annual Report"
+      ]
+    },
+    {
+      "name": "Gil Fuller",
+      "status": "unresolved",
+      "wikipedia": "https://en.wikipedia.org/wiki/Gil_Fuller",
+      "candidates": [
+        "Gil Fuller",
+        "Left & Right (album)",
+        "Dizzy Gillespie at Newport",
+        "Manteca (song)",
+        "Phil Moore (jazz musician)",
+        "Gil Fuller & the Monterey Jazz Festival Orchestra featuring Dizzy Gillespie",
+        "Night Flight (Gil Fuller album)",
+        "Afro-Cuban Influence"
+      ]
+    },
+    {
+      "name": "Johnny Carisi",
+      "status": "unresolved",
+      "wikipedia": "https://en.wikipedia.org/wiki/John_Carisi",
+      "candidates": [
+        "John Carisi",
+        "Into the Hot (Gil Evans album)",
+        "Love Songs (Miles Davis album)",
+        "Mr. Music (album)",
+        "Gerry Mulligan Presents a Concert in Jazz"
+      ]
+    },
+    {
+      "name": "Johnny Mandel",
+      "status": "unresolved",
+      "wikipedia": "https://en.wikipedia.org/wiki/Johnny_Mandel",
+      "candidates": [
+        "8th Annual Grammy Awards",
+        "Johnny Mandel",
+        "Shirley Horn",
+        "The Art of Romance",
+        "Chet Baker & Strings",
+        "Dance Session",
+        "Hoagy Sings Carmichael",
+        "I Want to Live! (soundtrack)"
+      ]
+    },
+    {
+      "name": "Bill Russo",
+      "status": "unresolved",
+      "candidates": [
+        "William Russo (musician)",
+        "Bob Curnow",
+        "The West Coast Sound",
+        "Stan Kenton Presents",
+        "Innovations in Modern Music",
+        "Portraits on Standards",
+        "Popular Favorites by Stan Kenton",
+        "The Innovations Orchestra"
+      ]
+    },
+    {
+      "name": "Billy Byers",
+      "status": "unresolved",
+      "wikipedia": "https://en.wikipedia.org/wiki/Billy_Byers",
+      "candidates": [
+        "Billy Byers",
+        "Basie Land",
+        "Dizzy Goes Hollywood",
+        "Shirley Horn with Horns",
+        "Any Number Can Win (album)",
+        "Pop Goes the Basie",
+        "The Jazz Version of \"How to Succeed in Business without Really Trying\"",
+        "Goodies (J. J. Johnson album)"
+      ]
+    },
+    {
+      "name": "George Russell",
+      "status": "unresolved",
+      "wikipedia": "https://en.wikipedia.org/wiki/George_Russell_(composer)",
+      "candidates": [
+        "Bo Stief",
+        "George Russell (composer)",
+        "Chuck Israels",
+        "Gil Fuller",
+        "Electronic Sonata for Souls Loved by Nature",
+        "George Russell Sextet at the Five Spot",
+        "Living Time",
+        "Gerry Mulligan Presents a Concert in Jazz"
+      ]
+    },
+    {
+      "name": "Jimmy Giuffre",
+      "status": "unresolved",
+      "wikipedia": "https://en.wikipedia.org/wiki/Jimmy_Giuffre",
+      "candidates": [
+        "Jimmy Giuffre",
+        "Jimmy Giuffre (album)",
+        "The Jimmy Giuffre Clarinet",
+        "The Easy Way (Jimmy Giuffre album)",
+        "7 Pieces",
+        "Herb Ellis Meets Jimmy Giuffre",
+        "Lee Konitz Meets Jimmy Giuffre",
+        "Dragonfly (Jimmy Giuffre album)"
+      ]
+    },
+    {
+      "name": "Manny Albam",
+      "status": "unresolved",
+      "wikipedia": "https://en.wikipedia.org/wiki/Manny_Albam",
+      "candidates": [
+        "Solid State Records (jazz label)",
+        "Manny Albam",
+        "Jazz Goes to the Movies",
+        "The Big Band",
+        "Brass on Fire",
+        "The Soul of the City",
+        "A Bag Full of Blues",
+        "That Old Feeling (Al Cohn album)"
+      ]
+    },
+    {
+      "name": "Marty Paich",
+      "status": "unresolved",
+      "wikipedia": "https://en.wikipedia.org/wiki/Marty_Paich",
+      "candidates": [
+        "Whisper Not (Ella Fitzgerald album)",
+        "Softly, as I Leave You (album)",
+        "Marty Paich",
+        "Gershwin Live!",
+        "Rosemary Clooney Sings Country Hits from the Heart",
+        "It's a Blue World (Mel Tormé album)",
+        "Lena Like Latin",
+        "The West Coast Sound"
+      ]
+    },
+    {
+      "name": "Shorty Rogers",
+      "status": "unresolved",
+      "wikipedia": "https://en.wikipedia.org/wiki/Shorty_Rogers",
+      "candidates": [
+        "Jimmy Giuffre",
+        "Shorty Rogers",
+        "Shorty Rogers Courts the Count",
+        "Cool and Crazy",
+        "Shorty Rogers and His Giants",
+        "Shorty Rogers Plays Richard Rodgers",
+        "Portrait of Shorty",
+        "Jazz Waltz (Shorty Rogers album)"
+      ]
+    },
+    {
+      "name": "Clare Fischer",
+      "status": "unresolved",
+      "wikipedia": "https://en.wikipedia.org/wiki/Clare_Fischer",
+      "candidates": [
+        "Clare Fischer",
+        "Morning (Clare Fischer composition)",
+        "Thesaurus (album)",
+        "First Time Out (album)",
+        "Surging Ahead",
+        "Extension (Clare Fischer album)",
+        "Só Danço Samba (album)",
+        "Manteca!"
+      ]
+    },
+    {
+      "name": "Claus Ogerman",
+      "status": "unresolved",
+      "wikipedia": "https://en.wikipedia.org/wiki/Claus_Ogerman",
+      "candidates": [
+        "Claus Ogerman",
+        "Comin' Home Baby!",
+        "Amoroso (album)",
+        "Up with Donald Byrd",
+        "Soul Surfin'",
+        "More Brass",
+        "Cityscape (Claus Ogerman and Michael Brecker album)",
+        "Warm Wave"
+      ]
+    },
+    {
+      "name": "Don Sebesky",
+      "status": "unresolved",
+      "wikipedia": "https://en.wikipedia.org/wiki/Don_Sebesky",
+      "candidates": [
+        "Grammy Award for Best Arrangement, Instrumental or A Cappella",
+        "Don Sebesky",
+        "The Sugar Man",
+        "Midnight in San Juan (Earl Klugh album)",
+        "Nightsongs (Earl Klugh album)",
+        "Giant Box",
+        "The Rape of El Morro",
+        "Pastels (album)"
+      ]
+    },
+    {
+      "name": "Duke Pearson",
+      "status": "unresolved",
+      "wikipedia": "https://en.wikipedia.org/wiki/Duke_Pearson",
+      "candidates": [
+        "Duke Pearson",
+        "A Bluish Bag",
+        "Dedication!",
+        "Hush! (Duke Pearson album)",
+        "Wahoo!",
+        "Prairie Dog (album)",
+        "The Right Touch",
+        "Merry Ole Soul"
+      ]
+    },
+    {
+      "name": "Gary McFarland",
+      "status": "unresolved",
+      "wikipedia": "https://en.wikipedia.org/wiki/Gary_McFarland",
+      "candidates": [
+        "Gary McFarland",
+        "The October Suite",
+        "Gloomy Sunday and Other Bright Moments",
+        "The Jazz Version of \"How to Succeed in Business without Really Trying\"",
+        "Gerry Mulligan Presents a Concert in Jazz",
+        "Gerry Mulligan '63",
+        "Soft Samba",
+        "The In Sound (Gary McFarland album)"
+      ]
+    },
+    {
+      "name": "Hank Levy",
+      "status": "unresolved",
+      "wikipedia": "https://en.wikipedia.org/wiki/Hank_Levy",
+      "candidates": [
+        "Stan Kenton",
+        "Hank Levy",
+        "Ken Hanna",
+        "Live at the Royal Festival Hall (Dizzy Gillespie album)",
+        "Don Ellis Orchestra 'Live' at Monterey!",
+        "Soaring (album)",
+        "Connection (Don Ellis album)",
+        "Tears of Joy (album)"
+      ]
+    },
+    {
+      "name": "Oliver Nelson",
+      "status": "unresolved",
+      "wikipedia": "https://en.wikipedia.org/wiki/Oliver_Nelson",
+      "candidates": [
+        "Oliver Nelson",
+        "Oliver Nelson Plays Michelle",
+        "The Spirit of '67 (Oliver Nelson and Pee Wee Russell album)",
+        "The Kennedy Dream",
+        "Live from Los Angeles",
+        "Swiss Suite",
+        "Stolen Moments (Oliver Nelson album)",
+        "Oliver Nelson discography"
+      ]
+    },
+    {
+      "name": "Bill Mays",
+      "status": "unresolved",
+      "wikipedia": "https://en.wikipedia.org/wiki/Bill_Mays",
+      "candidates": [
+        "Bill Mays",
+        "1944 in jazz",
+        "Who Is This Bitch, Anyway?",
+        "Pensativa",
+        "One Day, Forever",
+        "Bruce Eskovitz",
+        "Bop for Kerouac",
+        "Kerouac, Then and Now"
+      ]
+    },
+    {
+      "name": "Bob Florence",
+      "status": "unresolved",
+      "wikipedia": "https://en.wikipedia.org/wiki/Bob_Florence",
+      "candidates": [
+        "8th Annual Grammy Awards",
+        "Grammy Award for Best Arrangement, Instrumental or A Cappella",
+        "Bob Florence",
+        "Kim Richmond",
+        "Rusty Higgins",
+        "A Sign of the Times (Joe Pass album)",
+        "Big Swing Face (Buddy Rich Big Band album)",
+        "1932 in jazz"
+      ]
+    },
+    {
+      "name": "Don Grolnick",
+      "status": "unresolved",
+      "wikipedia": "https://en.wikipedia.org/wiki/Don_Grolnick",
+      "candidates": [
+        "Dreams (band)",
+        "For Sentimental Reasons (Linda Ronstadt album)",
+        "1996 in jazz",
+        "The Main Attraction (album)",
+        "Anything Goes (Ron Carter album)",
+        "The Rape of El Morro",
+        "Yama (album)",
+        "Beck (album)"
+      ]
+    },
+    {
+      "name": "Michael Abene",
+      "status": "unresolved",
+      "wikipedia": "https://en.wikipedia.org/wiki/Mike_Abene",
+      "candidates": [
+        "Grammy Award for Best Arrangement, Instrumental or A Cappella",
+        "Patti Austin",
+        "Klüvers Big Band",
+        "Earl MacDonald",
+        "Very Live at Buddy's Place",
+        "Dave Grusin Presents GRP All-Star Big Band Live!",
+        "Mike Abene",
+        "Annette Sanders"
+      ]
+    },
+    {
+      "name": "Michael Gibbs",
+      "status": "unresolved",
+      "candidates": [
+        "John Surman",
+        "Lou Marini",
+        "Michael Gibbs",
+        "Michael Gibbs (composer)",
+        "Mark Nightingale",
+        "Richard Niles",
+        "1937 in jazz",
+        "Hommage à Eberhard Weber"
+      ]
+    },
+    {
+      "name": "Tom Kubis",
+      "status": "unresolved",
+      "wikipedia": "https://en.wikipedia.org/wiki/Tom_Kubis"
+    },
+    {
+      "name": "Erich Bulling",
+      "status": "unresolved",
+      "candidates": [
+        "The Complete Ella Fitzgerald Song Books",
+        "Agora (Paulinho da Costa album)"
+      ]
+    },
+    {
+      "name": "Greg Hopkins",
+      "status": "unresolved",
+      "candidates": [
+        "Steve Rochinski",
+        "Phil Ivey",
+        "Toni Kitanovski",
+        "Stick It (Buddy Rich album)",
+        "Frank Macchia",
+        "Spirit of Atlanta Drum and Bugle Corps"
+      ]
+    },
+    {
+      "name": "Jeff Beal",
+      "status": "unresolved",
+      "wikipedia": "https://en.wikipedia.org/wiki/Jeff_Beal",
+      "candidates": [
+        "Walter Becker",
+        "List of composers by nationality",
+        "Jason Vieaux",
+        "List of Private Passions episodes (2020–present)",
+        "Atlanta CV Drum and Bugle Corps",
+        "List of Eastman School of Music people",
+        "1963 in jazz",
+        "Varèse Sarabande albums discography"
+      ]
+    },
+    {
+      "name": "John Beasley",
+      "status": "unresolved",
+      "candidates": [
+        "Grammy Award for Best Arrangement, Instrumental or A Cappella",
+        "Walter Becker",
+        "Donna Lee",
+        "1960 in jazz",
+        "60th Annual Grammy Awards",
+        "Latin Grammy Award for Best Arrangement",
+        "Cédric Hanriot",
+        "Rebirth (Sofia Hoffmann album)"
+      ]
+    },
+    {
+      "name": "Mike Tomaro",
+      "status": "unresolved",
+      "candidates": [
+        "Arrangement",
+        "Mary Pappert School of Music",
+        "R.S.V.P. (Rare Songs, Very Personal)",
+        "Barbara Nissman",
+        "Darryl Yokley"
+      ]
+    },
+    {
+      "name": "Ryan Truesdell",
+      "status": "unresolved",
+      "candidates": [
+        "Gil Evans"
+      ]
+    },
+    {
+      "name": "Alan Ferber",
+      "status": "unresolved",
+      "candidates": [
+        "Grammy Award for Best Large Jazz Ensemble Album",
+        "Ike Sturm",
+        "Person to Person: Live at the Blue Note",
+        "Posi-Tone Records",
+        "59th Annual Grammy Awards",
+        "Lovers (Nels Cline album)",
+        "Legacy (Gerald Wilson album)",
+        "Remy Le Boeuf"
+      ]
+    },
+    {
+      "name": "Christine Jensen",
+      "status": "unresolved",
+      "candidates": [
+        "Schulich School of Music",
+        "Caity Gyorgy",
+        "Christine Jensen (musician)"
+      ]
+    },
+    {
+      "name": "Dave Rivello",
+      "status": "unresolved",
+      "candidates": []
+    },
+    {
+      "name": "Doug Beavers",
+      "status": "unresolved",
+      "wikipedia": "https://en.wikipedia.org/wiki/Doug_Beavers",
+      "candidates": [
+        "Candela (American band)",
+        "Pensativa",
+        "60th Annual Grammy Awards",
+        "2017 in Latin music",
+        "Alex Mercado",
+        "Doug Beavers"
+      ]
+    },
+    {
+      "name": "Ed Palermo",
+      "status": "unresolved",
+      "candidates": [
+        "Napoleon Murphy Brock",
+        "Frank Zappa discography",
+        "Ed Palermo Big Band"
+      ]
+    },
+    {
+      "name": "Frank Mantooth",
+      "status": "unresolved",
+      "wikipedia": "https://en.wikipedia.org/wiki/Frank_Mantooth",
+      "candidates": [
+        "So What chord",
+        "Howie Smith",
+        "Frank Mantooth",
+        "1947 in jazz",
+        "Deaths in January 2004",
+        "List of people from Garden City, Kansas",
+        "Invitation (song)",
+        "2004 in jazz"
+      ]
+    },
+    {
+      "name": "Jim Martin",
+      "status": "unresolved",
+      "candidates": [
+        "July 21",
+        "Mike Patton",
+        "List of people from Ohio",
+        "List of people from Pittsburgh",
+        "Emory Remington",
+        "List of people from Oakland, California",
+        "Deaths in October 2002",
+        "My Little Pony: Make Your Mark"
+      ]
+    },
+    {
+      "name": "Kate Reid",
+      "status": "unresolved",
+      "candidates": [
+        "7th Annual Grammy Awards",
+        "August Wilson Theatre",
+        "List of people with brain tumors",
+        "Longacre Theatre"
+      ]
+    },
+    {
+      "name": "Matt Harris",
+      "status": "unresolved",
+      "candidates": [
+        "Leon Russell",
+        "Klüvers Big Band",
+        "Before I Sleep (album)",
+        "Jackie Allen (musician)",
+        "Upside Out",
+        "2021 in music",
+        "2021 in American music"
+      ]
+    },
+    {
+      "name": "Michael Phillip Mossman",
+      "status": "unresolved",
+      "candidates": []
+    },
+    {
+      "name": "Scott Whitfield",
+      "status": "unresolved",
+      "candidates": [
+        "Kenneth Ascher",
+        "Four Seasons of Morita Village",
+        "Monopoly Game",
+        "In a Mist",
+        "Origin Suite"
+      ]
+    },
+    {
+      "name": "Terry Vosbein",
+      "status": "unresolved",
+      "candidates": [
+        "Robert Graettinger"
+      ]
+    },
+    {
+      "name": "Ayn Inserto",
+      "status": "unresolved",
+      "candidates": []
+    },
+    {
+      "name": "Brian Lynch",
+      "status": "unresolved",
+      "candidates": [
+        "Benny Golson",
+        "Brian Lynch (musician)",
+        "Dave Stryker",
+        "Simpático (The Brian Lynch/Eddie Palmieri Project album)",
+        "Mickey Bass",
+        "Roberto Magris",
+        "Pedrito Martinez",
+        "62nd Annual Grammy Awards"
+      ]
+    },
+    {
+      "name": "David Weiss",
+      "status": "unresolved",
+      "candidates": [
+        "David Weiss",
+        "George David Weiss",
+        "Oliver Nelson Plays Michelle",
+        "The Kennedy Dream",
+        "The New Jazz Composers Octet",
+        "Myron Walden",
+        "Anything Goes (Ron Carter album)",
+        "Posi-Tone Records"
+      ]
+    },
+    {
+      "name": "Jihye Lee",
+      "status": "unresolved",
+      "candidates": [
+        "2021 in jazz"
+      ]
+    }
+  ]
+}

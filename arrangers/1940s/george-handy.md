@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/george-handy.jpg
+  credit: 'William P. Gottlieb, via Wikimedia Commons'
+  license: 'Public domain'
+  source: 'https://commons.wikimedia.org/wiki/File:George_Handy,_ca._Jan._1947_William_P._Gottlieb_(03881).jpg'
+---
 # George Handy (1920-1997)
 
 ## Biography

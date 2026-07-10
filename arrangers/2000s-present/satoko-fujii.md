@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/satoko-fujii.jpg
+  credit: 'Andy Newcombe, via Wikimedia Commons'
+  license: 'CC BY 2.0'
+  source: 'https://commons.wikimedia.org/wiki/File:Satoko_Fujii_photo.jpg'
+---
 # Satoko Fujii (b. 1958)
 
 ## Biography

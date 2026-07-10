@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/quincy-jones.jpg
+  credit: 'Los Angeles Times, via Wikimedia Commons'
+  license: 'CC BY 4.0'
+  source: 'https://commons.wikimedia.org/wiki/File:Quincy_jones_1980_(cropped).jpg'
+---
 # Quincy Jones (b. 1933)
 
 ## Biography

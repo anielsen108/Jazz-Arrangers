@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/eddie-sauter.jpg
+  credit: 'William P. Gottlieb, via Wikimedia Commons'
+  license: 'Public domain'
+  source: 'https://commons.wikimedia.org/wiki/File:Ralph_Burns,_Edwin_A._Finckel,_George_Handy,_Neal_Hefti,_Johnny_Richards,_and_Eddie_Sauter,_Museum_of_Modern_Art,_New_York,_N.Y.,_ca._Mar._1947_(Gottlieb_856).jpg'
+---
 # Eddie Sauter (1914-1981)
 
 ## Biography

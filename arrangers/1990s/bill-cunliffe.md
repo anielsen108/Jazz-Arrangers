@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/bill-cunliffe.jpg
+  credit: 'Jimmy Baikovicius from Montevideo, Uruguay, via Wikimedia Commons'
+  license: 'CC BY-SA 2.0'
+  source: 'https://commons.wikimedia.org/wiki/File:Bill_Cunliffe.jpg'
+---
 # Bill Cunliffe (b. 1956)
 
 ## Biography

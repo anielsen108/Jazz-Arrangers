@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/guillermo-klein.jpg
+  credit: 'Nomo michael hoefner http://www.zwo5.de, via Wikimedia Commons'
+  license: 'CC BY-SA 3.0'
+  source: 'https://commons.wikimedia.org/wiki/File:Guillermo-Klein-06n5337.jpg'
+---
 # Guillermo Klein (b. 1970)
 
 ## Biography

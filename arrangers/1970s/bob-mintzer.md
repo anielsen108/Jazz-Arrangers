@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/bob-mintzer.jpg
+  credit: 'Andreas Lawen, Fotandi, via Wikimedia Commons'
+  license: 'CC BY-SA 3.0'
+  source: 'https://commons.wikimedia.org/wiki/File:Yellowjackets_-_Leverkusener_Jazztage_2015-3444.jpg'
+---
 # Bob Mintzer (b. 1953)
 
 ## Biography

@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/john-clayton.png
+  credit: 'Sethcampbell7293, via Wikimedia Commons'
+  license: 'CC BY-SA 4.0'
+  source: 'https://commons.wikimedia.org/wiki/File:John_Clayton.png'
+---
 # John Clayton (b. 1952)
 
 ## Biography

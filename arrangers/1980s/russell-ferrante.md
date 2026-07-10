@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/russell-ferrante.jpg
+  credit: 'DonClemente12F67, via Wikimedia Commons'
+  license: 'CC BY-SA 4.0'
+  source: 'https://commons.wikimedia.org/wiki/File:Russell_Ferrante_at_Steinegg_Live_2019.jpg'
+---
 # Russell Ferrante (b. 1952)
 
 ## Biography

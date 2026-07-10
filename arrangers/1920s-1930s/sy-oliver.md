@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/sy-oliver.jpg
+  credit: 'William P. Gottlieb, via Wikimedia Commons'
+  license: 'CC BY-SA 4.0'
+  source: 'https://commons.wikimedia.org/wiki/File:Sy_Oliver_(1946).jpg'
+---
 # Sy Oliver (1910-1988)
 
 ## Biography

@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/al-cohn.jpg
+  credit: 'Salem State Archives, via Wikimedia Commons'
+  license: 'CC BY 4.0'
+  source: 'https://commons.wikimedia.org/wiki/File:Al_Cohn,_1965.jpg'
+---
 # Al Cohn (1925-1988)
 
 ## Biography

@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/ambrose-akinmusire.jpg
+  credit: 'David Becker, via Wikimedia Commons'
+  license: 'CC BY-SA 4.0'
+  source: 'https://commons.wikimedia.org/wiki/File:Ambrose_Akinmusire.jpg'
+---
 # Ambrose Akinmusire (b. 1982)
 
 ## Biography

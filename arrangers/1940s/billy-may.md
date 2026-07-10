@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/billy-may.jpg
+  credit: 'Unknown author Unknown author, via Wikimedia Commons'
+  license: 'CC0'
+  source: 'https://commons.wikimedia.org/wiki/File:Billy_May.tif'
+---
 # Billy May (1916-2004)
 
 ## Biography

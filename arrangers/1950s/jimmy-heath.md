@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/jimmy-heath.jpg
+  credit: 'John Mathew Smith & www.celebrity-photos.com from Laurel Maryland, USA, via Wikimedia Commons'
+  license: 'CC BY-SA 2.0'
+  source: 'https://commons.wikimedia.org/wiki/File:Jimmy_Heath_1998.jpg'
+---
 # Jimmy Heath (1926-2020)
 
 ## Biography

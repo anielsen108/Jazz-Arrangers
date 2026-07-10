@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/tom-scott.jpg
+  credit: 'Phatang, via Wikimedia Commons'
+  license: 'CC BY-SA 3.0'
+  source: 'https://commons.wikimedia.org/wiki/File:Tom_Scott_cropped.jpg'
+---
 # Tom Scott (b. 1948)
 
 ## Biography

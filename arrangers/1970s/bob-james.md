@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/bob-james.jpg
+  credit: 'ElxanQəniyev, via Wikimedia Commons'
+  license: 'CC BY-SA 4.0'
+  source: 'https://commons.wikimedia.org/wiki/File:Bob_James_Jazzmen_jazz_music.jpg'
+---
 # Bob James (b. 1939)
 
 ## Biography

@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/randy-brecker.jpg
+  credit: 'Tore Sætre, via Wikimedia Commons'
+  license: 'CC BY-SA 4.0'
+  source: 'https://commons.wikimedia.org/wiki/File:Randy_Brecker_Kongsberg_Jazzfestival_2018_(224735).jpg'
+---
 # Randy Brecker (b. 1945)
 
 ## Biography

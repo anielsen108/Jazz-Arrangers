@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/fletcher-henderson.jpg
+  credit: 'Maurice Seymour studio, via Wikimedia Commons'
+  license: 'Public domain'
+  source: 'https://commons.wikimedia.org/wiki/File:Fletcher_Henderson_(1943_publicity_photo).jpg'
+---
 # Fletcher Henderson (1897-1952)
 
 ## Biography

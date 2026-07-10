@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/van-alexander.jpg
+  credit: 'Unknown author Unknown author, via Wikimedia Commons'
+  license: 'Public domain'
+  source: 'https://commons.wikimedia.org/wiki/File:Van_Alexander.jpg'
+---
 # Van Alexander (1915-2015)
 
 ## Biography

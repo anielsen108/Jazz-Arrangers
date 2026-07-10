@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/miguel-zenon.jpg
+  credit: 'Nomo michael hoefner http://www.zwo5.de, via Wikimedia Commons'
+  license: 'CC BY-SA 3.0'
+  source: 'https://commons.wikimedia.org/wiki/File:Miguel_Zenon_06n5436.jpg'
+---
 # Miguel Zenón (b. 1976)
 
 ## Biography

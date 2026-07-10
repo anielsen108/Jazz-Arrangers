@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/j-j-johnson.jpg
+  credit: 'H. N. White Company, via Wikimedia Commons'
+  license: 'Public domain'
+  source: 'https://commons.wikimedia.org/wiki/File:J._J._Johnson.jpg'
+---
 # J.J. Johnson (1924-2001)
 
 ## Biography

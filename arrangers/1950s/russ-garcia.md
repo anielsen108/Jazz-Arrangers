@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/russ-garcia.jpg
+  credit: 'Kaiwhakahaere, via Wikimedia Commons'
+  license: 'Public domain'
+  source: 'https://commons.wikimedia.org/wiki/File:Russ.Garcia.Kerikeri.jpg'
+---
 # Russ Garcia (1916-2011)
 
 ## Biography

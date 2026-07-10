@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/orrin-evans.jpg
+  credit: 'Stéphane Flickr: esteban_zia (Paris, France), via Wikimedia Commons'
+  license: 'CC BY-SA 2.0'
+  source: 'https://commons.wikimedia.org/wiki/File:Orrin_Evans.jpg'
+---
 # Orrin Evans (b. 1976)
 
 ## Biography

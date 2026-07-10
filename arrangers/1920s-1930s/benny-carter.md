@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/benny-carter.jpg
+  credit: 'צלם של ממשלת ארצות הברית., via Wikimedia Commons'
+  license: 'Public domain'
+  source: 'https://commons.wikimedia.org/wiki/File:Benny_Carter_and_President_Clinton,_1993.jpg'
+---
 # Benny Carter (1907-2003)
 
 ## Biography

@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/gunther-schuller.jpg
+  credit: 'The original uploader was Nrswanson at English Wikipedia ., via Wikimedia Commons'
+  license: 'Public domain'
+  source: 'https://commons.wikimedia.org/wiki/File:Gunther_Schuller_(2008).jpg'
+---
 # Gunther Schuller (1925-2015)
 
 ## Biography

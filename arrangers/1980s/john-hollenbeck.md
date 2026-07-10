@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/john-hollenbeck.jpg
+  credit: 'Annamarie Ursula, via Wikimedia Commons'
+  license: 'CC BY-SA 4.0'
+  source: 'https://commons.wikimedia.org/wiki/File:John_Hollenbeck_2019_(Annamarie_Ursula)_P1320369.JPG'
+---
 # John Hollenbeck (b. 1968)
 
 ## Biography

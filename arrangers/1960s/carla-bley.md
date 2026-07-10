@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/carla-bley.jpg
+  credit: 'Svíčková, via Wikimedia Commons'
+  license: 'CC BY-SA 3.0'
+  source: 'https://commons.wikimedia.org/wiki/File:Carla_Bley_2009.JPG'
+---
 # Carla Bley (b. 1936)
 
 ## Biography

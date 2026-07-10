@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/gil-goldstein.jpg
+  credit: 'Alan Lee Brooklyn, New York, via Wikimedia Commons'
+  license: 'CC BY-SA 2.0'
+  source: 'https://commons.wikimedia.org/wiki/File:Gil_Goldstein.jpg'
+---
 # Gil Goldstein (b. 1950)
 
 ## Biography

@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/conrad-herwig.jpg
+  credit: 'Jay Buchanan http://www.randybandits.com/ c/o stv hammond, via Wikimedia Commons'
+  license: 'CC BY 2.0'
+  source: 'https://commons.wikimedia.org/wiki/File:Conrad_Herwig.jpg'
+---
 # Conrad Herwig (b. 1959)
 
 ## Biography

@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/shai-maestro.jpg
+  credit: '© Liri Agamai, via Wikimedia Commons'
+  license: 'CC BY-SA 4.0'
+  source: 'https://commons.wikimedia.org/wiki/File:By_Liri_Agami.jpg'
+---
 # Shai Maestro (b. 1987)
 
 ## Biography

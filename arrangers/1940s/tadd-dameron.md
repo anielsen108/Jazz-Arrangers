@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/tadd-dameron.jpg
+  credit: 'William P. Gottlieb, via Wikimedia Commons'
+  license: 'CC BY-SA 4.0'
+  source: 'https://commons.wikimedia.org/wiki/File:Tadd_Dameron,_ca._1946-1948.jpg'
+---
 # Tadd Dameron (1917-1965)
 
 ## Biography

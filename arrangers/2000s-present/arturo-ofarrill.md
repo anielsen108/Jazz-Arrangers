@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/arturo-o-farrill.jpg
+  credit: 'Tore Sætre, via Wikimedia Commons'
+  license: 'CC BY-SA 4.0'
+  source: 'https://commons.wikimedia.org/wiki/File:Arturo_O%E2%80%99Farrill_Oslo_Jazzfestival_2018_(221903).jpg'
+---
 # Arturo O'Farrill (b. 1960)
 
 ## Biography

@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/gerald-wilson.jpg
+  credit: 'Richard Newhouse Marina, USA, via Wikimedia Commons'
+  license: 'CC BY-SA 2.0'
+  source: 'https://commons.wikimedia.org/wiki/File:Gerald_Wilson.jpg'
+---
 # Gerald Wilson (1918-2014)
 
 ## Biography

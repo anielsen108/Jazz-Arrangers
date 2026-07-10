@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/ferde-grofe.jpg
+  credit: 'Bain News Service, publisher, via Wikimedia Commons'
+  license: 'Public domain'
+  source: 'https://commons.wikimedia.org/wiki/File:Ferde_Grof%C3%A9.jpg'
+---
 # Ferde Grofé (1892-1972)
 
 ## Biography

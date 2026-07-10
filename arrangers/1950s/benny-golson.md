@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/benny-golson.jpg
+  credit: 'Brianmcmillen, via Wikimedia Commons'
+  license: 'CC BY-SA 3.0'
+  source: 'https://commons.wikimedia.org/wiki/File:Benny_Golson_1985_(cropped).jpg'
+---
 # Benny Golson (b. 1929)
 
 ## Biography

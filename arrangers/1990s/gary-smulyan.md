@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/gary-smulyan.jpg
+  credit: 'Hreinn Gudlaugsson, via Wikimedia Commons'
+  license: 'CC BY-SA 4.0'
+  source: 'https://commons.wikimedia.org/wiki/File:Gary-smylyan.jpg'
+---
 # Gary Smulyan (b. 1956)
 
 ## Biography

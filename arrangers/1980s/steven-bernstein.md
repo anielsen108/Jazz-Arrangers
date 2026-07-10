@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/steven-bernstein.jpg
+  credit: 'Davide Leonardi, via Wikimedia Commons'
+  license: 'CC BY-SA 3.0'
+  source: 'https://commons.wikimedia.org/wiki/File:Steven_Bernstein.JPG'
+---
 # Steven Bernstein (b. 1961)
 
 ## Biography

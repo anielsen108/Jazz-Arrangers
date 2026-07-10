@@ -7,6 +7,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "portraits:source": "node scripts/source-wikimedia-portraits.mjs --write",
     "test": "vitest run",
     "test:watch": "vitest"
   },

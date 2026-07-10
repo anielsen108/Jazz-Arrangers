@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/miho-hazama.jpg
+  credit: 'Hreinn Gudlaugsson, via Wikimedia Commons'
+  license: 'CC BY-SA 4.0'
+  source: 'https://commons.wikimedia.org/wiki/File:Miho-Hazama_DSC00946.jpg'
+---
 # Miho Hazama (b. 1986)
 
 ## Biography - 2000s-Present Work

@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/larry-clinton.jpg
+  credit: 'The Library of Congress, via Wikimedia Commons'
+  license: 'Public domain'
+  source: 'https://commons.wikimedia.org/wiki/File:(Portrait_of_Larry_Clinton,_New_York,_N.Y.(%3F),_between_1938_and_1948)_(LOC)_(4932353726).jpg'
+---
 # Larry Clinton (1909-1985)
 
 ## Biography

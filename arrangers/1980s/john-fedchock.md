@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/john-fedchock.jpg
+  credit: 'Noah Sudolcan, via Wikimedia Commons'
+  license: 'Public domain'
+  source: 'https://commons.wikimedia.org/wiki/File:John_Fedchock_at_Jazz_Heritage_Series.jpg'
+---
 # John Fedchock (b. 1957)
 
 ## Biography

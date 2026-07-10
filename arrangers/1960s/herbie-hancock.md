@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/herbie-hancock.jpg
+  credit: 'Library of Congress Life, via Wikimedia Commons'
+  license: 'CC0'
+  source: 'https://commons.wikimedia.org/wiki/File:Herbie_Hancock_2023.jpg'
+---
 # Herbie Hancock (b. 1940)
 
 ## Biography

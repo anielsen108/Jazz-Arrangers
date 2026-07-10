@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/frank-foster.jpg
+  credit: 'Tom Pich, via Wikimedia Commons'
+  license: 'Public domain'
+  source: 'https://commons.wikimedia.org/wiki/File:Frank_Foster_(left)_and_Dan_Morgenstern.jpg'
+---
 # Frank Foster (1928-2011)
 
 ## Biography

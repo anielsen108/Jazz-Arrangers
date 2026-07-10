@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/lalo-schifrin.jpg
+  credit: 'Alexandra Spürk ( Alexi ), via Wikimedia Commons'
+  license: 'CC BY-SA 2.5'
+  source: 'https://commons.wikimedia.org/wiki/File:Lalo_schifrin_(cropped)_(2).jpg'
+---
 # Lalo Schifrin (b. 1932)
 
 ## Biography

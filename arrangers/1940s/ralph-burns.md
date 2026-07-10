@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/ralph-burns.jpg
+  credit: 'William P. Gottlieb, via Wikimedia Commons'
+  license: 'Public domain'
+  source: 'https://commons.wikimedia.org/wiki/File:Ralph_Burns_crop_(William_P._Gottlieb_00911).jpg'
+---
 # Ralph Burns (1922-2001)
 
 ## Biography

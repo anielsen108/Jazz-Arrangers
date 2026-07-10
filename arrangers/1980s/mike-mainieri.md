@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/mike-mainieri.jpg
+  credit: 'Tom Beetz @ http://home.hetnet.nl/~tbeetz/index.html, via Wikimedia Commons'
+  license: 'CC BY 2.0'
+  source: 'https://commons.wikimedia.org/wiki/File:Mike_Mainieri.jpg'
+---
 # Mike Mainieri (b. 1938)
 
 ## Biography

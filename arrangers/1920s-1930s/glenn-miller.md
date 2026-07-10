@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/glenn-miller.jpg
+  credit: 'Unknown author Unknown author, via Wikimedia Commons'
+  license: 'Public domain'
+  source: 'https://commons.wikimedia.org/wiki/File:Glenn_Miller_Billboard.jpg'
+---
 # Glenn Miller (1904-1944)
 
 ## Biography

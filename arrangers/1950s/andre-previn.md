@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/andre-previn.jpg
+  credit: 'Bert Verhoeff for Anefo, via Wikimedia Commons'
+  license: 'CC BY-SA 3.0 nl'
+  source: 'https://commons.wikimedia.org/wiki/File:Andr%C3%A9_Previn.jpg'
+---
 # André Previn (1929-2019)
 
 ## Biography

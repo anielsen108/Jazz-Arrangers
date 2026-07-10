@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/horace-henderson.jpg
+  credit: 'Unknown author Unknown author, via Wikimedia Commons'
+  license: 'Public domain'
+  source: 'https://commons.wikimedia.org/wiki/File:Horace_Henderson.jpg'
+---
 # Horace Henderson (1904-1988)
 
 ## Biography

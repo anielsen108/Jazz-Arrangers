@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/toshiko-akiyoshi.jpg
+  credit: 'Brian McMillen., via Wikimedia Commons'
+  license: 'CC BY-SA 3.0'
+  source: 'https://commons.wikimedia.org/wiki/File:Toshiko_Akiyoshi.jpg'
+---
 # Toshiko Akiyoshi (b. 1929)
 
 ## Biography

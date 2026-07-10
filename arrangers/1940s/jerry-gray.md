@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/jerry-gray.jpg
+  credit: 'The Library of Congress, via Wikimedia Commons'
+  license: 'Public domain'
+  source: 'https://commons.wikimedia.org/wiki/File:Jerry_Gray_(arranger)_(cropped).jpg'
+---
 # Jerry Gray (1915-1976)
 
 ## Biography

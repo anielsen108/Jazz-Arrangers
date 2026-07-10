@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/ray-conniff.png
+  credit: 'Columbia Records, via Wikimedia Commons'
+  license: 'Public domain'
+  source: 'https://commons.wikimedia.org/wiki/File:Ray_Conniff_(1967).png'
+---
 # Ray Conniff (1916-2002)
 
 ## Biography

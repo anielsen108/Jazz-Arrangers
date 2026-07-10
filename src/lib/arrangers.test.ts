@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { readFileSync, readdirSync } from 'node:fs';
+import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import {
   DECADES,
@@ -129,5 +129,22 @@ describe('repository content', () => {
       }
     }
     expect(pageCount).toBeGreaterThan(0);
+  });
+
+  it('every declared portrait points to a local image asset', () => {
+    const publicRoot = join(__dirname, '..', '..', 'public');
+    for (const decade of DECADES) {
+      const directory = join(root, decade.slug);
+      const files = readdirSync(directory).filter((file) => file.endsWith('.md'));
+      for (const file of files) {
+        const markdown = readFileSync(join(directory, file), 'utf8');
+        const src = markdown.match(/^\s+src:\s+(['"]?)(\/images\/[^\s'"]+)\1\s*$/m)?.[2];
+        if (!src) continue;
+        expect(
+          existsSync(join(publicRoot, src.slice(1))),
+          `${decade.slug}/${file} references missing portrait ${src}`
+        ).toBe(true);
+      }
+    }
   });
 });

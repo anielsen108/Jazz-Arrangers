@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/jim-mcneely.jpg
+  credit: 'Xysterq, via Wikimedia Commons'
+  license: 'CC BY-SA 3.0'
+  source: 'https://commons.wikimedia.org/wiki/File:JimPiano.jpg'
+---
 # Jim McNeely (b. 1949)
 
 ## Biography

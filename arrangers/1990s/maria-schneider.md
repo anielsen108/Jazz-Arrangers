@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/maria-schneider.jpg
+  credit: 'Marek Lazarski, Toronto Jazz Festival 2009, via Wikimedia Commons'
+  license: 'CC BY-SA 4.0'
+  source: 'https://commons.wikimedia.org/wiki/File:Maria_Schneider_DSC0108c.jpg'
+---
 # Maria Schneider (b. 1960)
 
 ## Biography

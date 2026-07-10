@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/steven-feifke.jpg
+  credit: 'Resoundbite86, via Wikimedia Commons'
+  license: 'CC BY-SA 4.0'
+  source: 'https://commons.wikimedia.org/wiki/File:Steven_Feifke_At_Mezzrow.jpg'
+---
 # Steven Feifke (b. 1990)
 
 ## Biography

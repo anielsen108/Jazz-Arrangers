@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/kenny-wheeler.jpg
+  credit: 'Andy Newcombe Farnborough, UK, via Wikimedia Commons'
+  license: 'CC BY-SA 2.0'
+  source: 'https://commons.wikimedia.org/wiki/File:Kenny_Wheeler.jpg'
+---
 # Kenny Wheeler (1930-2014)
 
 ## Biography

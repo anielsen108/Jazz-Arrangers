@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/billy-strayhorn.jpg
+  credit: 'William P. Gottlieb / Adam Cuerden, via Wikimedia Commons'
+  license: 'Public domain'
+  source: 'https://commons.wikimedia.org/wiki/File:Billy_Strayhorn,_New_York,_N.Y.,_between_1946_and_1948_(William_P._Gottlieb_08211).jpg'
+---
 # Billy Strayhorn (1915-1967)
 
 ## Biography

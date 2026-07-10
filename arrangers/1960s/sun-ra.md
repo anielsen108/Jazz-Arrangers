@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/sun-ra.jpg
+  credit: 'Distributed by Impulse! Records and ABC/Dunhill Records. Photographer uncredited on the publicity photo itself; most likely Francis Ing, who is credited for the photography on Astro Black (see Discogs link above)., via Wikimedia Commons'
+  license: 'Public domain'
+  source: 'https://commons.wikimedia.org/wiki/File:Sun_Ra_(1973_publicity_photo_-_Impulse_ABC_Dunhill).jpg'
+---
 # Sun Ra (1914-1993)
 
 ## Biography

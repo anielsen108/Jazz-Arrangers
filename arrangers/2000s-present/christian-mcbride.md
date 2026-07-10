@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/christian-mcbride.jpg
+  credit: 'Brian Callahan, via Wikimedia Commons'
+  license: 'CC BY-SA 2.0'
+  source: 'https://commons.wikimedia.org/wiki/File:Bassist_Christian_McBride.jpg'
+---
 # Christian McBride (b. 1972)
 
 ## Biography

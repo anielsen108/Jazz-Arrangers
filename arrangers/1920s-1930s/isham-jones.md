@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/isham-jones.jpg
+  credit: 'Isham Jones, via Wikimedia Commons'
+  license: 'Public domain'
+  source: 'https://commons.wikimedia.org/wiki/File:IshamJones1922.jpg'
+---
 # Isham Jones (1894-1956)
 
 ## Biography

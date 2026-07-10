@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/ed-partyka.jpg
+  credit: 'Hreinn Gudlaugsson, via Wikimedia Commons'
+  license: 'CC BY-SA 4.0'
+  source: 'https://commons.wikimedia.org/wiki/File:Ed-Partyka.jpg'
+---
 # Ed Partyka (b. 1955)
 
 ## Biography

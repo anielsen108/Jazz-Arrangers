@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/jelly-roll-morton.jpg
+  credit: 'Bloom photograph studio, Chicago, via Wikimedia Commons'
+  license: 'Public domain'
+  source: 'https://commons.wikimedia.org/wiki/File:Jelly_Roll_Morton_(c._1927).jpg'
+---
 # Jelly Roll Morton (1890-1941)
 
 ## Biography

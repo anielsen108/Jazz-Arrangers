@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/sammy-nestico.jpg
+  credit: 'U.S. Air Force photo by Master Sgt. Jack Braden, via Wikimedia Commons'
+  license: 'Public domain'
+  source: 'https://commons.wikimedia.org/wiki/File:Sammy_Nestico.jpg'
+---
 # Sammy Nestico (1924-2021)
 
 ## Biography

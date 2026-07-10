@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/patrick-williams.jpg
+  credit: 'Sourjack89, via Wikimedia Commons'
+  license: 'CC BY-SA 4.0'
+  source: 'https://commons.wikimedia.org/wiki/File:Patrick_Williams_photographed_by_James_DeFrances.jpg'
+---
 # Patrick Williams (b. 1939)
 
 ## Biography

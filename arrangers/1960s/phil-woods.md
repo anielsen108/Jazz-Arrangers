@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/phil-woods.jpg
+  credit: 'Tom Marcello Webster, New York, USA, via Wikimedia Commons'
+  license: 'CC BY-SA 2.0'
+  source: 'https://commons.wikimedia.org/wiki/File:Phil_Woods_1978.jpg'
+---
 # Phil Woods (1931-2015)
 
 ## Biography

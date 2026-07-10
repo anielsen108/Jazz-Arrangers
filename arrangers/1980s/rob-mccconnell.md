@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/rob-mcconnell.jpg
+  credit: 'Courtesy of the Fraser MacPherson estate c/o Guy MacPherson, via Wikimedia Commons'
+  license: 'CC BY 2.0'
+  source: 'https://commons.wikimedia.org/wiki/File:Fraser_MacPherson,_Rob_McConnell_1989.jpg'
+---
 # Rob McConnell (1935-2010)
 
 ## Biography

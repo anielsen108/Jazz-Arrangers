@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/nat-pierce.jpg
+  credit: 'Raymond Ross c/o Dick Sheridan, via Wikimedia Commons'
+  license: 'CC BY-SA 4.0'
+  source: 'https://commons.wikimedia.org/wiki/File:Nat_Pierce_(1961).jpg'
+---
 # Nat Pierce (1925-1992)
 
 ## Biography

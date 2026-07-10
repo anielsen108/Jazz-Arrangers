@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/andy-kirk.jpg
+  credit: 'Maud Cuney-Hare, 1874-1936, via Wikimedia Commons'
+  license: 'Public domain'
+  source: 'https://commons.wikimedia.org/wiki/File:Maud_Cuney_Hare-154-Andy_Kirk.jpg'
+---
 # Andy Kirk (1898-1992)
 
 ## Biography

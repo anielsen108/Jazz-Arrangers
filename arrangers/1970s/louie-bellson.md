@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/louie-bellson.jpg
+  credit: 'Courtesy of the Fraser MacPherson estate c/o Guy MacPherson, via Wikimedia Commons'
+  license: 'CC BY 2.0'
+  source: 'https://commons.wikimedia.org/wiki/File:Louis_Bellson.jpg'
+---
 # Louie Bellson (1924-2009)
 
 ## Biography

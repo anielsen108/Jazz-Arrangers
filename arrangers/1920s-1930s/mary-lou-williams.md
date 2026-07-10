@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/mary-lou-williams.jpg
+  credit: 'William P. Gottlieb / Adam Cuerden, via Wikimedia Commons'
+  license: 'Public domain'
+  source: 'https://commons.wikimedia.org/wiki/File:Mary_Lou_Williams_(Gottlieb_09231)_-_Crop.jpg'
+---
 # Mary Lou Williams (1910-1981)
 
 ## Biography

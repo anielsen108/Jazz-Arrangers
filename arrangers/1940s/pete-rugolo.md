@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/pete-rugolo.jpg
+  credit: 'William P. Gottlieb, via Wikimedia Commons'
+  license: 'Public domain'
+  source: 'https://commons.wikimedia.org/wiki/File:Pete_Rugolo,_New_York,_N.Y.,_between_1946_and_1948_(William_P._Gottlieb_07531).jpg'
+---
 # Pete Rugolo (1915-2011)
 
 ## Biography

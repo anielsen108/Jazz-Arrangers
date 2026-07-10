@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/slide-hampton.jpg
+  credit: 'Tom Marcello, via Wikimedia Commons'
+  license: 'CC BY-SA 2.0'
+  source: 'https://commons.wikimedia.org/wiki/File:Slide_Hampton_-_August_1978_(cropped).jpg'
+---
 # Slide Hampton (b. 1932)
 
 ## Biography

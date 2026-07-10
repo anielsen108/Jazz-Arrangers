@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/melba-liston.jpg
+  credit: 'Finnish Heritage Agency, via Wikimedia Commons'
+  license: 'CC BY-SA 4.0'
+  source: 'https://commons.wikimedia.org/wiki/File:Melba_Liston.jpg'
+---
 # Melba Liston (1926-1999)
 
 ## Biography

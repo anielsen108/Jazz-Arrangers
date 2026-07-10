@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/gordon-goodwin.jpg
+  credit: 'Rex Bullington, via Wikimedia Commons'
+  license: 'CC BY-SA 4.0'
+  source: 'https://commons.wikimedia.org/wiki/File:Gordon-goodwin.jpg'
+---
 # Gordon Goodwin (b. 1954)
 
 ## Biography

@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/david-amram.jpg
+  credit: 'The original uploader was Mind meal at English Wikipedia ., via Wikimedia Commons'
+  license: 'CC BY 2.0'
+  source: 'https://commons.wikimedia.org/wiki/File:David_Amram.jpg'
+---
 # David Amram (b. 1930)
 
 ## Biography

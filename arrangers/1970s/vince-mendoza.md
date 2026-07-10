@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/vince-mendoza.jpg
+  credit: 'Pamela Fong, via Wikimedia Commons'
+  license: 'CC BY 3.0'
+  source: 'https://commons.wikimedia.org/wiki/File:Vince_Mendoza_Close_up_blue.jpg'
+---
 # Vince Mendoza (b. 1961)
 
 ## Biography

@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/bob-brookmeyer.jpg
+  credit: 'Verve Records, via Wikimedia Commons'
+  license: 'Public domain'
+  source: 'https://commons.wikimedia.org/wiki/File:Bob_Brookmeyer.jpg'
+---
 # Bob Brookmeyer (1929-2011)
 
 ## Biography

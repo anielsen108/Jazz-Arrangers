@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/david-matthews.jpg
+  credit: 'Sophiacscott, via Wikimedia Commons'
+  license: 'CC BY-SA 4.0'
+  source: 'https://commons.wikimedia.org/wiki/File:David_Matthews_composer.jpg'
+---
 # David Matthews (b. 1942)
 
 ## Biography

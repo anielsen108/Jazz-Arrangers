@@ -1,3 +1,10 @@
+---
+photo:
+  src: /images/arrangers/neal-hefti.jpg
+  credit: 'Wally Wingert, 4-i''s Production, via Wikimedia Commons'
+  license: 'CC BY 3.0'
+  source: 'https://commons.wikimedia.org/wiki/File:Neal_Hefti.jpg'
+---
 # Neal Hefti (1922-2008)
 
 ## Biography
