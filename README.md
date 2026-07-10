@@ -1,17 +1,17 @@
 # Jazz Arrangers: A Historical Overview
 
-A comprehensive repository documenting 159 of the greatest jazz arrangers throughout history, from the big band era to contemporary jazz.
+A comprehensive repository documenting great jazz arrangers throughout history, from the big band era to contemporary jazz.
 
 ## Table of Contents
 
-- [1920s-1930s: The Big Band Era Begins](#1920s-1930s-the-big-band-era-begins) (20 arrangers)
-- [1940s: Swing Peaks and Bebop Emerges](#1940s-swing-peaks-and-bebop-emerges) (20 arrangers)
-- [1950s: Cool Jazz and Hard Bop](#1950s-cool-jazz-and-hard-bop) (20 arrangers)
-- [1960s: Modal Jazz and Free Jazz](#1960s-modal-jazz-and-free-jazz) (20 arrangers)
-- [1970s: Fusion and Jazz-Funk](#1970s-fusion-and-jazz-funk) (20 arrangers)
-- [1980s: Contemporary Jazz](#1980s-contemporary-jazz) (20 arrangers)
-- [1990s: Neo-Traditional and Experimental](#1990s-neo-traditional-and-experimental) (20 arrangers)
-- [2000s-Present: Modern Jazz Arrangers](#2000s-present-modern-jazz-arrangers) (19 arrangers)
+- [1920s-1930s: The Big Band Era Begins](#1920s-1930s-the-big-band-era-begins)
+- [1940s: Swing Peaks and Bebop Emerges](#1940s-swing-peaks-and-bebop-emerges)
+- [1950s: Cool Jazz and Hard Bop](#1950s-cool-jazz-and-hard-bop)
+- [1960s: Modal Jazz and Free Jazz](#1960s-modal-jazz-and-free-jazz)
+- [1970s: Fusion and Jazz-Funk](#1970s-fusion-and-jazz-funk)
+- [1980s: Contemporary Jazz](#1980s-contemporary-jazz)
+- [1990s: Neo-Traditional and Experimental](#1990s-neo-traditional-and-experimental)
+- [2000s-Present: Modern Jazz Arrangers](#2000s-present-modern-jazz-arrangers)
 
 ---
 
@@ -232,7 +232,7 @@ Contemporary arrangers continue to push boundaries, incorporating global influen
 
 ## About This Repository
 
-This repository documents 159 jazz arrangers spanning over a century of jazz history. Each arranger has their own detailed page with biographical information, style analysis, and their most important albums.
+This repository documents jazz arrangers spanning over a century of jazz history. Each arranger has their own detailed page with biographical information, style analysis, and their most important albums.
 
 ### Contributing
 

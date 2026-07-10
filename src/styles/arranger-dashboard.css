@@ -55,6 +55,14 @@
 .albums-section .general-listen .piece-listen { color: var(--lab-paper); border-color: color-mix(in srgb, var(--lab-paper) 45%, transparent); }
 .albums-section .general-listen .piece-listen:hover { color: var(--lab-ink); background: var(--lab-paper); }
 
+.derived-score-panel .piece-story { justify-content: center; }
+.derived-score-panel .ensemble-viz { display: flex; flex-direction: column; justify-content: center; }
+.score-profile-bars .family-row > i::before { background: var(--lab-accent); }
+.score-profile-bars .score-dimension-2 > i::before { background: var(--lab-accent-2); }
+.score-profile-bars .score-dimension-3 > i::before { background: var(--lab-ink); }
+.score-profile-bars .score-dimension-4 > i::before { background: #d9a441; }
+.derived-data-note { max-width: 30rem; margin: 1.4rem 0 0; color: var(--lab-muted); font-size: 0.68rem; font-style: italic; }
+
 @media (max-width: 44rem) {
   .dashboard-breadcrumb { width: calc(100vw - 1rem); }
   .production-dashboard .hero-copy h1 { font-size: clamp(3.5rem, 21vw, 6.5rem); }

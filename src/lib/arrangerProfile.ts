@@ -20,6 +20,16 @@ export interface AlbumRow {
   line: string;
 }
 
+export interface ScoreCard {
+  slug: string;
+  title: string;
+  album: string;
+  year: string;
+  note: string;
+  cue: string;
+  dimensions: Array<{ label: 'Color' | 'Register' | 'Density' | 'Motion'; value: number }>;
+}
+
 export interface ArrangerProfile {
   bio: string;
   bioWordCount: number;
@@ -27,6 +37,7 @@ export interface ArrangerProfile {
   soundDNA: SoundDimension[];
   techniques: TechniqueCard[];
   albums: AlbumRow[];
+  scores: ScoreCard[];
   tags: string[];
 }
 
@@ -263,6 +274,48 @@ function quotedWorkRows(body: string): AlbumRow[] {
   return rows;
 }
 
+function scoreSlug(value: string, index: number): string {
+  const slug = value
+    .toLowerCase()
+    .normalize('NFKD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '')
+    .slice(0, 48);
+  return `${slug || 'score'}-${index + 1}`;
+}
+
+function scoreCards(albumText: string, albums: AlbumRow[], overall: SoundDimension[]): ScoreCard[] {
+  const blocks = albumText.split(/^###\s+/m).slice(1);
+  return albums.map((album, index) => {
+    const block = blocks[index] ?? '';
+    const [, ...bodyLines] = block.split(/\r?\n/);
+    const bodyText = cleanMarkdown(bodyLines.join(' ')) || album.line;
+    const quotedTitle = [...bodyText.matchAll(/["“]([^"”]{2,80})["”]/g)]
+      .map((match) => match[1].trim())
+      .find((title) => title.toLowerCase() !== album.title.toLowerCase());
+    const title = quotedTitle ?? album.title;
+    const scoreDimensions = (['Color', 'Register', 'Density', 'Motion'] as const).map((label) => {
+      const rule = dimensionRules.find((candidate) => candidate.label === label)!;
+      const baseline = overall.find((dimension) => dimension.label === label)?.value ?? 50;
+      return {
+        label,
+        value: Math.round(baseline * 0.75 + scoreDimension(bodyText, rule.terms) * 0.25),
+      };
+    });
+    const strongest = [...scoreDimensions].sort((a, b) => b.value - a.value)[0];
+    return {
+      slug: scoreSlug(title, index),
+      title,
+      album: album.title,
+      year: album.year,
+      note: capWords(sentences(bodyText)[0] ?? bodyText, 22),
+      cue: `Notice how ${strongest.label.toLowerCase()} shapes the orchestral profile.`,
+      dimensions: scoreDimensions,
+    };
+  });
+}
+
 export function parseArrangerProfile(body: string): ArrangerProfile {
   const biography = section(body, SECTION_PATTERNS.biography);
   const style = section(body, SECTION_PATTERNS.style) || supplementaryStyleSection(body);
@@ -277,13 +330,16 @@ export function parseArrangerProfile(body: string): ArrangerProfile {
     (candidate) => !parsedAlbums.some((album) => album.title.toLowerCase() === candidate.title.toLowerCase())
   );
 
+  const albums = [...parsedAlbums, ...fallbackAlbums].slice(0, 3);
+
   return {
     bio,
     bioWordCount: words(bio).length,
     thesis: capWords(sentences(style)[0] ?? style, 16),
     soundDNA,
     techniques: techniqueCards(techniqueText),
-    albums: [...parsedAlbums, ...fallbackAlbums].slice(0, 3),
+    albums,
+    scores: scoreCards(albumText, albums, soundDNA),
     tags: ranked.slice(0, 3).map((item) => `${item.word.toLowerCase()} ${item.label.toLowerCase()}`),
   };
 }

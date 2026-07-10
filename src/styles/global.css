@@ -180,6 +180,43 @@ main {
   margin-top: 2rem;
 }
 
+.timeline-jump {
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  overflow-x: auto;
+  padding-bottom: 0.25rem;
+  font-family: system-ui, sans-serif;
+}
+
+.timeline-jump > span {
+  flex: 0 0 auto;
+  color: var(--muted);
+  font-size: 0.68rem;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.timeline-jump button {
+  flex: 0 0 auto;
+  padding: 0.38rem 0.68rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--text);
+  background: var(--surface);
+  font-size: 0.7rem;
+  cursor: pointer;
+}
+
+.timeline-jump button:hover,
+.timeline-jump button.active {
+  color: #fff;
+  border-color: var(--accent);
+  background: var(--accent);
+}
+
 .timeline-track {
   display: flex;
   align-items: stretch;
@@ -199,6 +236,7 @@ main {
   font-size: 0.8rem;
   font-weight: bold;
   font-family: system-ui, sans-serif;
+  scroll-margin-inline-start: 0.5rem;
 }
 
 .tcard {

@@ -26,10 +26,11 @@ The arranger also influenced generations of writers.
     expect(profile.soundDNA).toHaveLength(5);
     expect(profile.techniques).toHaveLength(6);
     expect(profile.albums).toHaveLength(3);
+    expect(profile.scores).toHaveLength(3);
     expect(profile.albums[0]).toMatchObject({ year: '1955', title: 'First Record', artist: 'Example Artist' });
   });
 
-  it('produces a complete dashboard profile for all 159 arranger files', () => {
+  it('produces a complete dashboard profile for every arranger file', () => {
     const root = join(__dirname, '..', '..', 'arrangers');
     const files = readdirSync(root, { withFileTypes: true })
       .filter((entry) => entry.isDirectory())
@@ -39,7 +40,7 @@ The arranger also influenced generations of writers.
           .map((file) => join(root, directory.name, file))
       );
 
-    expect(files).toHaveLength(159);
+    expect(files.length).toBeGreaterThan(0);
     for (const file of files) {
       const profile = parseArrangerProfile(readFileSync(file, 'utf8'));
       expect(profile.bio.length, `${file} has no concise bio`).toBeGreaterThan(20);
@@ -48,6 +49,7 @@ The arranger also influenced generations of writers.
       expect(profile.soundDNA, `${file} has incomplete Sound DNA`).toHaveLength(5);
       expect(profile.techniques, `${file} has an incomplete technique deck`).toHaveLength(6);
       expect(profile.albums.length, `${file} has incomplete album recommendations`).toBeGreaterThanOrEqual(2);
+      expect(profile.scores.length, `${file} has incomplete score profiles`).toBeGreaterThanOrEqual(2);
     }
   });
 });

@@ -1,8 +1,11 @@
 ---
-// Horizontal scroll-snap timeline of arranger portrait cards, ordered by
-// birth year with decade markers. Pure CSS scrolling — works without JS.
+// Horizontal scroll-snap timeline of arranger portrait cards, grouped by the
+// site's working-era decades. The jump controls scroll within the carousel.
+import { DECADES } from '../lib/arrangers';
+
 interface Item {
   id: string;
+  decade: string;
   name: string;
   years: string;
   born: number;
@@ -14,7 +17,7 @@ interface Props {
 }
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
-const items = [...Astro.props.items].sort((a, b) => a.born - b.born);
+const items = [...Astro.props.items];
 
 const initials = (name: string) =>
   name
@@ -23,30 +26,58 @@ const initials = (name: string) =>
     .slice(0, 2)
     .join('');
 
-const birthDecade = (born: number) => Math.floor(born / 10) * 10;
+const groups = DECADES.map((decade) => ({
+  ...decade,
+  shortLabel: decade.label.split(':')[0],
+  items: items
+    .filter((item) => item.decade === decade.slug)
+    .sort((a, b) => a.born - b.born || a.name.localeCompare(b.name)),
+})).filter((group) => group.items.length > 0);
 ---
 
 <section class="timeline" aria-label="Arrangers by birth year">
-  <div class="timeline-track">
-    {
-      items.map((item, i) => (
-        <>
-          {(i === 0 || birthDecade(items[i - 1].born) !== birthDecade(item.born)) && (
-            <span class="timeline-marker">{birthDecade(item.born)}s</span>
-          )}
+  <nav class="timeline-jump" aria-label="Jump to an era">
+    <span>Jump to</span>
+    {groups.map((group, index) => (
+      <button
+        type="button"
+        class:list={{ active: index === 0 }}
+        aria-pressed={index === 0 ? 'true' : 'false'}
+        data-timeline-target={`timeline-${group.slug}`}
+      >{group.shortLabel}</button>
+    ))}
+  </nav>
+  <div class="timeline-track" data-timeline-track>
+    {groups.map((group) => (
+      <>
+        <span class="timeline-marker" id={`timeline-${group.slug}`} data-era-marker>{group.shortLabel}</span>
+        {group.items.map((item) => (
           <a class="tcard" href={`${base}/arrangers/${item.id}/`}>
             {item.photoSrc ? (
               <img src={`${base}${item.photoSrc}`} alt={item.name} loading="lazy" />
             ) : (
-              <span class="tcard-placeholder" aria-hidden="true">
-                {initials(item.name)}
-              </span>
+              <span class="tcard-placeholder" aria-hidden="true">{initials(item.name)}</span>
             )}
             <span class="tcard-name">{item.name}</span>
             <span class="tcard-years">{item.years}</span>
           </a>
-        </>
-      ))
-    }
+        ))}
+      </>
+    ))}
   </div>
 </section>
+
+<script>
+  document.addEventListener('click', (event) => {
+    const button = (event.target as HTMLElement).closest<HTMLButtonElement>('[data-timeline-target]');
+    if (!button) return;
+    const timeline = button.closest('.timeline');
+    const marker = timeline?.querySelector<HTMLElement>(`#${button.dataset.timelineTarget}`);
+    marker?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+    timeline?.querySelectorAll<HTMLButtonElement>('[data-timeline-target]').forEach((candidate) => {
+      const active = candidate === button;
+      candidate.classList.toggle('active', active);
+      candidate.setAttribute('aria-pressed', String(active));
+    });
+  });
+</script>

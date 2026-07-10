@@ -150,7 +150,7 @@ const instrumentLabels = (ensemble: Record<string, number>) =>
           <div class="radar-labels" aria-hidden="true">
             {profile.soundDNA.map((item) => <span>{item.label}</span>)}
           </div>
-          <figcaption>The same scale is used across all 159 arrangers.</figcaption>
+          <figcaption>The same scale is used throughout the collection.</figcaption>
         </figure>
 
         <div class="dna-cards">
@@ -257,9 +257,68 @@ const instrumentLabels = (ensemble: Record<string, number>) =>
       </section>
     )}
 
+    {pieces.length === 0 && (
+      <section class="piece-section derived-score-section" aria-labelledby="piece-title">
+        <header class="section-heading">
+          <div><p class="section-number">03</p><p class="section-label">Music first</p></div>
+          <h2 id="piece-title">Scores &amp; orchestras</h2>
+          <p>Switch recordings to compare how this arranger’s musical priorities shape each orchestral profile.</p>
+        </header>
+
+        <div class="piece-tabs" role="tablist" aria-label="Featured scores and recordings">
+          {profile.scores.map((score, index) => (
+            <button
+              type="button"
+              role="tab"
+              class:list={['piece-tab', { active: index === 0 }]}
+              aria-selected={index === 0 ? 'true' : 'false'}
+              aria-controls={`score-${score.slug}`}
+              id={`tab-${score.slug}`}
+              data-piece-tab={score.slug}
+            ><span>{score.year}</span>{score.title}</button>
+          ))}
+        </div>
+
+        <div class="piece-panels">
+          {profile.scores.map((score, index) => (
+            <section
+              class:list={['piece-panel', 'derived-score-panel', { active: index === 0 }]}
+              role="tabpanel"
+              id={`score-${score.slug}`}
+              aria-labelledby={`tab-${score.slug}`}
+              hidden={index !== 0}
+              data-piece-panel={score.slug}
+            >
+              <div class="piece-story">
+                <p class="piece-album">{score.album}{score.year !== '—' && ` · ${score.year}`}</p>
+                <h3>{score.title}</h3>
+                <p class="piece-note">{score.note}</p>
+                <p class="listen-cue"><span aria-hidden="true">◎</span><strong>Listen for</strong>{score.cue}</p>
+              </div>
+              <figure class="ensemble-viz">
+                <figcaption>Comparative orchestral profile</figcaption>
+                <div class="family-bars score-profile-bars">
+                  {score.dimensions.map((dimension, dimensionIndex) => (
+                    <div class={`family-row score-dimension-${dimensionIndex + 1}`}>
+                      <span>{dimension.label}</span>
+                      <i style={`--family-level:${dimension.value}%`}><b>{dimension.value}</b></i>
+                    </div>
+                  ))}
+                </div>
+                <div class="instrument-cloud" aria-label="Signature profile">
+                  {profile.tags.map((tag) => <span>{tag}</span>)}
+                </div>
+                <p class="derived-data-note">Profile derived from the arranger’s documented style and recording notes; exact instrumentation is not asserted.</p>
+              </figure>
+            </section>
+          ))}
+        </div>
+      </section>
+    )}
+
     <section class="albums-section" aria-labelledby="albums-title">
       <header class="section-heading">
-        <div><p class="section-number">{pieces.length > 0 ? '04' : '03'}</p><p class="section-label">Start here</p></div>
+        <div><p class="section-number">04</p><p class="section-label">Start here</p></div>
         <h2 id="albums-title">{profile.albums.length === 3 ? 'Three essential albums' : 'Essential albums'}</h2>
         <p>One line each—enough context to choose the next listen.</p>
       </header>
