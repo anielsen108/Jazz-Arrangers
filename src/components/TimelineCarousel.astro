@@ -10,6 +10,7 @@ interface Item {
   years: string;
   born: number;
   photoSrc?: string;
+  hasDirectListen?: boolean;
 }
 
 interface Props {
@@ -49,10 +50,10 @@ const groups = DECADES.map((decade) => ({
   </nav>
   <div class="timeline-track" data-timeline-track>
     {groups.map((group) => (
-      <>
+      <div class="timeline-era" data-timeline-era={group.slug}>
         <span class="timeline-marker" id={`timeline-${group.slug}`} data-era-marker>{group.shortLabel}</span>
         {group.items.map((item) => (
-          <a class="tcard" href={`${base}/arrangers/${item.id}/`}>
+          <a class="tcard" href={`${base}/arrangers/${item.id}/`} data-arranger-name={item.name}>
             {item.photoSrc ? (
               <img src={`${base}${item.photoSrc}`} alt={item.name} loading="lazy" />
             ) : (
@@ -60,9 +61,17 @@ const groups = DECADES.map((decade) => ({
             )}
             <span class="tcard-name">{item.name}</span>
             <span class="tcard-years">{item.years}</span>
+            {item.hasDirectListen && (
+              <span
+                class="tcard-listen"
+                role="img"
+                aria-label="Has a playable YouTube listening example"
+                title="Has a playable YouTube listening example"
+              >♪</span>
+            )}
           </a>
         ))}
-      </>
+      </div>
     ))}
   </div>
 </section>

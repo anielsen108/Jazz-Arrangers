@@ -22,6 +22,7 @@ const cards = entries
       years: lifespanLabel(born, died),
       born,
       photoSrc: entry.data.photo?.src,
+      hasDirectListen: (entry.data.videos?.length ?? 0) > 0,
     };
   })
   .sort((a, b) => a.name.localeCompare(b.name));
@@ -45,16 +46,28 @@ const byDecade = DECADES.map((decade) => ({
     musical style, orchestration techniques, scores, and essential albums.
   </p>
 
+  <div class="arranger-search">
+    <label for="arranger-search">Search arrangers by name</label>
+    <input
+      id="arranger-search"
+      type="search"
+      placeholder="Start typing a name"
+      autocomplete="off"
+      data-arranger-search
+    />
+    <p class="arranger-search-status" aria-live="polite" data-arranger-search-status></p>
+  </div>
+
   <TimelineCarousel items={timelineItems} />
 
   {
     byDecade.map((decade) => (
-      <section class="decade-section">
+      <section class="decade-section" data-decade-section>
         <h2>{decade.label}</h2>
         <p class="decade-blurb">{decade.blurb}</p>
         <ul class="arranger-grid">
           {decade.arrangers.map((a) => (
-            <li class="arranger-card">
+            <li class="arranger-card" data-arranger-card data-arranger-name={a.name}>
               <a href={`${base}/arrangers/${a.id}/`}>
                 <span class="name">{a.name}</span>
                 <span class="years">{a.years || ' '}</span>
@@ -66,3 +79,37 @@ const byDecade = DECADES.map((decade) => ({
     ))
   }
 </Base>
+
+<script>
+  const search = document.querySelector<HTMLInputElement>('[data-arranger-search]');
+  const status = document.querySelector<HTMLElement>('[data-arranger-search-status]');
+  const namedItems = Array.from(document.querySelectorAll<HTMLElement>('[data-arranger-name]'));
+  const decadeSections = Array.from(document.querySelectorAll<HTMLElement>('[data-decade-section]'));
+  const eras = Array.from(document.querySelectorAll<HTMLElement>('[data-timeline-era]'));
+
+  const filterArrangers = () => {
+    const query = search?.value.trim().toLocaleLowerCase() ?? '';
+    namedItems.forEach((item) => {
+      item.hidden = Boolean(query) && !item.dataset.arrangerName?.toLocaleLowerCase().includes(query);
+    });
+
+    decadeSections.forEach((section) => {
+      section.hidden = query.length > 0 && !section.querySelector('[data-arranger-card]:not([hidden])');
+    });
+
+    eras.forEach((era) => {
+      const hasMatch = Boolean(era.querySelector('.tcard:not([hidden])'));
+      era.hidden = query.length > 0 && !hasMatch;
+      const jump = document.querySelector<HTMLElement>(`[data-timeline-target="timeline-${era.dataset.timelineEra}"]`);
+      if (jump) jump.hidden = query.length > 0 && !hasMatch;
+    });
+
+    if (status) {
+      status.textContent = query && !namedItems.some((item) => !item.hidden)
+        ? `No arranger found for “${search?.value.trim()}”.`
+        : query ? 'Showing matching arrangers.' : '';
+    }
+  };
+
+  search?.addEventListener('input', filterArrangers);
+</script>
