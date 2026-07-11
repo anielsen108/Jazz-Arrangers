@@ -4,6 +4,14 @@ photo:
   credit: 'ElxanQəniyev, via Wikimedia Commons'
   license: 'CC BY-SA 4.0'
   source: 'https://commons.wikimedia.org/wiki/File:Bob_James_Jazzmen_jazz_music.jpg'
+videos:
+  - id: gFwhlGTYYQ4
+    title: 'Bob James Quartet "Feel like making Love" Live at Java Jazz Festival 2010'
+    piece: 'Feel Like Making Love'
+  - id: TkZzKcIfhek
+    title: 'Bob James - Farandole (L''Arlesienne Suite No. 2) (audio)'
+    piece: 'Farandole (L''Arlésienne Suite No. 2)'
+
 ---
 # Bob James (b. 1939)
 

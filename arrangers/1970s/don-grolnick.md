@@ -1,3 +1,12 @@
+---
+videos:
+  - id: 2AWXZFgo0bo
+    title: 'Pools by Don Grolnick arranged by Andy Narell performed by the UNT 2:00 Steel Band'
+    piece: 'Pools'
+  - id: dLE_IBg9abk
+    title: 'Steps Ahead - Pools (Live at Copenhagen)'
+    piece: 'Pools'
+---
 # Don Grolnick (1947-1996)
 
 ## Biography

@@ -4,6 +4,14 @@ photo:
   credit: 'William P. Gottlieb, via Wikimedia Commons'
   license: 'Public domain'
   source: 'https://commons.wikimedia.org/wiki/File:Ralph_Burns,_Edwin_A._Finckel,_George_Handy,_Neal_Hefti,_Johnny_Richards,_and_Eddie_Sauter,_Museum_of_Modern_Art,_New_York,_N.Y.,_ca._Mar._1947_(Gottlieb_856).jpg'
+videos:
+  - id: DRdPPm7xE_k
+    title: 'Benny Goodman and His Orchestra "Benny Rides Again" Columbia  55001, Eddie Sauter, Cootie Williams'
+    piece: 'Benny Rides Again'
+  - id: Z1hSm2srowM
+    title: 'Doodletown Fifers'
+    piece: 'Doodletown Fifers'
+
 ---
 # Eddie Sauter (1914-1981)
 

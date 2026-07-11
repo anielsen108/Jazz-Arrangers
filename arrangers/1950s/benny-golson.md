@@ -4,6 +4,14 @@ photo:
   credit: 'Brianmcmillen, via Wikimedia Commons'
   license: 'CC BY-SA 3.0'
   source: 'https://commons.wikimedia.org/wiki/File:Benny_Golson_1985_(cropped).jpg'
+videos:
+  - id: PPXl1BmtPao
+    title: 'I Remember Clifford'
+    piece: 'I Remember Clifford'
+  - id: LtB1S8MKKKs
+    title: 'Whisper Not (Album Version)'
+    piece: 'Whisper Not'
+
 ---
 # Benny Golson (b. 1929)
 

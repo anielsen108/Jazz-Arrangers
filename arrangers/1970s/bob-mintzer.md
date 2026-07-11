@@ -4,6 +4,11 @@ photo:
   credit: 'Andreas Lawen, Fotandi, via Wikimedia Commons'
   license: 'CC BY-SA 3.0'
   source: 'https://commons.wikimedia.org/wiki/File:Yellowjackets_-_Leverkusener_Jazztage_2015-3444.jpg'
+videos:
+  - id: zQfHtCQTEB8
+    title: 'Incredible Journey'
+    piece: 'Incredible Journey'
+
 ---
 # Bob Mintzer (b. 1953)
 

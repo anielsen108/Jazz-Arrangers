@@ -26,8 +26,13 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const profile = parseArrangerProfile(entry.body ?? '');
 const { photo, videos = [], pieces = [] } = entry.data;
 const pieceSlugs = new Set(pieces.map((piece) => piece.slug));
+const scoreVideoKeys = new Set(profile.scores.flatMap((score) => [score.slug, score.title]));
 const videosFor = (slug: string) => videos.filter((video) => video.piece === slug);
-const generalVideos = videos.filter((video) => !video.piece || !pieceSlugs.has(video.piece));
+const videosForScore = (score: { slug: string; title: string }) =>
+  videos.filter((video) => video.piece === score.slug || video.piece === score.title);
+const generalVideos = videos.filter((video) =>
+  !video.piece || (!pieceSlugs.has(video.piece) && !scoreVideoKeys.has(video.piece)),
+);
 const youtubeSearch = (...terms: Array<string | undefined>) => {
   const query = terms.filter((term): term is string => Boolean(term?.trim())).join(' ');
   return `https://www.youtube.com/results?search_query=${encodeURIComponent(query)}`;
@@ -292,8 +297,9 @@ const instrumentLabels = (ensemble: Record<string, number>) =>
         </div>
 
         <div class="piece-panels">
-          {profile.scores.map((score, index) => (
-            <section
+          {profile.scores.map((score, index) => {
+            const scoreVideos = videosForScore(score);
+            return <section
               class:list={['piece-panel', 'derived-score-panel', { active: index === 0 }]}
               role="tabpanel"
               id={`score-${score.slug}`}
@@ -306,12 +312,18 @@ const instrumentLabels = (ensemble: Record<string, number>) =>
                 <h3>{score.title}</h3>
                 <p class="piece-note">{score.note}</p>
                 <p class="listen-cue"><span aria-hidden="true">◎</span><strong>Listen for</strong>{score.cue}</p>
-                <a
-                  class="piece-listen search-listen"
-                  href={youtubeSearch(name, score.title, score.album)}
-                  target="_blank"
-                  rel="noreferrer"
-                ><span aria-hidden="true">↗</span> Find listening example on YouTube</a>
+                {scoreVideos[0] ? (
+                  <button class="piece-listen" type="button" data-video-id={scoreVideos[0].id} data-video-title={scoreVideos[0].title}>
+                    <span aria-hidden="true">▶</span> Play listening example
+                  </button>
+                ) : (
+                  <a
+                    class="piece-listen search-listen"
+                    href={youtubeSearch(name, score.title, score.album)}
+                    target="_blank"
+                    rel="noreferrer"
+                  ><span aria-hidden="true">↗</span> Find listening example on YouTube</a>
+                )}
               </div>
               <figure class="ensemble-viz">
                 <figcaption>Comparative orchestral profile</figcaption>
@@ -328,8 +340,8 @@ const instrumentLabels = (ensemble: Record<string, number>) =>
                 </div>
                 <p class="derived-data-note">Profile derived from the arranger’s documented style and recording notes; exact instrumentation is not asserted.</p>
               </figure>
-            </section>
-          ))}
+            </section>;
+          })}
         </div>
       </section>
     )}

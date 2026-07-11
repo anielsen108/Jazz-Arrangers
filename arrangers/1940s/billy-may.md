@@ -4,6 +4,14 @@ photo:
   credit: 'Unknown author Unknown author, via Wikimedia Commons'
   license: 'CC0'
   source: 'https://commons.wikimedia.org/wiki/File:Billy_May.tif'
+videos:
+  - id: d9TjSnd6N0o
+    title: '"Moonlight In Vermont" - Sinatra/Billy May Arrangement Without Sinatra Vocal'
+    piece: 'Moonlight in Vermont'
+  - id: _Fp_rF2XdX0
+    title: 'Fat Man Boogie (Remastered)'
+    piece: 'Fat Man Boogie'
+
 ---
 # Billy May (1916-2004)
 

@@ -1,3 +1,15 @@
+---
+videos:
+  - id: v2bKmh4cjqA
+    title: 'Chico O''Farrill - Afro-Cuban Jazz Suite'
+    piece: 'Afro-Cuban Jazz Suite'
+  - id: BOQ2KuyPiH8
+    title: 'Chico O''Farrill Afro Cuban Jazz Orchestra, "A Night in Tunisia"'
+    piece: 'Afro'
+  - id: bmW6c-cIvD0
+    title: 'Chico O''Farrill Afro Cuban Jazz Orchestra Final Performance at Birdland, "Pure Emotion"'
+    piece: 'Pure Emotion'
+---
 # Chico O'Farrill (1921-2001)
 
 ## Biography

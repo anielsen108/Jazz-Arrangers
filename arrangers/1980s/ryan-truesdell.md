@@ -1,3 +1,9 @@
+---
+videos:
+  - id: WbjdVDPMUI4
+    title: 'The Gil Evans Centennial Project Ryan Truesdell, The Jazz Standard, NYC, 2012'
+    piece: 'Centennial'
+---
 # Ryan Truesdell (b. 1973)
 
 ## Biography

@@ -1,3 +1,9 @@
+---
+videos:
+  - id: CpU6JUxoYLA
+    title: 'westlake'
+    piece: 'Westlake'
+---
 # Bob Florence (1932-2008)
 
 ## Biography

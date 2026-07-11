@@ -1,3 +1,12 @@
+---
+videos:
+  - id: 516aebfC5h4
+    title: 'Gee Baby, Ain''t I Good To You Don Redman 1929 Tenor Sax'
+    piece: 'Gee Baby, Ain''t I Good to You'
+  - id: 6zWEimOFMBo
+    title: 'CHANT OF THE WEED   Andre Kostelanetz   Donald Redman'
+    piece: 'Chant of the Weed'
+---
 # Don Redman (1900-1964)
 
 ## Biography

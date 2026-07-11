@@ -4,6 +4,11 @@ photo:
   credit: 'DonClemente12F67, via Wikimedia Commons'
   license: 'CC BY-SA 4.0'
   source: 'https://commons.wikimedia.org/wiki/File:Russell_Ferrante_at_Steinegg_Live_2019.jpg'
+videos:
+  - id: 5qFv791YMVI
+    title: 'Claire''s Song [07] - Yellowjackets Live @ Birdland Jazz Club, New York City, NY, 2022-06-08'
+    piece: 'Claire''s Song'
+
 ---
 # Russell Ferrante (b. 1952)
 

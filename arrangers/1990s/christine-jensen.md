@@ -1,3 +1,9 @@
+---
+videos:
+  - id: ho6f16uBWjA
+    title: 'Treelines'
+    piece: 'Treelines'
+---
 # Christine Jensen (b. 1970)
 
 ## Biography

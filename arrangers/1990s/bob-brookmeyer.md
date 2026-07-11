@@ -4,6 +4,11 @@ photo:
   credit: 'Verve Records, via Wikimedia Commons'
   license: 'Public domain'
   source: 'https://commons.wikimedia.org/wiki/File:Bob_Brookmeyer.jpg'
+videos:
+  - id: lRaTpUEomwA
+    title: 'Bob Brookmeyer: "Spirit Music - The Door" | NDR Bigband'
+    piece: 'Spirit Music'
+
 ---
 # Bob Brookmeyer (1929-2011)
 

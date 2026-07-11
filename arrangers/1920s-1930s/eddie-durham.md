@@ -1,3 +1,9 @@
+---
+videos:
+  - id: zBL354T3JmI
+    title: 'Time Out'
+    piece: 'Time Out,'
+---
 # Eddie Durham (1906-1987)
 
 ## Biography

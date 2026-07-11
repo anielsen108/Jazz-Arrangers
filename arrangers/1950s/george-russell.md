@@ -1,3 +1,12 @@
+---
+videos:
+  - id: XwStn5326vY
+    title: 'Ye Hypocrite, Ye Beelzebub'
+    piece: 'Ye Hypocrite, Ye Beelzebub'
+  - id: Gn4-Fgoe2kI
+    title: 'George Russell - Honesty'
+    piece: 'Honesty'
+---
 # George Russell (1923-2009)
 
 ## Biography

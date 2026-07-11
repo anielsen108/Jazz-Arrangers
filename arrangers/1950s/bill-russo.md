@@ -1,3 +1,9 @@
+---
+videos:
+  - id: AQAD3XdBw8M
+    title: '23 Degrees North 82 Degrees West'
+    piece: '23 Degrees North, 82 Degrees West'
+---
 # Bill Russo (1928-2003)
 
 ## Biography

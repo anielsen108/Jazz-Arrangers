@@ -4,6 +4,17 @@ photo:
   credit: 'William P. Gottlieb / Adam Cuerden, via Wikimedia Commons'
   license: 'Public domain'
   source: 'https://commons.wikimedia.org/wiki/File:Billy_Strayhorn,_New_York,_N.Y.,_between_1946_and_1948_(William_P._Gottlieb_08211).jpg'
+videos:
+  - id: 7Ckls62nZHw
+    title: 'Duke Ellington, Blood Count (Billy Strayhorn)'
+    piece: 'Blood Count'
+  - id: kkahKmEhfxo
+    title: 'Isfahan (from The Far East Suite, 1966) (Billy Strayhorn, Grade 3.5 #JLCM04002)'
+    piece: 'Isfahan'
+  - id: Yxi2DFsoF5w
+    title: 'Passion Flower'
+    piece: 'Passion Flower,'
+
 ---
 # Billy Strayhorn (1915-1967)
 

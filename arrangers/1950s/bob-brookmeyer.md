@@ -4,6 +4,11 @@ photo:
   credit: 'Verve Records, via Wikimedia Commons'
   license: 'Public domain'
   source: 'https://commons.wikimedia.org/wiki/File:Bob_Brookmeyer.jpg'
+videos:
+  - id: RakhseLXnpQ
+    title: 'ABC Blues'
+    piece: 'ABC Blues'
+
 ---
 # Bob Brookmeyer (1929-2011)
 

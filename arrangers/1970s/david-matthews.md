@@ -4,6 +4,11 @@ photo:
   credit: 'Sophiacscott, via Wikimedia Commons'
   license: 'CC BY-SA 4.0'
   source: 'https://commons.wikimedia.org/wiki/File:David_Matthews_composer.jpg'
+videos:
+  - id: VX8h4OBJlfk
+    title: 'David Matthews - Dune (1977) [Album Retrospective]'
+    piece: 'Dune'
+
 ---
 # David Matthews (b. 1942)
 

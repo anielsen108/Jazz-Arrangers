@@ -1,3 +1,9 @@
+---
+videos:
+  - id: H-jzACLfgbA
+    title: 'Bill Challis'' The Goldkette Project - The Blue Room'
+    piece: 'The Goldkette Project'
+---
 # Bill Challis (1904-1994)
 
 ## Biography

@@ -4,6 +4,14 @@ photo:
   credit: 'צלם של ממשלת ארצות הברית., via Wikimedia Commons'
   license: 'Public domain'
   source: 'https://commons.wikimedia.org/wiki/File:Benny_Carter_and_President_Clinton,_1993.jpg'
+videos:
+  - id: WfRIoEw67ZU
+    title: 'Benny Carter · Body and Soul'
+    piece: 'Body and Soul'
+  - id: vbf-zYaPwno
+    title: 'Benny Carter, Billy Eckstine   Over The Rainbow'
+    piece: 'Over the Rainbow'
+
 ---
 # Benny Carter (1907-2003)
 

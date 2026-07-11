@@ -4,6 +4,17 @@ photo:
   credit: 'Maud Cuney-Hare, 1874-1936, via Wikimedia Commons'
   license: 'Public domain'
   source: 'https://commons.wikimedia.org/wiki/File:Maud_Cuney_Hare-154-Andy_Kirk.jpg'
+videos:
+  - id: P5JdRWhlLQY
+    title: 'Mess-a-Stomp'
+    piece: 'Mess-a-Stomp'
+  - id: 9vNOschNAik
+    title: 'Mcghee Special (2021 Remaster)'
+    piece: 'McGhee Special'
+  - id: 0Khx6xeH8y4
+    title: 'The Lady Who Swings the Band - Andy Kirk featuring Mary Lou Williams'
+    piece: 'The Lady Who Swings the Band'
+
 ---
 # Andy Kirk (1898-1992)
 

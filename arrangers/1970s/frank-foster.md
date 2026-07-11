@@ -4,6 +4,11 @@ photo:
   credit: 'Tom Pich, via Wikimedia Commons'
   license: 'Public domain'
   source: 'https://commons.wikimedia.org/wiki/File:Frank_Foster_(left)_and_Dan_Morgenstern.jpg'
+videos:
+  - id: ao2slTJZw9k
+    title: 'Shiny Stockings (Live)'
+    piece: 'Shiny Stockings'
+
 ---
 # Frank Foster (1928-2011)
 
