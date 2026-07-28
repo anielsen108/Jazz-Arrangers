@@ -1,48 +1,37 @@
 ---
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
-import TimelineCarousel from '../components/TimelineCarousel.astro';
+import EraTabs from '../components/EraTabs.astro';
 import {
-  DECADES,
-  decadeFromId,
+  canonicalizeArrangers,
+  eraFromArrangerId,
   lifespanLabel,
   parseArrangerHeading,
 } from '../lib/arrangers';
 
 const entries = await getCollection('arrangers');
-const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
-const cards = entries
+const cards = canonicalizeArrangers(entries)
   .map((entry) => {
     const { name, born, died } = parseArrangerHeading(entry.body ?? '');
     return {
       id: entry.id,
-      decade: decadeFromId(entry.id),
+      era: eraFromArrangerId(entry.id).slug,
       name: name ?? entry.id,
       years: lifespanLabel(born, died),
-      born,
       photoSrc: entry.data.photo?.src,
       hasDirectListen: (entry.data.videos?.length ?? 0) > 0,
     };
   })
   .sort((a, b) => a.name.localeCompare(b.name));
-
-const timelineItems = cards
-  .filter((c) => c.born !== null)
-  .map((c) => ({ ...c, born: c.born as number }));
-
-const byDecade = DECADES.map((decade) => ({
-  ...decade,
-  arrangers: cards.filter((c) => c.decade === decade.slug),
-}));
 ---
 
 <Base title="Jazz Arrangers: A Historical Overview">
   <h1>Jazz Arrangers: A Historical Overview</h1>
   <p>
     A repository documenting great jazz arrangers throughout history, from the
-    big band era to contemporary jazz. Jump to an era in the portrait timeline
-    or browse below — each arranger has a visual guide to their biography,
+    first dance bands to contemporary hybrid jazz. Browse by predominant era
+    below — each arranger has a visual guide to their biography,
     musical style, orchestration techniques, scores, and essential albums.
   </p>
 
@@ -58,34 +47,46 @@ const byDecade = DECADES.map((decade) => ({
     <p class="arranger-search-status" aria-live="polite" data-arranger-search-status></p>
   </div>
 
-  <TimelineCarousel items={timelineItems} />
-
-  {
-    byDecade.map((decade) => (
-      <section class="decade-section" data-decade-section>
-        <h2>{decade.label}</h2>
-        <p class="decade-blurb">{decade.blurb}</p>
-        <ul class="arranger-grid">
-          {decade.arrangers.map((a) => (
-            <li class="arranger-card" data-arranger-card data-arranger-name={a.name}>
-              <a href={`${base}/arrangers/${a.id}/`}>
-                <span class="name">{a.name}</span>
-                <span class="years">{a.years || ' '}</span>
-              </a>
-            </li>
-          ))}
-        </ul>
-      </section>
-    ))
-  }
+  <EraTabs items={cards} />
 </Base>
 
 <script>
   const search = document.querySelector<HTMLInputElement>('[data-arranger-search]');
   const status = document.querySelector<HTMLElement>('[data-arranger-search-status]');
   const namedItems = Array.from(document.querySelectorAll<HTMLElement>('[data-arranger-name]'));
-  const decadeSections = Array.from(document.querySelectorAll<HTMLElement>('[data-decade-section]'));
-  const eras = Array.from(document.querySelectorAll<HTMLElement>('[data-timeline-era]'));
+  const tabs = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-era-tab]'));
+  const panels = Array.from(document.querySelectorAll<HTMLElement>('[data-era-panel]'));
+
+  const activateEra = (slug: string, moveFocus = false) => {
+    tabs.forEach((tab) => {
+      const active = tab.dataset.eraTab === slug;
+      tab.classList.toggle('active', active);
+      tab.setAttribute('aria-selected', String(active));
+      tab.tabIndex = active ? 0 : -1;
+      if (active && moveFocus) tab.focus();
+    });
+    panels.forEach((panel) => {
+      panel.hidden = panel.dataset.eraPanel !== slug;
+    });
+  };
+
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => activateEra(tab.dataset.eraTab ?? ''));
+    tab.addEventListener('keydown', (event) => {
+      if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+      event.preventDefault();
+      const availableTabs = tabs.filter((candidate) => !candidate.hidden);
+      const currentIndex = availableTabs.indexOf(tab);
+      const target =
+        event.key === 'Home' ? availableTabs[0]
+        : event.key === 'End' ? availableTabs.at(-1)
+        : availableTabs[
+            (currentIndex + (event.key === 'ArrowRight' ? 1 : -1) + availableTabs.length) %
+              availableTabs.length
+          ];
+      if (target) activateEra(target.dataset.eraTab ?? '', true);
+    });
+  });
 
   const filterArrangers = () => {
     const query = search?.value.trim().toLocaleLowerCase() ?? '';
@@ -93,21 +94,40 @@ const byDecade = DECADES.map((decade) => ({
       item.hidden = Boolean(query) && !item.dataset.arrangerName?.toLocaleLowerCase().includes(query);
     });
 
-    decadeSections.forEach((section) => {
-      section.hidden = query.length > 0 && !section.querySelector('[data-arranger-card]:not([hidden])');
+    let matchingEras = 0;
+    panels.forEach((panel) => {
+      const visibleCount = panel.querySelectorAll('[data-arranger-card]:not([hidden])').length;
+      const tab = tabs.find((candidate) => candidate.dataset.eraTab === panel.dataset.eraPanel);
+      const count = panel.querySelector<HTMLElement>('[data-era-count]');
+      if (tab) tab.hidden = Boolean(query) && visibleCount === 0;
+      if (count) {
+        const totalCount = panel.querySelectorAll('[data-arranger-card]').length;
+        count.textContent = query
+          ? `${visibleCount} matching arranger${visibleCount === 1 ? '' : 's'}`
+          : `${totalCount} arrangers`;
+      }
+      if (visibleCount > 0) matchingEras += 1;
     });
 
-    eras.forEach((era) => {
-      const hasMatch = Boolean(era.querySelector('.tcard:not([hidden])'));
-      era.hidden = query.length > 0 && !hasMatch;
-      const jump = document.querySelector<HTMLElement>(`[data-timeline-target="timeline-${era.dataset.timelineEra}"]`);
-      if (jump) jump.hidden = query.length > 0 && !hasMatch;
-    });
+    const visibleItems = namedItems.filter((item) => !item.hidden);
+    const activeTab = tabs.find((tab) => tab.getAttribute('aria-selected') === 'true' && !tab.hidden);
+    const firstAvailable = tabs.find((tab) => !tab.hidden);
+    if (activeTab) {
+      activateEra(activeTab.dataset.eraTab ?? '');
+    } else if (firstAvailable) {
+      activateEra(firstAvailable.dataset.eraTab ?? '');
+    } else {
+      panels.forEach((panel) => {
+        panel.hidden = true;
+      });
+    }
 
     if (status) {
-      status.textContent = query && !namedItems.some((item) => !item.hidden)
+      status.textContent = query && visibleItems.length === 0
         ? `No arranger found for “${search?.value.trim()}”.`
-        : query ? 'Showing matching arrangers.' : '';
+        : query
+          ? `${visibleItems.length} matching arranger${visibleItems.length === 1 ? '' : 's'} across ${matchingEras} era${matchingEras === 1 ? '' : 's'}.`
+          : '';
     }
   };
 

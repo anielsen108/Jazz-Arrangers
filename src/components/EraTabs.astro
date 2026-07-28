@@ -1,0 +1,108 @@
+---
+import { ERAS } from '../lib/arrangers';
+
+interface Item {
+  id: string;
+  era: string;
+  name: string;
+  years: string;
+  photoSrc?: string;
+  hasDirectListen?: boolean;
+}
+
+interface Props {
+  items: Item[];
+}
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const items = [...Astro.props.items];
+const initials = (name: string) =>
+  name
+    .split(/\s+/)
+    .map((word) => word[0])
+    .slice(0, 2)
+    .join('');
+
+const groups = ERAS.map((era) => ({
+  ...era,
+  items: items
+    .filter((item) => item.era === era.slug)
+    .sort((a, b) => a.name.localeCompare(b.name)),
+})).filter((group) => group.items.length > 0);
+---
+
+<section class="era-browser" aria-labelledby="era-browser-title" data-era-browser>
+  <div class="era-browser-heading">
+    <div>
+      <p class="eyebrow">Browse by predominant era</p>
+      <h2 id="era-browser-title">The arranging traditions</h2>
+    </div>
+    <p>Each arranger appears once, in the era most central to their body of work.</p>
+  </div>
+
+  <div class="era-tabs" role="tablist" aria-label="Jazz arranging eras">
+    {groups.map((group, index) => (
+      <button
+        type="button"
+        role="tab"
+        class:list={{ active: index === 0 }}
+        id={`era-tab-${group.slug}`}
+        aria-selected={index === 0 ? 'true' : 'false'}
+        aria-controls={`era-panel-${group.slug}`}
+        tabindex={index === 0 ? 0 : -1}
+        data-era-tab={group.slug}
+      >
+        <span>{group.shortLabel}</span>
+        <small>{group.dateRange}</small>
+      </button>
+    ))}
+  </div>
+
+  <div class="era-panels">
+    {groups.map((group, index) => (
+      <section
+        class="era-panel"
+        role="tabpanel"
+        id={`era-panel-${group.slug}`}
+        aria-labelledby={`era-tab-${group.slug}`}
+        hidden={index !== 0}
+        data-era-panel={group.slug}
+      >
+        <header class="era-panel-heading">
+          <div>
+            <p class="era-range">{group.dateRange}</p>
+            <h3>{group.label}</h3>
+          </div>
+          <p>{group.blurb}</p>
+          <span class="era-count" data-era-count>{group.items.length} arrangers</span>
+        </header>
+
+        <ul class="era-arranger-grid">
+          {group.items.map((item) => (
+            <li data-arranger-card data-arranger-name={item.name}>
+              <a class="era-arranger-card" href={`${base}/arrangers/${item.id}/`}>
+                {item.photoSrc ? (
+                  <img src={`${base}${item.photoSrc}`} alt="" loading="lazy" />
+                ) : (
+                  <span class="era-card-placeholder" aria-hidden="true">{initials(item.name)}</span>
+                )}
+                <span class="era-card-copy">
+                  <strong>{item.name}</strong>
+                  <small>{item.years || 'Dates unavailable'}</small>
+                </span>
+                {item.hasDirectListen && (
+                  <span
+                    class="era-card-listen"
+                    role="img"
+                    aria-label="Has a playable listening example"
+                    title="Has a playable listening example"
+                  >♪</span>
+                )}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))}
+  </div>
+</section>

@@ -3,7 +3,11 @@ import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import {
   DECADES,
+  ERAS,
+  arrangerSlugFromId,
+  canonicalizeArrangers,
   decadeFromId,
+  eraFromArrangerId,
   lifespanLabel,
   parseArrangerHeading,
 } from './arrangers';
@@ -103,11 +107,50 @@ describe('DECADES', () => {
   });
 });
 
+describe('era classification', () => {
+  it('classifies arrangers by a predominant musical era rather than folder alone', () => {
+    expect(eraFromArrangerId('1920s-1930s/jelly-roll-morton').slug).toBe('early-jazz');
+    expect(eraFromArrangerId('1940s/billy-strayhorn').slug).toBe('swing-big-band');
+    expect(eraFromArrangerId('1940s/tadd-dameron').slug).toBe('bebop-progressive');
+    expect(eraFromArrangerId('1950s/bill-holman').slug).toBe('cool-west-coast');
+    expect(eraFromArrangerId('1960s/wayne-shorter').slug).toBe('hard-bop-post-bop');
+    expect(eraFromArrangerId('1960s/carla-bley').slug).toBe('third-stream-avant-garde');
+    expect(eraFromArrangerId('1970s/bob-james').slug).toBe('fusion-jazz-funk');
+    expect(eraFromArrangerId('1970s/maria-schneider').slug).toBe('contemporary-hybrid');
+  });
+
+  it('defines eight eras in chronological order', () => {
+    expect(ERAS.map((era) => era.slug)).toEqual([
+      'early-jazz',
+      'swing-big-band',
+      'bebop-progressive',
+      'cool-west-coast',
+      'hard-bop-post-bop',
+      'third-stream-avant-garde',
+      'fusion-jazz-funk',
+      'contemporary-hybrid',
+    ]);
+  });
+
+  it('chooses one canonical profile for arrangers found in multiple folders', () => {
+    const canonical = canonicalizeArrangers([
+      { id: '1970s/maria-schneider' },
+      { id: '1990s/maria-schneider' },
+      { id: '1940s/gil-evans' },
+    ]);
+    expect(canonical.map((item) => item.id).sort()).toEqual([
+      '1940s/gil-evans',
+      '1970s/maria-schneider',
+    ]);
+  });
+});
+
 describe('repository content', () => {
   const root = join(__dirname, '..', '..', 'arrangers');
 
-  it('every arranger page has a parseable H1 heading and known decade', () => {
+  it('every arranger page has a parseable H1 heading, known decade, and known era', () => {
     const decadeSlugs = new Set(DECADES.map((d) => d.slug));
+    const eraSlugs = new Set(ERAS.map((era) => era.slug));
     const decadeDirs = readdirSync(root, { withFileTypes: true }).filter((e) =>
       e.isDirectory()
     );
@@ -126,9 +169,26 @@ describe('repository content', () => {
         const md = readFileSync(join(root, dir.name, file), 'utf8');
         const { name } = parseArrangerHeading(md);
         expect(name, `${dir.name}/${file} has no parseable H1`).toBeTruthy();
+        expect(
+          eraSlugs.has(eraFromArrangerId(`${dir.name}/${file.replace(/\.md$/, '')}`).slug)
+        ).toBe(true);
       }
     }
     expect(pageCount).toBeGreaterThan(0);
+  });
+
+  it('the canonical catalogue contains each arranger slug exactly once', () => {
+    const ids = readdirSync(root, { withFileTypes: true }).flatMap((directory) =>
+      directory.isDirectory()
+        ? readdirSync(join(root, directory.name))
+            .filter((file) => file.endsWith('.md'))
+            .map((file) => `${directory.name}/${file.replace(/\.md$/, '')}`)
+        : []
+    );
+    const canonical = canonicalizeArrangers(ids.map((id) => ({ id })));
+    const slugs = canonical.map((item) => arrangerSlugFromId(item.id));
+    expect(new Set(slugs).size).toBe(slugs.length);
+    expect(canonical.length).toBeLessThan(ids.length);
   });
 
   it('every declared portrait points to a local image asset', () => {

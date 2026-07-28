@@ -3,8 +3,8 @@ import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import ArrangerDashboard from '../../components/ArrangerDashboard.astro';
 import {
-  DECADES,
-  decadeFromId,
+  canonicalizeArrangers,
+  eraFromArrangerId,
   lifespanLabel,
   parseArrangerHeading,
 } from '../../lib/arrangers';
@@ -17,10 +17,9 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { name, born, died } = parseArrangerHeading(entry.body ?? '');
 const displayName = name ?? entry.id;
-const decadeSlug = decadeFromId(entry.id);
-const decade = DECADES.find((item) => item.slug === decadeSlug);
-const siblings = (await getCollection('arrangers'))
-  .filter((item) => decadeFromId(item.id) === decadeSlug)
+const era = eraFromArrangerId(entry.id);
+const siblings = canonicalizeArrangers(await getCollection('arrangers'))
+  .filter((item) => eraFromArrangerId(item.id).slug === era.slug)
   .map((item) => ({ id: item.id, name: parseArrangerHeading(item.body ?? '').name ?? item.id }))
   .sort((a, b) => a.name.localeCompare(b.name));
 const index = siblings.findIndex((sibling) => sibling.id === entry.id);
@@ -38,7 +37,7 @@ const title = `${displayName} (${lifespanLabel(born, died) || 'jazz arranger'}) 
     name={displayName}
     born={born}
     died={died}
-    decadeLabel={decade?.label ?? decadeSlug}
+    eraLabel={era.label}
     prev={prev}
     next={next}
   />

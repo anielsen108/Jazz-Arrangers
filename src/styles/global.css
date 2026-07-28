@@ -177,6 +177,252 @@ main {
   font-size: 0.85rem;
 }
 
+.era-browser {
+  margin-top: 1.25rem;
+}
+
+.era-browser-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.8fr);
+  gap: 2rem;
+  align-items: end;
+  margin-bottom: 1rem;
+}
+
+.era-browser-heading .eyebrow,
+.era-range {
+  margin: 0;
+  color: var(--accent);
+  font-family: system-ui, sans-serif;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.era-browser-heading h2 {
+  margin: 0.15rem 0 0;
+  font-size: clamp(1.6rem, 4vw, 2.3rem);
+  line-height: 1.15;
+}
+
+.era-browser-heading > p {
+  margin: 0;
+  color: var(--muted);
+  font-style: italic;
+}
+
+.era-tabs {
+  display: flex;
+  align-items: stretch;
+  gap: 0.35rem;
+  overflow-x: auto;
+  padding: 0 0 0.5rem;
+  scrollbar-width: thin;
+}
+
+.era-tabs button {
+  flex: 1 0 8.5rem;
+  min-width: 0;
+  padding: 0.7rem 0.75rem 0.65rem;
+  border: 1px solid var(--border);
+  border-radius: 7px 7px 0 0;
+  color: var(--muted);
+  background: color-mix(in srgb, var(--surface) 72%, transparent);
+  text-align: left;
+  cursor: pointer;
+}
+
+.era-tabs button span,
+.era-tabs button small {
+  display: block;
+}
+
+.era-tabs button span {
+  color: inherit;
+  font-family: system-ui, sans-serif;
+  font-size: 0.74rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.era-tabs button small {
+  margin-top: 0.3rem;
+  font-size: 0.64rem;
+  line-height: 1.2;
+}
+
+.era-tabs button:hover {
+  color: var(--text);
+  border-color: var(--accent);
+}
+
+.era-tabs button.active {
+  color: #fff;
+  border-color: var(--accent);
+  background: var(--accent);
+}
+
+.era-tabs button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.era-panel {
+  padding: clamp(1rem, 3vw, 1.6rem);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--accent);
+  border-radius: 0 0 8px 8px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.era-panel[hidden],
+.era-arranger-grid > li[hidden] {
+  display: none;
+}
+
+.era-panel-heading {
+  display: grid;
+  grid-template-columns: minmax(14rem, 0.75fr) minmax(18rem, 1fr) auto;
+  gap: 1.5rem;
+  align-items: end;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.era-panel-heading h3 {
+  margin: 0.15rem 0 0;
+  font-size: 1.35rem;
+  line-height: 1.2;
+}
+
+.era-panel-heading > p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.era-count {
+  align-self: start;
+  padding: 0.25rem 0.55rem;
+  border-radius: 999px;
+  color: var(--accent);
+  background: var(--accent-soft);
+  font-family: system-ui, sans-serif;
+  font-size: 0.68rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.era-arranger-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  gap: 0.65rem;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.era-arranger-card {
+  min-height: 4.35rem;
+  display: grid;
+  grid-template-columns: 3rem minmax(0, 1fr) auto;
+  gap: 0.75rem;
+  align-items: center;
+  padding: 0.55rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text);
+  background: var(--bg);
+  text-decoration: none;
+  transition: border-color 120ms ease, transform 120ms ease;
+}
+
+.era-arranger-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.era-arranger-card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.era-arranger-card img,
+.era-card-placeholder {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 4px;
+}
+
+.era-arranger-card img {
+  object-fit: cover;
+  filter: saturate(0.78);
+}
+
+.era-card-placeholder {
+  display: grid;
+  place-items: center;
+  color: var(--accent);
+  background: var(--accent-soft);
+  font-family: system-ui, sans-serif;
+  font-size: 0.82rem;
+  font-weight: 850;
+}
+
+.era-card-copy {
+  min-width: 0;
+}
+
+.era-card-copy strong,
+.era-card-copy small {
+  display: block;
+}
+
+.era-card-copy strong {
+  line-height: 1.2;
+}
+
+.era-card-copy small {
+  margin-top: 0.2rem;
+  color: var(--muted);
+  font-size: 0.72rem;
+}
+
+.era-card-listen {
+  width: 1.55rem;
+  height: 1.55rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: #fff;
+  background: var(--accent);
+  font-family: system-ui, sans-serif;
+  font-weight: 800;
+}
+
+@media (max-width: 46rem) {
+  .era-browser-heading,
+  .era-panel-heading {
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+  }
+
+  .era-tabs button {
+    flex-basis: 8rem;
+  }
+
+  .era-count {
+    justify-self: start;
+  }
+
+  .era-arranger-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* --- Arranger pages --- */
 
 .breadcrumb {
