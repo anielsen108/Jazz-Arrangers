@@ -23,7 +23,7 @@ const initials = (name: string) =>
     .slice(0, 2)
     .join('');
 
-const groups = ERAS.map((era) => ({
+const groups = [...ERAS].reverse().map((era) => ({
   ...era,
   items: items
     .filter((item) => item.era === era.slug)
