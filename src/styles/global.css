@@ -214,15 +214,14 @@ main {
 
 .era-tabs {
   display: flex;
+  flex-wrap: wrap;
   align-items: stretch;
   gap: 0.35rem;
-  overflow-x: auto;
   padding: 0 0 0.5rem;
-  scrollbar-width: thin;
 }
 
 .era-tabs button {
-  flex: 1 0 8.5rem;
+  flex: 1 1 calc(25% - 0.35rem);
   min-width: 0;
   padding: 0.7rem 0.75rem 0.65rem;
   border: 1px solid var(--border);
@@ -411,7 +410,7 @@ main {
   }
 
   .era-tabs button {
-    flex-basis: 8rem;
+    flex-basis: calc(50% - 0.35rem);
   }
 
   .era-count {
