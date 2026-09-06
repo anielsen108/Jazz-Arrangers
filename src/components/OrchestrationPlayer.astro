@@ -1,0 +1,99 @@
+---
+import { CHORDS, MELODY, TREATMENTS, defaultTreatment } from '../lib/orchestration';
+import { measureSvg } from '../lib/orchestraScore';
+import '../styles/orchestration-player.css';
+
+interface Props { arrangerName: string }
+const { arrangerName } = Astro.props;
+const selected = defaultTreatment(arrangerName);
+const treatment = TREATMENTS.find((item) => item.id === selected)!;
+const matchesPage = TREATMENTS.some((item) => item.name === arrangerName);
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<section class="technique-section orchestration-section" id="orchestration" aria-labelledby="technique-title">
+  <header class="section-heading">
+    <div><p class="section-number">02</p><p class="section-label">Orchestration</p></div>
+    <h2 id="technique-title">At the <br />arranging desk</h2>
+    <p>One short phrase, three orchestral treatments. Hear the parts, follow the score, and examine the decisions inside each chord.</p>
+  </header>
+
+  <orchestration-player data-style={selected} data-base={base}>
+    <div class="orch-style-heading"><span>Orchestrated in the style of</span><span>Original teaching studies · 01–03</span></div>
+    <div class="orch-styles" role="group" aria-label="Orchestration style">
+      {TREATMENTS.map((item, index) => (
+        <button type="button" data-style-choice={item.id} aria-pressed={item.id === selected ? 'true' : 'false'}>
+          <small>0{index + 1}</small><strong>{item.name}</strong><span>{item.title}</span>
+        </button>
+      ))}
+    </div>
+    {!matchesPage && <p class="orch-collection-note">Compare three approaches from Sebesky, Nestico and Evans. These named studies are shared across the collection.</p>}
+
+    <div class="orch-console">
+      <div class="orch-piece-heading">
+        <div><p class="orch-eyebrow">Original miniature</p><h3>Small Hours</h3><p>8 bars · C major · 4/4 <span data-feel>{treatment.feel}</span></p></div>
+        <p data-treatment-description>{treatment.description}</p>
+      </div>
+      <div class="orch-transport">
+        <button type="button" class="orch-play" data-play disabled><span aria-hidden="true">▶</span> Play passage</button>
+        <button type="button" data-restart disabled aria-label="Return to the beginning">↤ Start</button>
+        <label class="orch-loop">Loop<select data-loop disabled aria-label="Loop selection"><option value="off">Off</option><option value="passage">8 bars</option><option value="bar">Selected bar</option></select></label>
+        <label class="orch-tempo">Tempo <output data-tempo-value>104</output><span>bpm</span><input type="range" data-tempo min="72" max="160" value="104" step="1" aria-label="Tempo in beats per minute" disabled /></label>
+        <label class="orch-volume">Volume<input type="range" data-volume min="0" max="100" value="70" aria-label="Master volume" disabled /></label>
+      </div>
+      <div class="orch-position"><span data-position>Bar 1 · beat 1</span><input type="range" data-seek min="0" max="31.5" value="0" step="0.5" aria-label="Passage position in beats" disabled /><span data-time>0:00 / 0:18</span></div>
+      <p class="orch-status" data-status role="status" aria-live="polite">Choose Play to load the instrument samples.</p>
+      <noscript><p class="orch-error">Enable JavaScript to play the music, change parts and inspect voicings. The melody score remains visible below.</p></noscript>
+    </div>
+
+    <div class="orch-score-top">
+      <div><p class="orch-eyebrow">The passage</p><h4>Read what you hear</h4></div>
+      <label>Score part <select data-score-part aria-label="Score part" disabled><option value="melody">Melody · concert pitch</option>{treatment.parts.map((part) => <option value={part.id}>{part.label} · concert pitch</option>)}</select></label>
+    </div>
+    <p class="orch-score-hint">All parts at sounding pitch · middle C = C4 · eighth notes follow the selected feel. Select a bar to inspect or replay it.</p>
+    <div class="orch-score-scroll" tabindex="0" role="region" aria-label="Eight-bar concert-pitch score; scroll horizontally on a small screen">
+      <div class="orch-score" data-score>
+        {CHORDS.map((chord, bar) => <button type="button" class="orch-measure" data-bar={bar} aria-label={`Bar ${bar + 1}, ${chord.symbol}`} aria-pressed={bar === 0 ? 'true' : 'false'} set:html={measureSvg(MELODY, bar, 'treble', 'Melody')} />)}
+      </div>
+    </div>
+
+    <div class="orch-workbench">
+      <section class="orch-mixer" aria-labelledby="orch-mixer-title">
+        <div class="orch-panel-heading"><div><p class="orch-eyebrow">Inside the ensemble</p><h4 id="orch-mixer-title">Listen by part</h4></div><span data-part-count>{treatment.parts.length} parts</span></div>
+        <div class="orch-mix-presets"><button type="button" data-full>Full ensemble</button><button type="button" data-melody>Melody only</button></div>
+        <p class="orch-small">Combine Solo buttons to hear a voicing or a doubling. Mute removes a part from the mix.</p>
+        <div data-mixer></div>
+        <div class="orch-downloads"><button type="button" data-midi>↓ MIDI</button><button type="button" data-musicxml>↓ Full score · MusicXML</button></div>
+        <p class="orch-small">Downloads include every part at concert pitch. MIDI includes the selected tempo and swing feel.</p>
+      </section>
+
+      <section class="orch-notebook" aria-labelledby="orch-notebook-title">
+        <div class="orch-panel-heading"><div><p class="orch-eyebrow" data-bar-label>Bar 01 · I · tonic</p><h4 id="orch-notebook-title" data-chord>Cmaj9</h4></div><span class="orch-beat-badge" data-inspector-beat>Beat 1</span></div>
+        <div class="orch-beat-buttons" role="group" aria-label="Inspect a beat in the selected bar">
+          {[0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5].map((beat, index) => <button type="button" data-inspect-beat={beat} aria-label={`Inspect beat ${Math.floor(beat) + 1}${beat % 1 ? ' and' : ''}`}>{index % 2 === 0 ? String(beat + 1) : '&'}</button>)}
+        </div>
+        <div class="orch-listen-cue"><span aria-hidden="true">◎</span><p data-listen>{treatment.annotations[0].listen}</p></div>
+        <div class="orch-commentary"><h5>Voicing &amp; register</h5><p data-voicing>{treatment.annotations[0].voicing}</p><h5>Timbral combination</h5><p data-color>{treatment.annotations[0].color}</p><h5>Voice leading &amp; harmony</h5><p data-motion>{treatment.annotations[0].motion}</p></div>
+        <details class="orch-notes" open><summary>Sounding pitches <span data-sounding-count></span></summary><p class="orch-small">High to low · muted parts are dimmed · note releases can leave a rest between attacks.</p><table><thead><tr><th scope="col">Part</th><th scope="col">Pitch</th><th scope="col">Chord role</th></tr></thead><tbody data-notes></tbody></table></details>
+      </section>
+    </div>
+
+    <details class="orch-reading">
+      <summary>From the arranging bookshelf <span>Sebesky · Nestico</span></summary>
+      <div>
+        <p>These original scores apply the books’ approach of comparing voicings, registers and instrumental combinations. They illustrate selected traits of each arranger; they are not transcriptions of their music or reproductions of the books’ examples.</p>
+        <ul>
+          <li><strong>Don Sebesky, <cite>The Contemporary Arranger</cite></strong>: “Combining the Woodwinds,” printed pp. 69–70 (PDF pp. 78–79), compares balance at different registers. “Voicing the Strings,” beginning on printed p. 124 (PDF p. 133), discusses distributing string voices. “Combining Strings with Winds,” printed p. 155 (PDF p. 164), demonstrates how a flute changes the color and balance of a string line.</li>
+          <li><strong>Sammy Nestico, <cite>The Complete Arranger</cite></strong>: “Close [Block] Voicing” and “Semi-Open Voicing,” printed p. 24 (PDF p. 26), contrast a compact moving saxophone block with a voice dropped an octave. The original study here uses close reeds and opens the lower brass voices.</li>
+        </ul>
+        <p>Playback uses sampled instruments. Attack, blend and balance are useful for comparison; live phrasing, section size, bowing and specific mute types remain approximations. Each string line uses a section sample.</p>
+        <p class="orch-small">Audio: FluidR3 GM by Frank Wen and contributors, rendered by Benjamin Gleitzman and contributors. <a href="https://github.com/gleitz/midi-js-soundfonts#soundfonts-available">Sample source</a> · <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>. Selected pitches are bundled locally.</p>
+      </div>
+    </details>
+  </orchestration-player>
+</section>
+
+<script>
+  import { initializeOrchestrationPlayers } from '../lib/orchestraPlayer';
+  initializeOrchestrationPlayers();
+</script>

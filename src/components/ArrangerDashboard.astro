@@ -5,6 +5,7 @@ import '../styles/arranger-dashboard.css';
 import { INSTRUMENTS } from '../lib/ensemble';
 import { lifespanLabel } from '../lib/arrangers';
 import { parseArrangerProfile } from '../lib/arrangerProfile';
+import OrchestrationPlayer from './OrchestrationPlayer.astro';
 
 interface Neighbor {
   id: string;
@@ -175,30 +176,7 @@ const instrumentLabels = (ensemble: Record<string, number>) =>
       </div>
     </section>
 
-    <section class="technique-section" aria-labelledby="technique-title">
-      <header class="section-heading">
-        <div><p class="section-number">02</p><p class="section-label">Orchestration</p></div>
-        <h2 id="technique-title">Technique deck</h2>
-        <p>Select a card to spotlight a device drawn from this arranger’s orchestral language.</p>
-      </header>
-
-      <div class="technique-grid" data-technique-grid>
-        {profile.techniques.map((technique, index) => (
-          <button
-            class:list={['technique-card', { active: index === 0 }]}
-            type="button"
-            aria-pressed={index === 0 ? 'true' : 'false'}
-            data-technique-card
-          >
-            <span class="technique-index">{technique.number}</span>
-            <span class={`technique-glyph glyph-${technique.glyph}`} aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
-            <span class="technique-title">{technique.title}</span>
-            <span class="technique-description">{technique.description}</span>
-            <span class="technique-cue"><i aria-hidden="true">↗</i>{technique.cue}</span>
-          </button>
-        ))}
-      </div>
-    </section>
+    <OrchestrationPlayer arrangerName={name} />
 
     {pieces.length > 0 && (
       <section class="piece-section" aria-labelledby="piece-title">
@@ -385,16 +363,6 @@ const instrumentLabels = (ensemble: Record<string, number>) =>
 <script>
   document.addEventListener('click', (event) => {
     const target = event.target as HTMLElement;
-    const techniqueCard = target.closest<HTMLButtonElement>('[data-technique-card]');
-    if (techniqueCard) {
-      const grid = techniqueCard.closest('[data-technique-grid]');
-      grid?.querySelectorAll<HTMLButtonElement>('[data-technique-card]').forEach((card) => {
-        const active = card === techniqueCard;
-        card.classList.toggle('active', active);
-        card.setAttribute('aria-pressed', String(active));
-      });
-    }
-
     const pieceTab = target.closest<HTMLButtonElement>('[data-piece-tab]');
     if (pieceTab) {
       const shell = pieceTab.closest('.piece-section');

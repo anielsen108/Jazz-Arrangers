@@ -2,3 +2,10 @@ node_modules/
 dist/
 .astro/
 npm-debug.log*
+output/tooling/
+output/book-notes/
+output/playwright/orchestration-*.png
+output/playwright/small-hours-*.mid
+output/playwright/small-hours-*.musicxml
+.playwright-cli/
+.playwright/

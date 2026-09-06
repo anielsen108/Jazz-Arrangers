@@ -1,0 +1,140 @@
+.orchestration-section { --orch-dark: #192a30; --orch-gold: #e2b46f; --orch-paper: #fffdf7; }
+orchestration-player { display: block; min-width: 0; }
+orchestration-player button, orchestration-player select, orchestration-player input { font: inherit; }
+orchestration-player button, orchestration-player select { cursor: pointer; }
+orchestration-player button:focus-visible, orchestration-player select:focus-visible, orchestration-player input:focus-visible, .orch-score-scroll:focus-visible, .orch-reading summary:focus-visible { outline: 3px solid #d67432; outline-offset: 3px; }
+orchestration-player button:disabled { cursor: wait; opacity: 0.5; }
+.orch-style-heading { display: flex; justify-content: space-between; gap: 1rem; margin-bottom: 0.8rem; font-size: 0.67rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 750; }
+.orch-style-heading > :last-child { color: var(--lab-muted); }
+.orch-styles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border: 1px solid var(--lab-line); }
+.orch-styles button { position: relative; min-height: 7rem; padding: 1.15rem 1.1rem 1.15rem 3rem; background: var(--lab-paper); border: 0; border-right: 1px solid var(--lab-line); text-align: left; }
+.orch-styles button:last-child { border-right: 0; }
+.orch-styles button small { position: absolute; top: 1.35rem; left: 1rem; opacity: 0.6; font-size: 0.6rem; }
+.orch-styles button strong { display: block; font-size: 1rem; }
+.orch-styles button > span { display: block; margin-top: 0.35rem; font-size: 0.7rem; line-height: 1.5; opacity: 0.8; }
+.orch-styles button[aria-pressed='true'] { background: var(--orch-dark); color: #fffdf7; box-shadow: inset 0 -3px var(--orch-gold); }
+.orch-collection-note { font-size: 0.74rem; color: var(--lab-muted); margin: 0.75rem 0 0; }
+.orch-console { margin-top: 1.2rem; padding: 1.7rem 1.8rem 1rem; color: #f6f2e9; background: var(--orch-dark); border-radius: 0.45rem 0.45rem 0 0; }
+.orch-piece-heading { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center; }
+.orch-eyebrow { margin: 0; text-transform: uppercase; letter-spacing: 0.13em; font-size: 0.62rem; font-weight: 800; }
+.orch-console .orch-eyebrow { color: var(--orch-gold); }
+.orch-piece-heading h3 { margin: 0.1rem 0 0.3rem; font: italic 2.6rem/1.15 Georgia, serif; letter-spacing: -0.04em; }
+.orch-piece-heading > div > p:last-child { font-size: 0.7rem; margin: 0; color: #c7d1ce; }
+.orch-piece-heading [data-feel] { display: block; margin-top: 0.3rem; color: var(--orch-gold); }
+.orch-piece-heading > p { max-width: 29rem; font-size: 0.8rem; line-height: 1.7; color: #c7d1ce; }
+.orch-transport { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; margin: 1.5rem 0 1.25rem; }
+.orch-console button, .orch-console select { border: 1px solid #657579; background: #263b42; color: #f6f2e9; border-radius: 0.25rem; padding: 0.65rem 0.75rem; font-size: 0.72rem; min-height: 2.65rem; }
+.orch-console .orch-play { min-width: 9.8rem; background: var(--orch-gold); color: #192a30; border-color: var(--orch-gold); font-size: 0.8rem; font-weight: 800; }
+.orch-console label { font-size: 0.65rem; color: #c7d1ce; display: flex; align-items: center; gap: 0.4rem; }
+.orch-loop select { padding: 0.4rem; }
+.orch-tempo { margin-left: auto; flex-wrap: wrap; max-width: 9rem; }
+.orch-tempo output { color: #fffdf7; font-weight: 800; font-variant-numeric: tabular-nums; }
+.orch-tempo input { width: 100%; }
+.orch-volume { flex-direction: column; align-items: start !important; }
+.orch-volume input { width: 4.7rem; }
+.orch-console input[type='range'] { accent-color: var(--orch-gold); cursor: pointer; }
+.orch-position { display: grid; grid-template-columns: 7.5rem 1fr 5rem; gap: 0.7rem; align-items: center; font: 0.65rem/1.5 ui-monospace, monospace; color: #d0dbd8; }
+.orch-position input { min-width: 0; width: 100%; }
+.orch-position > :last-child { text-align: right; }
+.orch-status { min-height: 1.25rem; margin: 0.6rem 0 0; font-size: 0.65rem; color: #bdccca; }
+.orch-console .orch-error { color: #ffcb9d; font-weight: 700; }
+.orch-score-top { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-top: 2rem; }
+.orch-score-top h4, .orch-panel-heading h4 { margin: 0.15rem 0 0; font-size: 1.35rem; letter-spacing: -0.035em; }
+.orch-score-top label { font-size: 0.68rem; display: flex; align-items: center; gap: 0.7rem; }
+.orch-score-top select { max-width: 17rem; border: 1px solid var(--lab-line); padding: 0.7rem; background: var(--orch-paper); color: var(--lab-ink); border-radius: 0.2rem; }
+.orch-score-hint { font-size: 0.68rem; color: var(--lab-muted); margin: 0.6rem 0 1rem; }
+.orch-score-scroll { overflow-x: auto; border: 1px solid #d8d6c8; background: var(--orch-paper); border-radius: 0.25rem; }
+.orch-score { display: grid; grid-template-columns: repeat(4, minmax(225px, 1fr)); min-width: 900px; }
+.orch-measure { background: transparent; border: 0; padding: 0.25rem 0; color: #263031; box-shadow: inset 0 0 0 1px #eae7dc; min-width: 0; text-align: left; }
+.orch-measure[aria-pressed='true'] { background: #f9edcf; box-shadow: inset 0 3px #c08938; }
+.orch-measure svg { width: 100%; display: block; overflow: visible; }
+.staff-line { stroke: #abae9e; stroke-width: 0.6; }
+.ledger { stroke: #58605c; stroke-width: 0.7; }
+.score-bar-number { fill: #767d74; font: 11px ui-monospace, monospace; }
+.score-chord { fill: #243c36; font: 600 15px Georgia, serif; }
+.score-clef { font: 50px 'Segoe UI Symbol', 'Noto Music', serif; fill: #243c36; }
+.score-accidental { font: 20px 'Segoe UI Symbol', serif; fill: #243c36; }
+.note-head { fill: #243c36; stroke: #243c36; stroke-width: 1.2; }
+.note-head.open-note { fill: var(--orch-paper); stroke-width: 1.8; }
+.note-stem, .note-flag { fill: none; stroke: #243c36; stroke-width: 1.2; }
+.score-rest { fill: #243c36; }
+.score-rest-glyph { fill: #243c36; font: 32px 'Segoe UI Symbol', 'Noto Music', serif; }
+.score-beats text { fill: #9a9d91; font: 9px ui-monospace, monospace; text-anchor: middle; }
+.sounding .note-head { fill: #b54c25; stroke: #b54c25; }
+.sounding .note-stem, .sounding .note-flag { stroke: #b54c25; }
+.orch-workbench { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 1.3rem; margin-top: 1.3rem; align-items: start; }
+.orch-mixer, .orch-notebook { min-width: 0; padding: 1.5rem; border: 1px solid var(--lab-line); background: var(--lab-paper); border-radius: 0.3rem; }
+.orch-notebook { background: var(--orch-paper); border-color: #d8d6c8; }
+.orch-panel-heading { display: flex; gap: 0.5rem; align-items: center; justify-content: space-between; }
+.orch-panel-heading > span { font: 0.62rem ui-monospace, monospace; color: var(--lab-muted); }
+.orch-notebook h4 { font: 2.1rem/1.2 Georgia, serif; }
+.orch-notebook .orch-eyebrow { font-size: 0.58rem; }
+.orch-beat-badge { white-space: nowrap; padding: 0.4rem 0.6rem; border: 1px solid #d8d6c8; border-radius: 0.2rem; }
+.orch-mix-presets, .orch-downloads { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1.2rem 0 0.8rem; }
+.orch-mix-presets button, .orch-downloads button { font-size: 0.66rem; padding: 0.55rem 0.65rem; border: 1px solid var(--lab-line); background: transparent; border-radius: 0.2rem; min-height: 2.4rem; }
+.orch-mix-presets [aria-pressed='true'] { border-color: var(--orch-dark); background: var(--orch-dark); color: #fff; }
+.orch-small { margin: 0.65rem 0; font-size: 0.65rem; line-height: 1.6; color: #65716e; }
+.orch-part { --part-color: #648c8a; display: grid; grid-template-columns: 0.5rem minmax(0, 1fr) 2rem 2rem; gap: 0.6rem; align-items: center; padding: 0.8rem 0; border-bottom: 1px solid var(--lab-line); }
+.orch-part.family-brass { --part-color: #b4802e; }
+.orch-part.family-strings { --part-color: #855979; }
+.orch-part.family-rhythm { --part-color: #53747f; }
+.orch-part.family-lead { --part-color: #bc643f; }
+.orch-part strong { display: block; font-size: 0.75rem; line-height: 1.3; }
+.orch-part small { display: block; margin-top: 0.2rem; font-size: 0.6rem; line-height: 1.4; color: #65716e; }
+.orch-part-light { width: 0.45rem; height: 0.45rem; background: #d6dfdc; border-radius: 50%; }
+.orch-part.is-sounding .orch-part-light { background: var(--part-color); box-shadow: 0 0 0 3px color-mix(in srgb, var(--part-color) 15%, transparent); }
+.orch-part button { width: 2rem; min-height: 2rem; padding: 0; border: 1px solid var(--lab-line); background: transparent; font: 650 0.64rem ui-monospace, monospace; border-radius: 0.2rem; }
+.orch-part button[aria-pressed='true'] { color: #fff; background: var(--orch-dark); border-color: var(--orch-dark); }
+.orch-part button[data-mute][aria-pressed='true'] { background: #a7543e; border-color: #a7543e; }
+.orch-part.inaudible > div { opacity: 0.5; }
+.orch-notes .inaudible { opacity: 0.43; }
+.orch-beat-buttons { display: grid; grid-template-columns: repeat(8, 1fr); margin: 1.2rem 0; border: 1px solid #dad6c7; }
+.orch-beat-buttons button { border: 0; border-right: 1px solid #dad6c7; background: transparent; padding: 0.45rem 0; font: 0.65rem ui-monospace, monospace; min-height: 2rem; }
+.orch-beat-buttons button:last-child { border-right: 0; }
+.orch-beat-buttons button[aria-pressed='true'] { background: var(--orch-dark); color: #fff; }
+.orch-listen-cue { display: flex; gap: 0.8rem; padding: 0.8rem 1rem; background: #ecebdc; color: #354b3d; border-left: 2px solid #91a184; }
+.orch-listen-cue > span { font-size: 1.3rem; }
+.orch-listen-cue p { font-size: 0.72rem; margin: 0; line-height: 1.6; }
+.orch-commentary h5 { margin: 1.25rem 0 0.35rem; font-size: 0.64rem; text-transform: uppercase; letter-spacing: 0.08em; color: #8f592d; }
+.orch-commentary p { margin: 0; font-size: 0.78rem; line-height: 1.75; color: #38433c; }
+.orch-notes { margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #dad6c7; }
+.orch-notes summary { cursor: pointer; font-size: 0.72rem; font-weight: 750; }
+.orch-notes summary > span { margin-left: 0.6rem; font-size: 0.6rem; font-weight: 400; color: #65716e; }
+.orch-notes table { width: 100%; border-collapse: collapse; font-size: 0.68rem; text-align: left; }
+.orch-notes th { color: #65716e; font-size: 0.6rem; font-weight: 600; }
+.orch-notes th, .orch-notes td { padding: 0.5rem 0.25rem; border-bottom: 1px solid #e8e4d8; }
+.orch-notes td:nth-child(2) { font-weight: 750; font-family: ui-monospace, monospace; }
+.orch-reading { border-top: 1px solid var(--lab-line); margin-top: 1.5rem; padding-top: 1.2rem; }
+.orch-reading summary { cursor: pointer; font-weight: 750; font-size: 0.77rem; }
+.orch-reading summary span { float: right; font-weight: 400; font-size: 0.65rem; color: var(--lab-muted); }
+.orch-reading > div { max-width: 55rem; padding: 0.8rem 0; font-size: 0.77rem; line-height: 1.8; color: #4f5a57; }
+.orch-reading li { margin: 0.8rem 0; }
+.orch-reading a { color: #376c72; }
+@media (max-width: 70rem) {
+  .orch-transport { gap: 0.6rem; }
+  .orch-tempo { margin-left: 0; }
+  .orch-styles button { padding-left: 2.4rem; }
+}
+@media (max-width: 54rem) {
+  .orch-workbench { grid-template-columns: 1fr; }
+  .orch-notebook { grid-row: 1; }
+  .orch-piece-heading { grid-template-columns: 1fr; gap: 0.2rem; }
+  .orch-piece-heading > p { max-width: none; }
+  .orch-style-heading > :last-child { display: none; }
+}
+@media (max-width: 38rem) {
+  .orch-styles { grid-template-columns: 1fr; }
+  .orch-styles button { min-height: 4.5rem; border-right: 0; border-bottom: 1px solid var(--lab-line); padding: 0.8rem 1rem 0.8rem 2.7rem; }
+  .orch-styles button small { top: 1rem; }
+  .orch-styles button > span { margin-top: 0.15rem; }
+  .orch-console { padding: 1.25rem 1rem 0.8rem; }
+  .orch-score-top { align-items: start; flex-direction: column; }
+  .orch-score-top label { width: 100%; }
+  .orch-score-top select { min-width: 0; max-width: 100%; flex: 1; }
+  .orch-mixer, .orch-notebook { padding: 1.1rem; }
+  .orch-position { grid-template-columns: 1fr auto; }
+  .orch-position input { grid-column: 1 / -1; grid-row: 2; }
+  .orch-position > :last-child { grid-column: 2; grid-row: 1; }
+  .orch-reading summary span { display: none; }
+  .orch-part button { min-height: 2.4rem; }
+}

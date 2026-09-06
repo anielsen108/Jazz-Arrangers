@@ -1,5 +1,6 @@
 .dashboard-breadcrumb {
   width: min(82rem, calc(100vw - 1.5rem));
+  max-width: 100%;
   margin: 0 auto 1rem;
   display: flex;
   gap: 0.5rem;
