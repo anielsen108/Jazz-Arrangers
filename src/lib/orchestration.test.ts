@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
-import { readFileSync } from 'node:fs';
-import { CHORDS, MELODY, TREATMENTS, chordDegree, defaultTreatment, midi, performedBeat, soundingNotes, writtenBeat } from './orchestration';
+import { readFileSync, readdirSync } from 'node:fs';
+import { CHORDS, MELODY, TREATMENTS, chordDegree, defaultTreatment, treatmentForArtist, midi, octave, performedBeat, soundingNotes, writtenBeat } from './orchestration';
+import { INSTRUMENTS } from './orchestraStudies';
 import { makeMidi, makeMusicXml } from './orchestraScore';
 
 describe('original orchestration studies', () => {
@@ -8,21 +9,25 @@ describe('original orchestration studies', () => {
     expect(MELODY.reduce((sum, n) => sum + n.duration, 0)).toBe(32);
     for (const treatment of TREATMENTS) {
       expect(treatment.annotations).toHaveLength(CHORDS.length);
-      const leadIds = treatment.id === 'nestico' ? ['alto1', 'tpt1'] : [treatment.parts[0].id];
+      const leadIds = treatment.melodyParts ?? (treatment.id === 'nestico' ? ['alto1', 'tpt1'] : [treatment.parts[0].id]);
       for (const note of MELODY) {
-        expect(treatment.parts.filter((p) => leadIds.includes(p.id)).some((p) => p.notes.some((n) => n.beat === note.beat && n.pitch === note.pitch && n.duration === note.duration)), `${treatment.id}: missing melody ${note.pitch} at ${note.beat}`).toBe(true);
+        expect(treatment.parts.filter((p) => leadIds.includes(p.id)).some((p) => p.notes.some((n) => n.beat === note.beat && n.pitch === octave(note.pitch, treatment.melodyOctave ?? 0) && n.duration === note.duration)), `${treatment.id}: missing melody ${note.pitch} at ${note.beat}`).toBe(true);
       }
     }
   });
 
   it('has a local decoded-audio source for every scored pitch, with no out-of-passage events', () => {
+    const banks = new Map<string, Record<string, string>>();
     for (const treatment of TREATMENTS) for (const part of treatment.parts) {
-      const samples = JSON.parse(readFileSync(new URL(`../../public/audio/orchestra/${part.instrument}.json`, import.meta.url), 'utf8'));
+      if (!banks.has(part.instrument)) banks.set(part.instrument, JSON.parse(readFileSync(new URL(`../../public/audio/orchestra/${part.instrument}.json`, import.meta.url), 'utf8')));
+      const samples = banks.get(part.instrument)!;
+      const range = Object.values(INSTRUMENTS).find((spec) => spec.sample === part.instrument)!;
       for (const note of part.notes) {
         expect(note.beat).toBeGreaterThanOrEqual(0);
         expect(note.beat + note.duration).toBeLessThanOrEqual(32);
         expect(note.duration).toBeGreaterThan(0);
-        expect(midi(note.pitch)).toBeGreaterThanOrEqual(21);
+        expect(midi(note.pitch), `${treatment.name}: ${part.label} ${note.pitch}`).toBeGreaterThanOrEqual(range.low);
+        expect(midi(note.pitch), `${treatment.name}: ${part.label} ${note.pitch}`).toBeLessThanOrEqual(range.high);
         expect(samples[midi(note.pitch)], `${part.instrument} ${note.pitch}`).toMatch(/^data:audio\/mp3;base64,/);
       }
     }
@@ -50,6 +55,45 @@ describe('original orchestration studies', () => {
     expect(defaultTreatment('Sammy Nestico')).toBe('nestico');
     expect(defaultTreatment('Gil Evans')).toBe('evans');
     expect(defaultTreatment('Don Sebesky')).toBe('sebesky');
+    expect(defaultTreatment('Christian McBride')).toBe('christian-mcbride');
+    expect(defaultTreatment('Miguel Zenon')).toBe('miguel-zenon');
+    expect(() => defaultTreatment('Unlisted arranger')).toThrow('Missing orchestration study');
+  });
+
+  it('gives every supported profile its own artist and a musically distinct score', () => {
+    const root = new URL('../../arrangers/', import.meta.url);
+    const names = new Set<string>();
+    for (const decade of readdirSync(root, { withFileTypes: true }).filter((entry) => entry.isDirectory())) {
+      const directory = new URL(`${decade.name}/`, root);
+      for (const file of readdirSync(directory).filter((name) => name.endsWith('.md'))) {
+        const source = readFileSync(new URL(file, directory), 'utf8');
+        const name = /^# (.+?)(?: \(|$)/m.exec(source)![1];
+        expect(treatmentForArtist(name).name).toBe(name);
+        names.add(name);
+      }
+    }
+    expect(TREATMENTS).toHaveLength(names.size);
+    expect(new Set(TREATMENTS.map((t) => t.id)).size).toBe(names.size);
+    // Exclude names, IDs, prose, pan, level and velocity: an actual scoring change is required.
+    const signatures = TREATMENTS.map((t) => JSON.stringify([t.swing, t.parts.map((p) => [p.instrument, p.notes.map((n) => [n.beat, n.duration, n.pitch])])]));
+    expect(new Set(signatures).size).toBe(names.size);
+    for (const treatment of TREATMENTS) {
+      expect(treatment.parts.length).toBeLessThanOrEqual(15);
+      expect(new Set(treatment.parts.map((p) => p.id)).size).toBe(treatment.parts.length);
+    }
+  });
+
+  it('scores McBride with five reeds, independent walking bass and trombone replies', () => {
+    const study = treatmentForArtist('Christian McBride');
+    expect(study.parts.filter((p) => ['alto_sax', 'tenor_sax', 'baritone_sax'].includes(p.instrument))).toHaveLength(5);
+    expect(study.parts.find((p) => p.id === 'bass')!.notes).toHaveLength(32);
+    expect(study.parts.find((p) => p.id === 'counter')!.instrument).toBe('trombone');
+    expect(study.annotations[0].voicing).toContain('Tenor sax 1 B3');
+    expect(study.annotations[0].voicing).toContain('Baritone sax E3');
+    expect(study.annotations[0].listen).toContain('walking bass first');
+    const source = readFileSync(new URL('../components/OrchestrationPlayer.astro', import.meta.url), 'utf8');
+    expect(source).not.toContain('data-style-choice');
+    expect(source).toContain('treatmentForArtist(arrangerName)');
   });
 
   it('exports valid MIDI track lengths, channels, tempos and every scored note', () => {
@@ -79,7 +123,8 @@ describe('original orchestration studies', () => {
       expect(offset).toBe(data.length);
       const expected = treatment.parts.flatMap((part, index) => part.notes.map((note) => ({ channel: index >= 9 ? index + 1 : index, pitch: midi(note.pitch), tick: Math.round(performedBeat(note.beat, treatment.swing) * 480) })));
       expect(played).toHaveLength(expected.length);
-      for (const note of expected) expect(played).toContainEqual(note);
+      const sorted = (notes: typeof played) => notes.map((n) => `${n.channel}:${n.pitch}:${n.tick}`).sort();
+      expect(sorted(played)).toEqual(sorted(expected));
       expect(played.some((note) => note.channel === 9)).toBe(false);
     }
   });

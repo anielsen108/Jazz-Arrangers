@@ -1,4 +1,4 @@
-import { midi, performedBeat, writtenBeat, type Part, type Treatment } from './orchestration';
+import { midi, performedBeat, writtenBeat, type Part, type Treatment } from './orchestraMusic';
 
 export type LoopMode = 'off' | 'passage' | 'bar';
 type Voice = { source: AudioBufferSourceNode; envelope: GainNode };

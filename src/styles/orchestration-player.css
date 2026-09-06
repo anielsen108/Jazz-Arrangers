@@ -6,6 +6,9 @@ orchestration-player button:focus-visible, orchestration-player select:focus-vis
 orchestration-player button:disabled { cursor: wait; opacity: 0.5; }
 .orch-style-heading { display: flex; justify-content: space-between; gap: 1rem; margin-bottom: 0.8rem; font-size: 0.67rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 750; }
 .orch-style-heading > :last-child { color: var(--lab-muted); }
+.orch-artist { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem 1.5rem; padding: 1.1rem 1.4rem; border-left: 3px solid var(--orch-gold); background: var(--orch-dark); color: var(--orch-paper); }
+.orch-artist strong { font: 1.5rem/1.3 Georgia, serif; }
+.orch-artist > span { color: #d0dbd8; font-size: 0.78rem; line-height: 1.5; }
 .orch-styles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border: 1px solid var(--lab-line); }
 .orch-styles button { position: relative; min-height: 7rem; padding: 1.15rem 1.1rem 1.15rem 3rem; background: var(--lab-paper); border: 0; border-right: 1px solid var(--lab-line); text-align: left; }
 .orch-styles button:last-child { border-right: 0; }

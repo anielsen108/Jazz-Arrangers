@@ -1,4 +1,4 @@
-import { CHORDS, displayPitch, midi, performedBeat, type Note, type Part, type Treatment } from './orchestration';
+import { CHORDS, displayPitch, midi, performedBeat, type Note, type Part, type Treatment } from './orchestraMusic';
 
 const esc = (text: string) => text.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('"', '&quot;');
 const step = (pitch: string) => Number(pitch.slice(-1)) * 7 + 'CDEFGAB'.indexOf(pitch[0]);

@@ -1,4 +1,4 @@
-import { CHORDS, MELODY, TREATMENTS, chordDegree, displayPitch, soundingNotes, type Treatment } from './orchestration';
+import { CHORDS, MELODY, octave, chordDegree, displayPitch, soundingNotes, type Treatment } from './orchestraMusic';
 import { OrchestraAudio, type LoopMode } from './orchestraAudio';
 import { makeMidi, makeMusicXml, measureSvg } from './orchestraScore';
 
@@ -24,7 +24,10 @@ class OrchestrationPlayer extends HTMLElement {
   connectedCallback() {
     if (this.initialized) return;
     this.initialized = true;
-    this.treatment = TREATMENTS.find((item) => item.id === this.dataset.style) ?? TREATMENTS[0];
+    const data = this.querySelector<HTMLScriptElement>('[data-treatment]')?.textContent;
+    if (!data) throw new Error('This page is missing its orchestration study.');
+    this.treatment = JSON.parse(data) as Treatment;
+    if (this.treatment.id !== this.dataset.style) throw new Error('The orchestration study does not match this page.');
     this.all<HTMLButtonElement | HTMLInputElement | HTMLSelectElement>('[disabled]').forEach((el) => el.disabled = false);
     this.addEventListener('click', this.handleClick);
     this.el<HTMLSelectElement>('[data-score-part]').addEventListener('change', () => this.renderScore());
@@ -55,26 +58,14 @@ class OrchestrationPlayer extends HTMLElement {
     if (!button || !this.contains(button)) return;
     if (button.hasAttribute('data-play')) { this.loading || this.engine.playing ? this.pause() : void this.play(); return; }
     if (button.hasAttribute('data-restart')) { this.seek(0); return; }
-    if (button.dataset.styleChoice) {
-      const treatment = TREATMENTS.find((item) => item.id === button.dataset.styleChoice)!;
-      if (treatment === this.treatment) return;
-      const resume = this.engine.playing || this.loading;
-      this.pause();
-      this.treatment = treatment;
-      this.dataset.style = treatment.id;
-      this.beat = Math.floor(this.beat / 4) * 4;
-      this.muted.clear(); this.solo.clear();
-      this.renderTreatment();
-      this.status(`Ready: ${treatment.name}.`);
-      if (resume) void this.play();
-    } else if (button.dataset.bar !== undefined) this.seek(Number(button.dataset.bar) * 4);
+    if (button.dataset.bar !== undefined) this.seek(Number(button.dataset.bar) * 4);
     else if (button.dataset.inspectBeat !== undefined) this.seek(Math.floor(this.beat / 4) * 4 + Number(button.dataset.inspectBeat));
     else if (button.dataset.mute) { this.toggle(this.muted, button.dataset.mute); this.updateMix(); }
     else if (button.dataset.solo) { this.toggle(this.solo, button.dataset.solo); this.updateMix(); }
     else if (button.hasAttribute('data-full')) { this.muted.clear(); this.solo.clear(); this.updateMix(); }
     else if (button.hasAttribute('data-melody')) {
       this.muted.clear();
-      this.solo = new Set(this.treatment.id === 'nestico' ? ['alto1', 'tpt1'] : [this.treatment.parts[0].id]);
+      this.solo = new Set(this.treatment.melodyParts ?? (this.treatment.id === 'nestico' ? ['alto1', 'tpt1'] : [this.treatment.parts[0].id]));
       this.updateMix();
     } else if (button.hasAttribute('data-midi')) this.download(makeMidi(this.treatment, this.tempo), 'mid', 'audio/midi');
     else if (button.hasAttribute('data-musicxml')) this.download(makeMusicXml(this.treatment, this.tempo), 'musicxml', 'application/vnd.recordare.musicxml+xml');
@@ -106,7 +97,7 @@ class OrchestrationPlayer extends HTMLElement {
         onTick: (beat) => { this.beat = beat; this.updatePosition(); },
         onEnd: () => {
           this.beat = 0; this.loading = false; this.playButton('▶ Play again');
-          this.status('Passage complete. Switch styles to compare the same melody.');
+          this.status(`Passage complete · ${this.treatment.name}. Replay or solo parts to explore the arrangement.`);
           this.updatePosition();
         },
       });
@@ -139,7 +130,6 @@ class OrchestrationPlayer extends HTMLElement {
   private seek(beat: number) { this.restartAt(Math.max(0, Math.min(31.5, beat))); }
 
   private renderTreatment() {
-    this.all<HTMLButtonElement>('[data-style-choice]').forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.styleChoice === this.treatment.id)));
     this.text('[data-feel]', this.treatment.feel);
     this.text('[data-treatment-description]', this.treatment.description);
     this.text('[data-part-count]', `${this.treatment.parts.length} parts`);
@@ -167,9 +157,9 @@ class OrchestrationPlayer extends HTMLElement {
   private renderScore() {
     const id = this.el<HTMLSelectElement>('[data-score-part]').value;
     const part = this.treatment.parts.find((item) => item.id === id);
-    const notes = part?.notes ?? MELODY;
+    const notes = part?.notes ?? MELODY.map((note) => ({ ...note, pitch: octave(note.pitch, this.treatment.melodyOctave ?? 0) }));
     this.all<HTMLButtonElement>('[data-bar]').forEach((button) => {
-      button.innerHTML = measureSvg(notes, Number(button.dataset.bar), part?.clef ?? 'treble', part?.label ?? 'Melody');
+      button.innerHTML = measureSvg(notes, Number(button.dataset.bar), part?.clef ?? this.treatment.parts[0].clef, part?.label ?? 'Melody');
     });
     this.lastSnapshot = -1; this.updatePosition();
   }
