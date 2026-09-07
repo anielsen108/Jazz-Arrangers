@@ -82,3 +82,5 @@ for i, part in enumerate(parts):
     print(json.dumps(entry),flush=True)
 (out / 'part-verification.json').write_text(json.dumps(results,indent=2))
 PY
+
+python3 scripts/mix-free-audition.py "$out"

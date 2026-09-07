@@ -41,3 +41,6 @@ await writeFile(`${out}/small-hours.musicxml`, xml);
 await writeFile(`${out}/reference.mid`, makeMidi(treatment, tempo));
 await writeFile(`${out}/manifest.json`, JSON.stringify({ artist: treatment.name, title: 'Small Hours', tempo, swing: treatment.swing, durationSeconds: 32 * 60 / tempo, parts: treatment.parts.map(p => ({ id:p.id, label:p.label, instrument:p.instrument, notes:p.notes.length })), noteCount:treatment.parts.reduce((n,p)=>n+p.notes.length,0), status:'Score prepared; MuseSounds rendering must be verified separately.' }, null, 2));
 console.log(`Prepared ${treatment.parts.length} parts at ${tempo} BPM.`);
+
+import { midi, performedBeat } from '../src/lib/orchestraMusic.ts';
+await writeFile(`${out}/mix-score.json`, JSON.stringify({tempo, duration:32*60/tempo+3, parts:treatment.parts.map(p=>({...p,notes:p.notes.map(n=>({...n,midi:midi(n.pitch),start:performedBeat(n.beat,treatment.swing)*60/tempo,length:(performedBeat(n.beat+n.duration*n.gate,treatment.swing)-performedBeat(n.beat,treatment.swing))*60/tempo}))}))}));
