@@ -3,6 +3,11 @@ set -euo pipefail
 out="$PWD/output/tooling/musesounds-audition"
 tools_dir="$RUNNER_TEMP/musesounds-tools"
 mkdir -p "$out" "$tools_dir"
+collect_logs() {
+  mkdir -p "$out/diagnostics"
+  find "$HOME/.local/share/MuseScore" -type f -name '*.log' -exec cp {} "$out/diagnostics/" \; 2>/dev/null || true
+}
+trap collect_logs EXIT
 sudo apt-get update -qq
 sudo apt-get install -y --no-install-recommends xvfb xauth ffmpeg libasound2t64 libegl1 libopengl0 libnss3 libpipewire-0.3-0 libxcb-cursor0 libxcb-xinerama0 libxkbcommon-x11-0 libicu74 xdg-utils
 curl --fail --location --retry 3 https://github.com/musescore/MuseScore/releases/download/v4.7.4/MuseScore-Studio-4.7.4.260706075-x86_64.AppImage -o "$tools_dir/MuseScore.AppImage"
@@ -25,10 +30,26 @@ set -e
 if [[ "$import_status" != 0 && "$import_status" != 139 ]]; then exit "$import_status"; fi
 unzip -t "$out/small-hours.mscz"
 set +e
-timeout 300 xvfb-run -a "$mscore" -d --sound-profile MuseSounds -o "$out/musesounds.wav" "$out/small-hours.mscz" 2>&1 | tee "$out/render.log"
+printf '[{"in":"%s/small-hours.mscz","out":["%s/musesounds.wav","%s/rendered.mscz","%s/rendered.mid"]}]' "$out" "$out" "$out" "$out" > "$out/job.json"
+timeout 300 xvfb-run -a "$mscore" -d --sound-profile MuseSounds -j "$out/job.json" 2>&1 | tee "$out/render.log"
 render_status=${PIPESTATUS[0]}
 set -e
 printf '{"importExit":%s,"renderExit":%s}\n' "$import_status" "$render_status" > "$out/process-status.json"
 if [[ "$render_status" != 0 && "$render_status" != 139 ]]; then exit "$render_status"; fi
 ffprobe -v error -show_format -show_streams -of json "$out/musesounds.wav" > "$out/audio-info.json"
 ffmpeg -hide_banner -i "$out/musesounds.wav" -af loudnorm=print_format=json -f null - 2> "$out/levels.log"
+python3 - "$out" <<'PY'
+import json, sys, zipfile, xml.etree.ElementTree as E
+from pathlib import Path
+out = Path(sys.argv[1])
+with zipfile.ZipFile(out / 'rendered.mscz') as z:
+    settings = json.loads(z.read('audiosettings.json'))
+    score = E.fromstring(z.read(next(n for n in z.namelist() if n.endswith('.mscx'))))
+identities = [i.get('id') for i in score.findall('.//Instrument')]
+expected = ['c-trumpet','alto-saxophone','alto-saxophone','tenor-saxophone','tenor-saxophone','baritone-saxophone','trombone','piano','contrabass']
+report = {'identities':identities, 'noteCount':len(score.findall('.//Note')), 'audioSettings':settings}
+(out / 'verification.json').write_text(json.dumps(report, indent=2))
+assert identities == expected, identities
+assert report['noteCount'] == 274, report['noteCount']
+print(json.dumps(report, indent=2))
+PY
