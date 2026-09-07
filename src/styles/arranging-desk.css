@@ -12,9 +12,11 @@
 .desk-heading h1 { margin: 0; font: 2.9rem/1.12 Georgia, serif; letter-spacing: -0.04em; color: var(--text); }
 .desk-heading > p { max-width: 32rem; margin: 0; color: var(--muted); font-size: 0.92rem; }
 .desk-layout { display: grid; grid-template-columns: 15rem minmax(0, 1fr); gap: 1.75rem; align-items: start; }
-.desk-picker { position: sticky; top: 1rem; border: 1px solid var(--border); border-radius: 0.45rem; background: var(--surface); color: var(--text); overflow: hidden; }
+.desk-picker { position: sticky; top: 1rem; max-height: calc(100dvh - 2rem); border: 1px solid var(--border); border-radius: 0.45rem; background: var(--surface); color: var(--text); overflow: auto; scrollbar-width: thin; }
 .desk-picker summary { padding: 1rem; cursor: pointer; font-size: 0.73rem; font-weight: 700; }
 .desk-picker summary strong { display: block; margin: 0.3rem 0 0 1rem; font-size: 0.95rem; font-weight: 600; }
+.desk-picker summary small { display: block; margin: 0.4rem 0 0 1rem; color: var(--muted); font-size: 0.65rem; font-weight: 400; }
+.desk-picker [hidden] { display: none; }
 .desk-search { padding: 0.15rem 0.85rem 0; }
 .desk-search label { display: block; margin-bottom: 0.4rem; color: var(--muted); font-size: 0.7rem; font-weight: 600; }
 .desk-search-field { display: flex; align-items: center; background: var(--bg); border: 1px solid var(--border); border-radius: 0.25rem; }
@@ -23,7 +25,13 @@
 .desk-search button { flex: 0 0 2.4rem; min-height: 2.6rem; border: 0; background: transparent; color: var(--text); cursor: pointer; font: 1.25rem/1 ui-sans-serif, system-ui, sans-serif; }
 .desk-search button[hidden] { display: none; }
 .desk-search p { margin: 0.6rem 0; color: var(--muted); font-size: 0.7rem; }
-.desk-artists { position: relative; list-style: none; margin: 0; padding: 0.3rem 0.5rem 0.5rem; max-height: min(60vh, 38rem); overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; }
+.desk-filters { margin-top: 0.8rem; }
+.desk-filters label { margin-top: 0.6rem; }
+.desk-filters select { width: 100%; min-width: 0; padding: 0.6rem 0.35rem; border: 1px solid var(--border); border-radius: 0.25rem; background: var(--bg); color: var(--text); font: 0.76rem/1.5 ui-sans-serif, system-ui, sans-serif; }
+.desk-search .desk-filter-note { font-size: 0.64rem; line-height: 1.5; }
+.desk-filter-status { display: flex; align-items: center; justify-content: space-between; gap: 0.3rem; }
+.desk-search .desk-reset { flex: none; padding: 0.3rem 0; color: var(--accent); font: 600 0.7rem/1.5 ui-sans-serif, system-ui, sans-serif; text-decoration: underline; text-underline-offset: 0.15rem; }
+.desk-artists { position: relative; list-style: none; margin: 0; padding: 0.3rem 0.5rem 0.5rem; max-height: min(35vh, 24rem); overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; }
 .desk-artists li { margin: 0; }
 .desk-artists li[hidden] { display: none; }
 .desk-artists a { display: block; border-left: 3px solid transparent; border-radius: 0.15rem; padding: 0.7rem 0.65rem; color: var(--text); text-decoration: none; }
@@ -39,7 +47,7 @@
 .desk-stage .orch-console .orch-play { color: #192a30; }
 .desk-stage .orch-part button[aria-pressed='true'], .desk-stage .orch-mix-presets [aria-pressed='true'], .desk-stage .orch-beat-buttons [aria-pressed='true'] { color: #fff; }
 .desk-profile-link { display: inline-block; margin-top: 1rem; color: #376c72; font-size: 0.78rem; text-underline-offset: 0.2rem; }
-.desk-picker :is(a, button, input, summary):focus-visible, .desk-profile-link:focus-visible { outline: 3px solid var(--accent); outline-offset: -3px; }
+.desk-picker :is(a, button, input, select, summary):focus-visible, .desk-profile-link:focus-visible { outline: 3px solid var(--accent); outline-offset: -3px; }
 @media (max-width: 78rem) {
   .desk-layout { grid-template-columns: 13.5rem minmax(0, 1fr); gap: 1rem; }
   .desk-stage { padding: 1.1rem; }
@@ -52,13 +60,13 @@
   .desk-heading { grid-template-columns: 1fr; gap: 0.8rem; margin-bottom: 1.4rem; }
   .desk-heading h1 { font-size: clamp(2rem, 7vw, 2.9rem); }
   .desk-layout { grid-template-columns: minmax(0, 1fr); }
-  .desk-picker { position: static; }
+  .desk-picker { position: static; max-height: none; }
   .desk-picker summary { padding: 0.8rem 1rem; }
   .desk-picker summary strong { display: inline; margin-left: 0.6rem; }
   .desk-artists { max-height: 13rem; }
 }
 @media (max-width: 38rem) {
-  .desk-search input { font-size: 1rem; }
+  .desk-search input, .desk-filters select { font-size: 1rem; }
   .desk-stage { padding: 0.85rem; }
   .desk-stage .orch-artist { padding: 0.9rem; }
   .desk-stage .orch-artist strong { font-size: 1.3rem; }

@@ -8,15 +8,25 @@ McBride selected. Each artist has a direct URL, for example
 `/arranging-desk/christian-mcbride/` or `/arranging-desk/gil-evans/`.
 
 The artist list searches across all 150 names, ignoring accents, spaces and
-punctuation. Enter opens the first match; Arrow Down moves from search into the
-results, and arrow keys navigate the list. Escape or Clear resets the filter.
-Selection preserves the search in the `q` URL parameter. Native links provide
+punctuation. Name search combines with time period (the artist's predominant era),
+ensemble size (up to 7, 8, or 9+ scored parts), and instrumentation (a family or
+individual instrument present in the study). Size counts scored parts, including
+section parts, rather than claiming a player headcount. Instrument facets use the
+sounding instruments, including leads, and exclude silent parts. Option counts
+reflect the other active filters; unavailable combinations are disabled.
+
+Enter opens the first match; Arrow Down moves from search into the results, and
+arrow keys navigate the list. Escape or Clear resets the name search; Reset all
+clears all four controls. Filtering leaves the current player unchanged until an
+artist is selected, with a notice if the current artist is outside the results.
+Selection preserves `q`, `era`, `size`, and `instrument` in the URL. Native links provide
 bookmarking, Back/Forward and a browseable list without JavaScript; playback still
 requires JavaScript. The picker folds away on phones.
 
 The desk reuses the same `OrchestrationPlayer` component and scores as artist
 profiles. `ArrangingDesk.astro` supplies the searchable directory and profile links;
-`deskNavigation.ts` handles filtering and keyboard navigation. Artist changes open
+`deskFilters.ts` derives study facets and combines filters; `deskNavigation.ts`
+handles controls, URL state and keyboard navigation. Artist changes open
 the selected score ready to play and stop the previous page's audio.
 
 ## Artist studies

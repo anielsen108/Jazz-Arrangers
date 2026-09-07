@@ -2,8 +2,10 @@
 import { getCollection } from 'astro:content';
 import OrchestrationPlayer from './OrchestrationPlayer.astro';
 import { TREATMENTS, treatmentForArtist } from '../lib/orchestration';
-import { canonicalizeArrangers, parseArrangerHeading, eraFromArrangerId } from '../lib/arrangers';
+import { canonicalizeArrangers, parseArrangerHeading, eraFromArrangerId, ERAS } from '../lib/arrangers';
 import { deskSlug } from '../lib/deskNavigation';
+import { ENSEMBLE_SIZES, INSTRUMENT_GROUPS, studyFacets } from '../lib/deskFilters';
+import { INSTRUMENTS } from '../lib/orchestraStudies';
 import '../styles/arranging-desk.css';
 
 interface Props { arrangerName?: string }
@@ -14,9 +16,11 @@ const profiles = canonicalizeArrangers(await getCollection('arrangers'));
 const profilesByName = new Map(profiles.map((entry) => [parseArrangerHeading(entry.body ?? '').name, entry]));
 const artists = TREATMENTS.map((study) => {
   const profile = profilesByName.get(study.name)!;
-  return { id: study.id, name: study.name, href: `${base}arranging-desk/${deskSlug(study.id)}/`, profile: `${base}arrangers/${profile.id}/`, era: eraFromArrangerId(profile.id).shortLabel };
+  return { id: study.id, name: study.name, href: `${base}arranging-desk/${deskSlug(study.id)}/`, profile: `${base}arrangers/${profile.id}/`, era: eraFromArrangerId(profile.id), ...studyFacets(study.parts) };
 }).sort((a, b) => a.name.localeCompare(b.name));
 const selected = artists.find((artist) => artist.id === treatment.id)!;
+const presentInstruments = new Set(TREATMENTS.flatMap((study) => study.parts.filter((part) => part.notes.length).map((part) => part.instrument)));
+const instruments = Object.values(INSTRUMENTS).filter((instrument) => presentInstruments.has(instrument.sample)).sort((a, b) => a.label.localeCompare(b.label));
 ---
 
 <div class="arranging-desk">
@@ -27,21 +31,45 @@ const selected = artists.find((artist) => artist.id === treatment.id)!;
 
   <div class="desk-layout">
     <details class="desk-picker" data-desk-picker open>
-      <summary><span>Choose an artist</span><strong>{arrangerName}</strong></summary>
+      <summary><span>Choose an artist · search &amp; filters</span><strong>{arrangerName}</strong><small data-desk-filter-summary hidden></small></summary>
       <div class="desk-search">
         <label for="desk-artist-search">Search artists</label>
         <div class="desk-search-field">
           <input id="desk-artist-search" type="search" placeholder="e.g. McBride or Ellington" autocomplete="off" aria-controls="desk-artist-list" data-desk-search disabled />
           <button type="button" data-desk-clear hidden aria-label="Clear artist search">×</button>
         </div>
-        <p data-desk-count role="status" aria-live="polite">{artists.length} artists · A–Z</p>
-        <noscript><p>Choose a name from the list below. Enable JavaScript to search and play.</p></noscript>
+        <div class="desk-filters">
+          <label for="desk-era">Time period</label>
+          <select id="desk-era" data-desk-filter="era" aria-controls="desk-artist-list" disabled>
+            <option value="">All time periods</option>
+            {ERAS.toReversed().map((era) => <option value={era.slug}>{era.dateRange} · {era.shortLabel}</option>)}
+          </select>
+          <label for="desk-size">Ensemble size</label>
+          <select id="desk-size" data-desk-filter="size" aria-controls="desk-artist-list" aria-describedby="desk-size-note" disabled>
+            <option value="">All sizes</option>
+            {ENSEMBLE_SIZES.map((size) => <option value={size.value}>{size.label}</option>)}
+          </select>
+          <label for="desk-instrument">Instrumentation</label>
+          <select id="desk-instrument" data-desk-filter="instrument" aria-controls="desk-artist-list" disabled>
+            <option value="">Any instrumentation</option>
+            <optgroup label="Instrument families">
+              {INSTRUMENT_GROUPS.map((group) => <option value={`family:${group.value}`}>Includes {group.label.toLowerCase()}</option>)}
+            </optgroup>
+            <optgroup label="Individual instruments">
+              {instruments.map((instrument) => <option value={`instrument:${instrument.sample}`}>{instrument.label}</option>)}
+            </optgroup>
+          </select>
+        </div>
+        <p class="desk-filter-note" id="desk-size-note">Period follows the artist’s main era. Size and instruments describe this study; a section counts as one part.</p>
+        <div class="desk-filter-status"><p data-desk-count role="status" aria-live="polite">{artists.length} artists · A–Z</p><button class="desk-reset" type="button" data-desk-reset hidden>Reset all</button></div>
+        <p data-desk-selection-note hidden>The current artist is outside these filters. Choose a result to change the player.</p>
+        <noscript><p>Choose a name from the list below. Enable JavaScript to filter and play.</p></noscript>
       </div>
       <nav aria-label="Select an artist to play">
         <ul class="desk-artists" id="desk-artist-list" data-desk-artists>
-          {artists.map((artist) => <li data-desk-artist={artist.name}><a href={artist.href} aria-current={artist.id === treatment.id ? 'page' : undefined}><span>{artist.name}</span><small>{artist.era}</small></a></li>)}
+          {artists.map((artist) => <li data-desk-artist={artist.name} data-desk-era={artist.era.slug} data-desk-size={artist.size} data-desk-instruments={artist.instruments.join(' ')}><a href={artist.href} aria-current={artist.id === treatment.id ? 'page' : undefined}><span>{artist.name}</span><small>{artist.era.shortLabel} · {artist.partCount} parts</small></a></li>)}
         </ul>
-        <p class="desk-empty" data-desk-empty hidden>No matching artist. Try a surname or clear the search.</p>
+        <p class="desk-empty" data-desk-empty hidden>No matching artist. Change a filter, clear the name search, or reset all.</p>
       </nav>
     </details>
 
