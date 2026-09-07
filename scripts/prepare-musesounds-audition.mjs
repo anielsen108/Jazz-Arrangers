@@ -11,6 +11,18 @@ const { makeMusicXml, makeMidi } = await import(pathToFileURL(`${out}/score.mjs`
 const treatment = treatmentForArtist('Christian McBride');
 const tempo = 104;
 let xml = makeMusicXml(treatment, tempo);
+const sounds = {
+  trumpet: ['Trumpet in C', 'brass.trumpet'], alto_sax: ['Alto Saxophone', 'wind.reed.saxophone.alto'],
+  tenor_sax: ['Tenor Saxophone', 'wind.reed.saxophone.tenor'], baritone_sax: ['Baritone Saxophone', 'wind.reed.saxophone.baritone'],
+  trombone: ['Trombone', 'brass.trombone'], acoustic_grand_piano: ['Piano', 'keyboard.piano'], acoustic_bass: ['Contrabass', 'strings.contrabass'],
+};
+let instrumentIndex = 0;
+xml = xml.replace(/<instrument-name>[^<]*<\/instrument-name>/g, () => {
+  const [name, sound] = sounds[treatment.parts[instrumentIndex++].instrument];
+  return `<instrument-name>${name}</instrument-name><instrument-sound>${sound}</instrument-sound>`;
+});
+// Sound IDs identify timbre. Pitches remain concert pitches for every instrument.
+xml = xml.replaceAll('</attributes>', '<transpose><diatonic>0</diatonic><chromatic>0</chromatic></transpose></attributes>');
 // Preserve the written score while explicitly transmitting its 2:1 swing feel.
 xml = xml.replaceAll(`<sound tempo="${tempo}"/>`, `<sound tempo="${tempo}"><swing><first>2</first><second>1</second><swing-type>eighth</swing-type></swing></sound>`);
 let partIndex = 0;
