@@ -6,6 +6,7 @@ on:
       - .github/workflows/musesounds-audition.yml
       - scripts/prepare-musesounds-audition.mjs
       - scripts/render-musesounds-audition.sh
+      - scripts/mix-free-audition.py
 permissions:
   contents: read
 concurrency:

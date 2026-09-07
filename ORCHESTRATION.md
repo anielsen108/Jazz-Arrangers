@@ -118,3 +118,24 @@ with `npm test -- --testTimeout=60000 --maxWorkers=1 --no-file-parallelism`.
 The orchestration tests check all profile names, unique musical scores (excluding
 labels and cosmetic mix changes), complete melody coverage, instrument ranges,
 every sampled pitch, and every MIDI and MusicXML part across the full collection.
+
+## Free remote renderer audition
+
+The `audition/musesounds` branch renders the McBride study on GitHub's standard
+Ubuntu runner. It uses free Muse Brass, Woodwinds and Keys through MuseScore 4.7.4.
+The score imports as nine correct instruments, with 274 notes and explicit swing.
+The free MuseSounds selection falls back to MS Basic for solo double bass, so the
+final `free-ensemble.wav` replaces that part with this repository's recorded
+Karoryfer Meatbass samples (CC0). Eight individually verified MuseSounds stems
+and the recorded upright bass are mixed with the score's part levels and panning.
+The final mix uses linear gain to reach -20 LUFS when peak headroom permits.
+
+Push audition script changes on that branch to run the workflow. The one-day
+artifact contains the full mix, individual parts, scores, and verification reports.
+Sample libraries install only on the temporary GitHub runner; the website can
+play exported audio without installing music software on listeners' computers.
+This is an audition, and does not change or deploy the website player.
+
+MuseScore currently exits 139 after some score-only imports. The script tolerates
+that specific exit only after validating the saved archive; audio and score
+outputs are separately checked. The workflow remains experimental.
