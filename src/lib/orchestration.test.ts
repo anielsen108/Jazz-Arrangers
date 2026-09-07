@@ -3,6 +3,7 @@ import { readFileSync, readdirSync } from 'node:fs';
 import { CHORDS, MELODY, TREATMENTS, chordDegree, defaultTreatment, treatmentForArtist, midi, octave, performedBeat, soundingNotes, writtenBeat } from './orchestration';
 import { INSTRUMENTS } from './orchestraStudies';
 import { makeMidi, makeMusicXml } from './orchestraScore';
+import { isRecordedBank, sampleChoice, type SampleBank } from './orchestraSamples';
 
 describe('original orchestration studies', () => {
   it('retains a complete eight-bar melody and eight annotations per treatment', () => {
@@ -17,7 +18,7 @@ describe('original orchestration studies', () => {
   });
 
   it('has a local decoded-audio source for every scored pitch, with no out-of-passage events', () => {
-    const banks = new Map<string, Record<string, string>>();
+    const banks = new Map<string, SampleBank>();
     for (const treatment of TREATMENTS) for (const part of treatment.parts) {
       if (!banks.has(part.instrument)) banks.set(part.instrument, JSON.parse(readFileSync(new URL(`../../public/audio/orchestra/${part.instrument}.json`, import.meta.url), 'utf8')));
       const samples = banks.get(part.instrument)!;
@@ -28,7 +29,8 @@ describe('original orchestration studies', () => {
         expect(note.duration).toBeGreaterThan(0);
         expect(midi(note.pitch), `${treatment.name}: ${part.label} ${note.pitch}`).toBeGreaterThanOrEqual(range.low);
         expect(midi(note.pitch), `${treatment.name}: ${part.label} ${note.pitch}`).toBeLessThanOrEqual(range.high);
-        expect(samples[midi(note.pitch)], `${part.instrument} ${note.pitch}`).toMatch(/^data:audio\/mp3;base64,/);
+        const audio = isRecordedBank(samples) ? sampleChoice(samples, midi(note.pitch), note.velocity).sample.audio : samples[midi(note.pitch)];
+        expect(audio, `${part.instrument} ${note.pitch}`).toMatch(/^data:audio\/mp3;base64,/);
       }
     }
   });

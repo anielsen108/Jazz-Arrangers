@@ -87,11 +87,17 @@ were checked visually in the supplied scans:
   register and voice-motion commentary from the actual parts. A lead can move down
   one or two octaves to suit its instrument; the melody score and solo follow it.
 - `src/lib/orchestraAudio.ts`: Web Audio sample player, transport, swing timing and mixer.
+  Recorded dynamics and pitch-center selection are defined in `orchestraSamples.ts`.
+  Only recordings needed by the current study are decoded; sustain buffers are cached.
 - `src/lib/orchestraScore.ts`: concert-pitch part notation and MIDI/MusicXML exports.
 - `src/components/OrchestrationPlayer.astro`, `src/lib/orchestraPlayer.ts` and
   `src/styles/orchestration-player.css`: page interface and controls.
-- `public/audio/orchestra/`: approximately 17 MB of locally bundled FluidR3 GM
-  sample subsets, with attribution in its README. No external audio service is
+- `public/audio/orchestra/`: locally bundled VSCO 2 CE, MTG Solo Saxophones,
+  Karoryfer Meatbass and retained FluidR3 GM sample subsets, with attribution,
+  licenses and conversion details in its README. Eighteen instrument banks use
+  the new recorded format, with two or three dynamics where available. Ten less
+  common colors retain the previous banks; eight extreme-register brass pitches
+  also retain their previous recordings. No external audio service is
   required. Only the instruments used on the page are fetched on first playback.
   Each page embeds only its own treatment data; the complete catalogue is not
   included in the browser's JavaScript bundle.
@@ -101,7 +107,11 @@ and bowing. It is intended for comparing musical choices, not as a finished reco
 The books and their scanned pages are not part of the public build.
 
 To refresh sample subsets after editing pitches, run
-`node scripts/source-orchestra-samples.mjs` with Node 22.18 or newer and network access.
+`node scripts/source-orchestra-samples.mjs` for retained legacy sounds and
+`node scripts/source-orchestra-hq.mjs --write` for the new recordings, with Node
+22.18 or newer and network access. The latter also requires FFmpeg. Its source
+revisions are pinned, and its downloads and intermediate files stay under
+`output/tooling/`. `--dry-run` checks pitch and dynamic selections before conversion.
 Normal builds use the bundled sample files. Validate changes with `npm test`
 and `npm run build`. On a slow OneDrive checkout, the repository tests can be run
 with `npm test -- --testTimeout=60000 --maxWorkers=1 --no-file-parallelism`.

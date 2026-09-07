@@ -1,5 +1,5 @@
 // Fetch only the pitches used by the original studies. No remote scripts execute.
-import { mkdir, writeFile } from 'node:fs/promises';
+import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { TREATMENTS, midi } from '../src/lib/orchestration.ts';
 const source = 'https://raw.githubusercontent.com/gleitz/midi-js-soundfonts/gh-pages/FluidR3_GM/';
 const wanted = new Map();
@@ -14,6 +14,10 @@ const queue = [...wanted];
 await Promise.all(Array.from({ length: 3 }, async () => {
   while (queue.length) {
     const [instrument, pitches] = queue.shift();
+    try {
+      const existing = JSON.parse(await readFile(`public/audio/orchestra/${instrument}.json`, 'utf8'));
+      if (existing.version === 2) { console.log(`${instrument}: recorded bank retained; refresh with source-orchestra-hq.mjs`); continue; }
+    } catch { /* First-time legacy bank. */ }
     const response = await fetch(`${source}${instrument}-mp3.js`, { signal: AbortSignal.timeout(60000) });
     if (!response.ok) throw new Error(`${instrument}: ${response.status}`);
     const text = await response.text();
