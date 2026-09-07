@@ -16,7 +16,19 @@ timeout 900 /opt/muse-sounds-manager/muse-sounds-manager --headless --install-mu
 mscore="$tools_dir/squashfs-root/bin/mscore4portable"
 export QT_QPA_PLATFORM=offscreen
 export MU_QT_QPA_PLATFORM=offscreen
-timeout 240 xvfb-run -a "$mscore" --sound-profile MuseSounds -o "$out/small-hours.mscz" "$out/small-hours.musicxml" 2>&1 | tee "$out/import.log"
-timeout 300 xvfb-run -a "$mscore" --sound-profile MuseSounds -o "$out/musesounds.wav" "$out/small-hours.mscz" 2>&1 | tee "$out/render.log"
+set +e
+timeout 240 xvfb-run -a "$mscore" -d --sound-profile MuseSounds -o "$out/small-hours.mscz" "$out/small-hours.musicxml" 2>&1 | tee "$out/import.log"
+import_status=${PIPESTATUS[0]}
+set -e
+# 4.7.4 can crash during shutdown after writing the complete score. Check the
+# artifact independently before proceeding; all other failures remain fatal.
+if [[ "$import_status" != 0 && "$import_status" != 139 ]]; then exit "$import_status"; fi
+unzip -t "$out/small-hours.mscz"
+set +e
+timeout 300 xvfb-run -a "$mscore" -d --sound-profile MuseSounds -o "$out/musesounds.wav" "$out/small-hours.mscz" 2>&1 | tee "$out/render.log"
+render_status=${PIPESTATUS[0]}
+set -e
+printf '{"importExit":%s,"renderExit":%s}\n' "$import_status" "$render_status" > "$out/process-status.json"
+if [[ "$render_status" != 0 && "$render_status" != 139 ]]; then exit "$render_status"; fi
 ffprobe -v error -show_format -show_streams -of json "$out/musesounds.wav" > "$out/audio-info.json"
 ffmpeg -hide_banner -i "$out/musesounds.wav" -af loudnorm=print_format=json -f null - 2> "$out/levels.log"
