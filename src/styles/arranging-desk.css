@@ -1,0 +1,67 @@
+.arranging-desk {
+  --lab-paper: #f8faf9;
+  --lab-ink: #192a30;
+  --lab-muted: #586969;
+  --lab-line: #cdd7d3;
+  color: var(--lab-ink);
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  line-height: 1.5;
+}
+.desk-heading { display: grid; grid-template-columns: 1.25fr 1fr; align-items: end; gap: 2rem; margin-bottom: 2rem; }
+.desk-eyebrow { margin: 0 0 0.5rem; color: var(--accent); font-size: 0.67rem; font-weight: 800; letter-spacing: 0.13em; text-transform: uppercase; }
+.desk-heading h1 { margin: 0; font: 2.9rem/1.12 Georgia, serif; letter-spacing: -0.04em; color: var(--text); }
+.desk-heading > p { max-width: 32rem; margin: 0; color: var(--muted); font-size: 0.92rem; }
+.desk-layout { display: grid; grid-template-columns: 15rem minmax(0, 1fr); gap: 1.75rem; align-items: start; }
+.desk-picker { position: sticky; top: 1rem; border: 1px solid var(--border); border-radius: 0.45rem; background: var(--surface); color: var(--text); overflow: hidden; }
+.desk-picker summary { padding: 1rem; cursor: pointer; font-size: 0.73rem; font-weight: 700; }
+.desk-picker summary strong { display: block; margin: 0.3rem 0 0 1rem; font-size: 0.95rem; font-weight: 600; }
+.desk-search { padding: 0.15rem 0.85rem 0; }
+.desk-search label { display: block; margin-bottom: 0.4rem; color: var(--muted); font-size: 0.7rem; font-weight: 600; }
+.desk-search-field { display: flex; align-items: center; background: var(--bg); border: 1px solid var(--border); border-radius: 0.25rem; }
+.desk-search input { width: 100%; min-width: 0; background: transparent; color: var(--text); padding: 0.7rem 0.6rem; border: 0; font: 0.78rem/1.5 ui-sans-serif, system-ui, sans-serif; }
+.desk-search input::-webkit-search-cancel-button { display: none; }
+.desk-search button { flex: 0 0 2.4rem; min-height: 2.6rem; border: 0; background: transparent; color: var(--text); cursor: pointer; font: 1.25rem/1 ui-sans-serif, system-ui, sans-serif; }
+.desk-search button[hidden] { display: none; }
+.desk-search p { margin: 0.6rem 0; color: var(--muted); font-size: 0.7rem; }
+.desk-artists { position: relative; list-style: none; margin: 0; padding: 0.3rem 0.5rem 0.5rem; max-height: min(60vh, 38rem); overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; }
+.desk-artists li { margin: 0; }
+.desk-artists li[hidden] { display: none; }
+.desk-artists a { display: block; border-left: 3px solid transparent; border-radius: 0.15rem; padding: 0.7rem 0.65rem; color: var(--text); text-decoration: none; }
+.desk-artists a:hover { background: var(--accent-soft); }
+.desk-artists a[aria-current='page'] { background: #192a30; border-left-color: #e2b46f; color: #fffdf7; }
+.desk-artists span { display: block; font-size: 0.83rem; font-weight: 650; }
+.desk-artists small { display: block; margin-top: 0.15rem; color: var(--muted); font-size: 0.64rem; }
+.desk-artists a[aria-current='page'] small { color: #bdccca; }
+.desk-empty { padding: 0 1rem 1rem; font-size: 0.8rem; color: var(--muted); }
+.desk-stage { min-width: 0; padding: 1.5rem; border: 1px solid #cdd7d3; border-radius: 0.5rem; background: #eaf0ed; color: var(--lab-ink); }
+.desk-stage button { color: inherit; }
+.desk-stage .orch-console button { color: #f6f2e9; }
+.desk-stage .orch-console .orch-play { color: #192a30; }
+.desk-stage .orch-part button[aria-pressed='true'], .desk-stage .orch-mix-presets [aria-pressed='true'], .desk-stage .orch-beat-buttons [aria-pressed='true'] { color: #fff; }
+.desk-profile-link { display: inline-block; margin-top: 1rem; color: #376c72; font-size: 0.78rem; text-underline-offset: 0.2rem; }
+.desk-picker :is(a, button, input, summary):focus-visible, .desk-profile-link:focus-visible { outline: 3px solid var(--accent); outline-offset: -3px; }
+@media (max-width: 78rem) {
+  .desk-layout { grid-template-columns: 13.5rem minmax(0, 1fr); gap: 1rem; }
+  .desk-stage { padding: 1.1rem; }
+  .desk-stage .orch-workbench { grid-template-columns: 1fr; }
+  .desk-stage .orch-notebook { grid-row: 1; }
+  .desk-stage .orch-piece-heading { grid-template-columns: 1fr; gap: 0.2rem; }
+  .desk-stage .orch-piece-heading > p { max-width: none; }
+}
+@media (max-width: 54rem) {
+  .desk-heading { grid-template-columns: 1fr; gap: 0.8rem; margin-bottom: 1.4rem; }
+  .desk-heading h1 { font-size: clamp(2rem, 7vw, 2.9rem); }
+  .desk-layout { grid-template-columns: minmax(0, 1fr); }
+  .desk-picker { position: static; }
+  .desk-picker summary { padding: 0.8rem 1rem; }
+  .desk-picker summary strong { display: inline; margin-left: 0.6rem; }
+  .desk-artists { max-height: 13rem; }
+}
+@media (max-width: 38rem) {
+  .desk-search input { font-size: 1rem; }
+  .desk-stage { padding: 0.85rem; }
+  .desk-stage .orch-artist { padding: 0.9rem; }
+  .desk-stage .orch-artist strong { font-size: 1.3rem; }
+  .desk-heading > p { font-size: 0.82rem; }
+  .desk-picker summary strong { display: block; margin: 0.2rem 0 0 1rem; }
+}

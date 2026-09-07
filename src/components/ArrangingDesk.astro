@@ -1,0 +1,58 @@
+---
+import { getCollection } from 'astro:content';
+import OrchestrationPlayer from './OrchestrationPlayer.astro';
+import { TREATMENTS, treatmentForArtist } from '../lib/orchestration';
+import { canonicalizeArrangers, parseArrangerHeading, eraFromArrangerId } from '../lib/arrangers';
+import { deskSlug } from '../lib/deskNavigation';
+import '../styles/arranging-desk.css';
+
+interface Props { arrangerName?: string }
+const { arrangerName = 'Christian McBride' } = Astro.props;
+const treatment = treatmentForArtist(arrangerName);
+const base = import.meta.env.BASE_URL;
+const profiles = canonicalizeArrangers(await getCollection('arrangers'));
+const profilesByName = new Map(profiles.map((entry) => [parseArrangerHeading(entry.body ?? '').name, entry]));
+const artists = TREATMENTS.map((study) => {
+  const profile = profilesByName.get(study.name)!;
+  return { id: study.id, name: study.name, href: `${base}arranging-desk/${deskSlug(study.id)}/`, profile: `${base}arrangers/${profile.id}/`, era: eraFromArrangerId(profile.id).shortLabel };
+}).sort((a, b) => a.name.localeCompare(b.name));
+const selected = artists.find((artist) => artist.id === treatment.id)!;
+---
+
+<div class="arranging-desk">
+  <header class="desk-heading">
+    <div><p class="desk-eyebrow">The listening room</p><h1>At the Arranging Desk</h1></div>
+    <p>One miniature, {artists.length} individual orchestrations. Find an artist, press Play, and hear how the parts fit together.</p>
+  </header>
+
+  <div class="desk-layout">
+    <details class="desk-picker" data-desk-picker open>
+      <summary><span>Choose an artist</span><strong>{arrangerName}</strong></summary>
+      <div class="desk-search">
+        <label for="desk-artist-search">Search artists</label>
+        <div class="desk-search-field">
+          <input id="desk-artist-search" type="search" placeholder="e.g. McBride or Ellington" autocomplete="off" aria-controls="desk-artist-list" data-desk-search disabled />
+          <button type="button" data-desk-clear hidden aria-label="Clear artist search">×</button>
+        </div>
+        <p data-desk-count role="status" aria-live="polite">{artists.length} artists · A–Z</p>
+        <noscript><p>Choose a name from the list below. Enable JavaScript to search and play.</p></noscript>
+      </div>
+      <nav aria-label="Select an artist to play">
+        <ul class="desk-artists" id="desk-artist-list" data-desk-artists>
+          {artists.map((artist) => <li data-desk-artist={artist.name}><a href={artist.href} aria-current={artist.id === treatment.id ? 'page' : undefined}><span>{artist.name}</span><small>{artist.era}</small></a></li>)}
+        </ul>
+        <p class="desk-empty" data-desk-empty hidden>No matching artist. Try a surname or clear the search.</p>
+      </nav>
+    </details>
+
+    <div class="desk-stage">
+      <OrchestrationPlayer arrangerName={arrangerName} showHeading={false} />
+      <a class="desk-profile-link" href={selected.profile}>Explore {arrangerName}’s full profile <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+</div>
+
+<script>
+  import { initializeDeskSearch } from '../lib/deskNavigation';
+  initializeDeskSearch();
+</script>

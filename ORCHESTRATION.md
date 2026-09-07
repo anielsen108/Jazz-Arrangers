@@ -1,5 +1,26 @@
 # Orchestration studies
 
+## Dedicated listening view
+
+The home page has a prominent **At the Arranging Desk** player entry, also available
+in the main navigation. `/arranging-desk/` opens the standalone player with Christian
+McBride selected. Each artist has a direct URL, for example
+`/arranging-desk/christian-mcbride/` or `/arranging-desk/gil-evans/`.
+
+The artist list searches across all 150 names, ignoring accents, spaces and
+punctuation. Enter opens the first match; Arrow Down moves from search into the
+results, and arrow keys navigate the list. Escape or Clear resets the filter.
+Selection preserves the search in the `q` URL parameter. Native links provide
+bookmarking, Back/Forward and a browseable list without JavaScript; playback still
+requires JavaScript. The picker folds away on phones.
+
+The desk reuses the same `OrchestrationPlayer` component and scores as artist
+profiles. `ArrangingDesk.astro` supplies the searchable directory and profile links;
+`deskNavigation.ts` handles filtering and keyboard navigation. Artist changes open
+the selected score ready to play and stop the previous page's audio.
+
+## Artist studies
+
 The Orchestration section now plays an original eight-bar miniature, **Small Hours**,
 in **150 individual artist treatments**, covering every supported arranger. Each
 page plays that artist's own score; there is no shared three-style selector or

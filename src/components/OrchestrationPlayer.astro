@@ -3,8 +3,8 @@ import { CHORDS, MELODY, octave, treatmentForArtist } from '../lib/orchestration
 import { measureSvg } from '../lib/orchestraScore';
 import '../styles/orchestration-player.css';
 
-interface Props { arrangerName: string }
-const { arrangerName } = Astro.props;
+interface Props { arrangerName: string; showHeading?: boolean }
+const { arrangerName, showHeading = true } = Astro.props;
 const treatment = treatmentForArtist(arrangerName);
 const selected = treatment.id;
 const melody = MELODY.map((note) => ({ ...note, pitch: octave(note.pitch, treatment.melodyOctave ?? 0) }));
@@ -12,12 +12,12 @@ const serialized = JSON.stringify(treatment).replaceAll('<', '\\u003c');
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
-<section class="technique-section orchestration-section" id="orchestration" aria-labelledby="technique-title">
-  <header class="section-heading">
+<section class="technique-section orchestration-section" id="orchestration" aria-labelledby={showHeading ? 'technique-title' : undefined} aria-label={showHeading ? undefined : `${arrangerName} orchestration player`}>
+  {showHeading && <header class="section-heading">
     <div><p class="section-number">02</p><p class="section-label">Orchestration</p></div>
     <h2 id="technique-title">At the <br />arranging desk</h2>
     <p>“Small Hours,” orchestrated in the style of {arrangerName}. Hear the parts, follow the score, and examine the decisions inside each chord.</p>
-  </header>
+  </header>}
 
   <orchestration-player data-style={selected} data-base={base}>
     <script type="application/json" data-treatment is:inline set:html={serialized} />

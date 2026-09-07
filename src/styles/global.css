@@ -71,6 +71,25 @@ a {
   font-size: 0.9rem;
 }
 
+.site-nav { display: flex; flex-wrap: wrap; gap: 0.4rem 1.3rem; width: 100%; font: 600 0.82rem/1.5 ui-sans-serif, system-ui, sans-serif; }
+.site-nav a { padding: 0.35rem 0; color: var(--muted); text-decoration: none; border-bottom: 2px solid transparent; }
+.site-nav a:hover, .site-nav a[aria-current] { color: var(--accent); border-bottom-color: var(--accent); }
+.site-nav a:focus-visible, .desk-entry:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+.wide-main { max-width: 90rem; }
+.desk-entry { display: grid; grid-template-columns: 3.25rem minmax(0, 1fr) auto; align-items: center; gap: 1.2rem; margin: 2rem 0; padding: 1.5rem; border-radius: 0.5rem; background: #192a30; color: #fffdf7; text-decoration: none; border-bottom: 3px solid #e2b46f; }
+.desk-entry:hover { background: #263d43; }
+.desk-entry-icon { display: grid; place-items: center; width: 3.25rem; height: 3.25rem; border: 1px solid #718180; border-radius: 50%; color: #e2b46f; }
+.desk-entry-kicker { color: #e2b46f; font: 700 0.66rem/1.5 ui-sans-serif, system-ui, sans-serif; text-transform: uppercase; letter-spacing: 0.08em; }
+.desk-entry h2 { margin: 0.3rem 0; font-size: 1.7rem; line-height: 1.2; font-weight: 400; }
+.desk-entry p { margin: 0.5rem 0 0; color: #cad6d3; font: 0.82rem/1.65 ui-sans-serif, system-ui, sans-serif; }
+.desk-entry-action { font: 650 0.78rem/1.5 ui-sans-serif, system-ui, sans-serif; color: #e2b46f; white-space: nowrap; }
+@media (max-width: 38rem) {
+  .desk-entry { grid-template-columns: 2.5rem minmax(0, 1fr); gap: 1rem; padding: 1.2rem; }
+  .desk-entry-icon { width: 2.5rem; height: 2.5rem; }
+  .desk-entry h2 { font-size: 1.45rem; }
+  .desk-entry-action { grid-column: 2; }
+}
+
 main {
   max-width: 60rem;
   margin: 0 auto;

@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import EraTabs from '../components/EraTabs.astro';
+import { TREATMENTS } from '../lib/orchestration';
 import {
   canonicalizeArrangers,
   eraFromArrangerId,
@@ -10,6 +11,7 @@ import {
 } from '../lib/arrangers';
 
 const entries = await getCollection('arrangers');
+const base = import.meta.env.BASE_URL;
 
 const cards = canonicalizeArrangers(entries)
   .map((entry) => {
@@ -34,6 +36,16 @@ const cards = canonicalizeArrangers(entries)
     below — each arranger has a visual guide to their biography,
     musical style, orchestration techniques, scores, and essential albums.
   </p>
+
+  <a class="desk-entry" href={`${base}arranging-desk/`}>
+    <span class="desk-entry-icon" aria-hidden="true">▶</span>
+    <div>
+      <span class="desk-entry-kicker">Listen &amp; explore · {TREATMENTS.length} artists</span>
+      <h2>At the Arranging Desk</h2>
+      <p>Choose an artist. Play “Small Hours” in their style, isolate the parts, and explore the voicings.</p>
+    </div>
+    <span class="desk-entry-action">Open the player <span aria-hidden="true">↗</span></span>
+  </a>
 
   <div class="arranger-search">
     <label for="arranger-search">Search arrangers by name</label>

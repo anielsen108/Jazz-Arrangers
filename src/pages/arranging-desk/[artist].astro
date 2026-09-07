@@ -1,0 +1,14 @@
+---
+import Base from '../../layouts/Base.astro';
+import ArrangingDesk from '../../components/ArrangingDesk.astro';
+import { TREATMENTS } from '../../lib/orchestration';
+import { deskSlug } from '../../lib/deskNavigation';
+
+export function getStaticPaths() {
+  return TREATMENTS.map((treatment) => ({ params: { artist: deskSlug(treatment.id) }, props: { arrangerName: treatment.name } }));
+}
+const { arrangerName } = Astro.props;
+---
+<Base title={`${arrangerName} — At the Arranging Desk`} description={`Play Small Hours orchestrated in the style of ${arrangerName}. Explore the score, instrument parts, timbral combinations and chord voicings.`} wide>
+  <ArrangingDesk arrangerName={arrangerName} />
+</Base>
