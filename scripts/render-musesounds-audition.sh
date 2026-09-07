@@ -53,3 +53,32 @@ assert identities == expected, identities
 assert report['noteCount'] == 274, report['noteCount']
 print(json.dumps(report, indent=2))
 PY
+
+python3 - "$out" "$mscore" <<'PY'
+import copy, json, os, subprocess, sys, xml.etree.ElementTree as E
+from pathlib import Path
+out, mscore = Path(sys.argv[1]), sys.argv[2]
+source = E.parse(out / 'small-hours.musicxml').getroot()
+parts = source.findall('part')
+manifest = json.loads((out / 'manifest.json').read_text())
+results = []
+for i, part in enumerate(parts):
+    root = copy.deepcopy(source)
+    for p in list(root.findall('part')):
+        if p.get('id') != part.get('id'): root.remove(p)
+    listing = root.find('part-list')
+    for p in list(listing):
+        if p.get('id') != part.get('id'): listing.remove(p)
+    score = out / ('part-' + str(i) + '.musicxml')
+    E.ElementTree(root).write(score, encoding='utf-8', xml_declaration=True)
+    wave = score.with_suffix('.wav')
+    run = subprocess.run(['xvfb-run','-a',mscore,'-d','--sound-profile','MuseSounds','-o',str(wave),str(score)], timeout=100)
+    assert run.returncode in (0,139) and wave.stat().st_size > 100000
+    log = max((Path.home()/'.local/share/MuseScore/MuseScore4/logs').glob('*.log'), key=lambda p:p.stat().st_mtime)
+    text = log.read_text()
+    count = text.count('Start offline mode')
+    entry = {'part':manifest['parts'][i]['label'], 'museSamplerVoices':count, 'file':wave.name}
+    results.append(entry)
+    print(json.dumps(entry),flush=True)
+(out / 'part-verification.json').write_text(json.dumps(results,indent=2))
+PY
