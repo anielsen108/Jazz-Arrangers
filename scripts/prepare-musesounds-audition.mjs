@@ -12,7 +12,7 @@ const treatment = treatmentForArtist('Christian McBride');
 const tempo = 104;
 let xml = makeMusicXml(treatment, tempo);
 const sounds = {
-  trumpet: ['Trumpet in C', 'brass.trumpet'], alto_sax: ['Alto Saxophone', 'wind.reed.saxophone.alto'],
+  trumpet: ['Trumpet', 'brass.trumpet.c'], alto_sax: ['Alto Saxophone', 'wind.reed.saxophone.alto'],
   tenor_sax: ['Tenor Saxophone', 'wind.reed.saxophone.tenor'], baritone_sax: ['Baritone Saxophone', 'wind.reed.saxophone.baritone'],
   trombone: ['Trombone', 'brass.trombone'], acoustic_grand_piano: ['Piano', 'keyboard.piano'], acoustic_bass: ['Contrabass', 'strings.contrabass'],
 };
