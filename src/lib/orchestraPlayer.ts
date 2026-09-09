@@ -1,9 +1,9 @@
 import { CHORDS, MELODY, octave, chordDegree, displayPitch, soundingNotes, type Treatment } from './orchestraMusic';
-import { OrchestraAudio, type LoopMode } from './orchestraAudio';
+import { OrchestraRecordings, type LoopMode } from './orchestraRecordings';
 import { makeMidi, makeMusicXml, measureSvg } from './orchestraScore';
 
 class OrchestrationPlayer extends HTMLElement {
-  private engine = new OrchestraAudio();
+  private engine = new OrchestraRecordings();
   private treatment!: Treatment;
   private muted = new Set<string>();
   private solo = new Set<string>();
@@ -83,7 +83,7 @@ class OrchestrationPlayer extends HTMLElement {
     window.dispatchEvent(new CustomEvent('orchestration-start', { detail: this }));
     this.loading = true;
     this.playButton('■ Cancel loading');
-    this.status('Loading the ensemble’s instrument samples…');
+    this.status(this.tempo === 104 ? 'Loading the recorded ensemble…' : 'Preparing the recorded ensemble at this tempo…');
     this.setAttribute('aria-busy', 'true');
     try {
       await this.engine.play({

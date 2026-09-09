@@ -86,9 +86,17 @@ were checked visually in the supplied scans:
 - `src/lib/orchestraStudies.ts`: scores the briefs and derives bar-by-bar pitch,
   register and voice-motion commentary from the actual parts. A lead can move down
   one or two octaves to suit its instrument; the melody score and solo follow it.
-- `src/lib/orchestraAudio.ts`: Web Audio sample player, transport, swing timing and mixer.
-  Recorded dynamics and pitch-center selection are defined in `orchestraSamples.ts`.
-  Only recordings needed by the current study are decoded; sustain buffers are cached.
+- `src/lib/orchestraRecordings.ts`: playback of separately rendered musical parts,
+  synchronized transport, swing-aware seeking, loops and the live mixer.
+  `orchestraTempo.ts` and its worker preserve pitch when changing tempo. Default
+  playback uses the original 104 BPM recordings without time stretching.
+- `public/audio/performances/v1/`: artist manifests and shared content-addressed
+  Opus part recordings. Each manifest names the actual instrument source and
+  preserves the score's part IDs. The live player never loads raw sample banks.
+- `scripts/prepare-recorded-ensemble.mjs`, `scripts/render-recorded-ensemble.py`
+  and the `Render recorded ensemble` workflow: free remote rendering, pitch
+  verification and ensemble loudness normalization. The artifact is downloaded
+  into `public/audio/performances/v1/` before tests, build and deployment.
 - `src/lib/orchestraScore.ts`: concert-pitch part notation and MIDI/MusicXML exports.
 - `src/components/OrchestrationPlayer.astro`, `src/lib/orchestraPlayer.ts` and
   `src/styles/orchestration-player.css`: page interface and controls.
@@ -98,7 +106,8 @@ were checked visually in the supplied scans:
   the new recorded format, with two or three dynamics where available. Ten less
   common colors retain the previous banks; eight extreme-register brass pitches
   also retain their previous recordings. No external audio service is
-  required. Only the instruments used on the page are fetched on first playback.
+  required. These banks are retained as render sources for additional colors;
+  the live player fetches finished performances on first playback.
   Each page embeds only its own treatment data; the complete catalogue is not
   included in the browser's JavaScript bundle.
 

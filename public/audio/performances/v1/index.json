@@ -1,0 +1,602 @@
+{
+  "sebesky": {
+    "parts": 9,
+    "museParts": 6
+  },
+  "nestico": {
+    "parts": 11,
+    "museParts": 10
+  },
+  "evans": {
+    "parts": 7,
+    "museParts": 3
+  },
+  "andy-kirk": {
+    "parts": 7,
+    "museParts": 6
+  },
+  "benny-carter": {
+    "parts": 8,
+    "museParts": 6
+  },
+  "bill-challis": {
+    "parts": 7,
+    "museParts": 3
+  },
+  "don-redman": {
+    "parts": 8,
+    "museParts": 6
+  },
+  "duke-ellington": {
+    "parts": 8,
+    "museParts": 5
+  },
+  "eddie-durham": {
+    "parts": 5,
+    "museParts": 3
+  },
+  "edgar-sampson": {
+    "parts": 8,
+    "museParts": 7
+  },
+  "ferde-grofe": {
+    "parts": 8,
+    "museParts": 4
+  },
+  "fletcher-henderson": {
+    "parts": 7,
+    "museParts": 4
+  },
+  "gene-gifford": {
+    "parts": 7,
+    "museParts": 4
+  },
+  "glenn-miller": {
+    "parts": 8,
+    "museParts": 5
+  },
+  "horace-henderson": {
+    "parts": 7,
+    "museParts": 6
+  },
+  "isham-jones": {
+    "parts": 7,
+    "museParts": 4
+  },
+  "jelly-roll-morton": {
+    "parts": 6,
+    "museParts": 3
+  },
+  "jimmy-mundy": {
+    "parts": 8,
+    "museParts": 7
+  },
+  "larry-clinton": {
+    "parts": 7,
+    "museParts": 4
+  },
+  "luis-russell": {
+    "parts": 7,
+    "museParts": 3
+  },
+  "mary-lou-williams": {
+    "parts": 7,
+    "museParts": 6
+  },
+  "sy-oliver": {
+    "parts": 7,
+    "museParts": 5
+  },
+  "will-hudson": {
+    "parts": 8,
+    "museParts": 5
+  },
+  "andy-gibson": {
+    "parts": 7,
+    "museParts": 6
+  },
+  "billy-may": {
+    "parts": 8,
+    "museParts": 7
+  },
+  "billy-strayhorn": {
+    "parts": 8,
+    "museParts": 3
+  },
+  "buster-harding": {
+    "parts": 7,
+    "museParts": 5
+  },
+  "chico-ofarrill": {
+    "parts": 8,
+    "museParts": 6
+  },
+  "eddie-sauter": {
+    "parts": 8,
+    "museParts": 3
+  },
+  "george-handy": {
+    "parts": 7,
+    "museParts": 3
+  },
+  "gerald-wilson": {
+    "parts": 8,
+    "museParts": 7
+  },
+  "gerry-mulligan": {
+    "parts": 6,
+    "museParts": 4
+  },
+  "gil-fuller": {
+    "parts": 7,
+    "museParts": 6
+  },
+  "jerry-gray": {
+    "parts": 8,
+    "museParts": 5
+  },
+  "johnny-carisi": {
+    "parts": 8,
+    "museParts": 4
+  },
+  "johnny-mandel": {
+    "parts": 8,
+    "museParts": 4
+  },
+  "melba-liston": {
+    "parts": 8,
+    "museParts": 6
+  },
+  "neal-hefti": {
+    "parts": 7,
+    "museParts": 5
+  },
+  "pete-rugolo": {
+    "parts": 8,
+    "museParts": 5
+  },
+  "ralph-burns": {
+    "parts": 8,
+    "museParts": 6
+  },
+  "ray-conniff": {
+    "parts": 8,
+    "museParts": 4
+  },
+  "tadd-dameron": {
+    "parts": 8,
+    "museParts": 6
+  },
+  "al-cohn": {
+    "parts": 7,
+    "museParts": 5
+  },
+  "andre-previn": {
+    "parts": 8,
+    "museParts": 4
+  },
+  "benny-golson": {
+    "parts": 8,
+    "museParts": 7
+  },
+  "bill-holman": {
+    "parts": 8,
+    "museParts": 6
+  },
+  "bill-russo": {
+    "parts": 8,
+    "museParts": 5
+  },
+  "billy-byers": {
+    "parts": 8,
+    "museParts": 5
+  },
+  "bob-brookmeyer": {
+    "parts": 8,
+    "museParts": 4
+  },
+  "ernie-wilkins": {
+    "parts": 7,
+    "museParts": 6
+  },
+  "george-russell": {
+    "parts": 8,
+    "museParts": 6
+  },
+  "jimmy-giuffre": {
+    "parts": 5,
+    "museParts": 2
+  },
+  "jimmy-heath": {
+    "parts": 8,
+    "museParts": 5
+  },
+  "johnny-richards": {
+    "parts": 8,
+    "museParts": 6
+  },
+  "manny-albam": {
+    "parts": 8,
+    "museParts": 5
+  },
+  "marty-paich": {
+    "parts": 8,
+    "museParts": 5
+  },
+  "nat-pierce": {
+    "parts": 7,
+    "museParts": 5
+  },
+  "quincy-jones": {
+    "parts": 8,
+    "museParts": 6
+  },
+  "russ-garcia": {
+    "parts": 8,
+    "museParts": 5
+  },
+  "shorty-rogers": {
+    "parts": 7,
+    "museParts": 5
+  },
+  "thad-jones": {
+    "parts": 8,
+    "museParts": 7
+  },
+  "van-alexander": {
+    "parts": 7,
+    "museParts": 4
+  },
+  "carla-bley": {
+    "parts": 8,
+    "museParts": 4
+  },
+  "clare-fischer": {
+    "parts": 8,
+    "museParts": 4
+  },
+  "claus-ogerman": {
+    "parts": 8,
+    "museParts": 6
+  },
+  "david-amram": {
+    "parts": 8,
+    "museParts": 3
+  },
+  "don-ellis": {
+    "parts": 8,
+    "museParts": 5
+  },
+  "duke-pearson": {
+    "parts": 8,
+    "museParts": 7
+  },
+  "gary-burton": {
+    "parts": 5,
+    "museParts": 2
+  },
+  "gary-mcfarland": {
+    "parts": 8,
+    "museParts": 4
+  },
+  "gil-goldstein": {
+    "parts": 8,
+    "museParts": 4
+  },
+  "gunther-schuller": {
+    "parts": 8,
+    "museParts": 4
+  },
+  "hank-levy": {
+    "parts": 8,
+    "museParts": 6
+  },
+  "herbie-hancock": {
+    "parts": 6,
+    "museParts": 3
+  },
+  "jj-johnson": {
+    "parts": 8,
+    "museParts": 5
+  },
+  "lalo-schifrin": {
+    "parts": 8,
+    "museParts": 3
+  },
+  "oliver-nelson": {
+    "parts": 8,
+    "museParts": 7
+  },
+  "phil-woods": {
+    "parts": 8,
+    "museParts": 5
+  },
+  "sun-ra": {
+    "parts": 8,
+    "museParts": 4
+  },
+  "toshiko-akiyoshi": {
+    "parts": 8,
+    "museParts": 7
+  },
+  "wayne-shorter": {
+    "parts": 7,
+    "museParts": 4
+  },
+  "bill-mays": {
+    "parts": 6,
+    "museParts": 4
+  },
+  "bill-watrous": {
+    "parts": 8,
+    "museParts": 7
+  },
+  "bob-florence": {
+    "parts": 7,
+    "museParts": 6
+  },
+  "bob-james": {
+    "parts": 8,
+    "museParts": 4
+  },
+  "bob-mintzer": {
+    "parts": 8,
+    "museParts": 6
+  },
+  "david-matthews": {
+    "parts": 8,
+    "museParts": 5
+  },
+  "don-grolnick": {
+    "parts": 7,
+    "museParts": 3
+  },
+  "frank-foster": {
+    "parts": 9,
+    "museParts": 8
+  },
+  "jim-mcneely": {
+    "parts": 7,
+    "museParts": 5
+  },
+  "john-clayton": {
+    "parts": 8,
+    "museParts": 5
+  },
+  "louie-bellson": {
+    "parts": 8,
+    "museParts": 6
+  },
+  "maria-schneider": {
+    "parts": 8,
+    "museParts": 5
+  },
+  "michael-abene": {
+    "parts": 7,
+    "museParts": 6
+  },
+  "michael-gibbs": {
+    "parts": 8,
+    "museParts": 4
+  },
+  "patrick-williams": {
+    "parts": 8,
+    "museParts": 5
+  },
+  "slide-hampton": {
+    "parts": 8,
+    "museParts": 7
+  },
+  "tom-kubis": {
+    "parts": 8,
+    "museParts": 6
+  },
+  "tom-scott": {
+    "parts": 7,
+    "museParts": 4
+  },
+  "vince-mendoza": {
+    "parts": 8,
+    "museParts": 5
+  },
+  "alan-broadbent": {
+    "parts": 7,
+    "museParts": 5
+  },
+  "conrad-herwig": {
+    "parts": 8,
+    "museParts": 6
+  },
+  "darcy-james-argue": {
+    "parts": 8,
+    "museParts": 3
+  },
+  "ed-partyka": {
+    "parts": 8,
+    "museParts": 4
+  },
+  "erich-bulling": {
+    "parts": 8,
+    "museParts": 6
+  },
+  "gordon-goodwin": {
+    "parts": 8,
+    "museParts": 6
+  },
+  "greg-hopkins": {
+    "parts": 8,
+    "museParts": 7
+  },
+  "jeff-beal": {
+    "parts": 8,
+    "museParts": 4
+  },
+  "john-beasley": {
+    "parts": 8,
+    "museParts": 6
+  },
+  "john-fedchock": {
+    "parts": 8,
+    "museParts": 7
+  },
+  "john-hollenbeck": {
+    "parts": 8,
+    "museParts": 2
+  },
+  "kenny-wheeler": {
+    "parts": 8,
+    "museParts": 6
+  },
+  "mike-mainieri": {
+    "parts": 6,
+    "museParts": 2
+  },
+  "mike-tomaro": {
+    "parts": 9,
+    "museParts": 8
+  },
+  "randy-brecker": {
+    "parts": 7,
+    "museParts": 4
+  },
+  "rob-mccconnell": {
+    "parts": 9,
+    "museParts": 7
+  },
+  "russell-ferrante": {
+    "parts": 7,
+    "museParts": 3
+  },
+  "ryan-truesdell": {
+    "parts": 8,
+    "museParts": 3
+  },
+  "steven-bernstein": {
+    "parts": 8,
+    "museParts": 4
+  },
+  "alan-ferber": {
+    "parts": 8,
+    "museParts": 5
+  },
+  "bill-cunliffe": {
+    "parts": 7,
+    "museParts": 6
+  },
+  "christine-jensen": {
+    "parts": 8,
+    "museParts": 6
+  },
+  "dave-rivello": {
+    "parts": 8,
+    "museParts": 6
+  },
+  "doug-beavers": {
+    "parts": 8,
+    "museParts": 5
+  },
+  "ed-palermo": {
+    "parts": 8,
+    "museParts": 3
+  },
+  "frank-mantooth": {
+    "parts": 7,
+    "museParts": 5
+  },
+  "gary-smulyan": {
+    "parts": 8,
+    "museParts": 6
+  },
+  "jim-martin": {
+    "parts": 9,
+    "museParts": 8
+  },
+  "kate-reid": {
+    "parts": 7,
+    "museParts": 4
+  },
+  "matt-harris": {
+    "parts": 8,
+    "museParts": 6
+  },
+  "michael-phillip-mossman": {
+    "parts": 8,
+    "museParts": 6
+  },
+  "miho-hazama": {
+    "parts": 8,
+    "museParts": 3
+  },
+  "scott-whitfield": {
+    "parts": 8,
+    "museParts": 5
+  },
+  "terry-vosbein": {
+    "parts": 8,
+    "museParts": 5
+  },
+  "wynton-marsalis": {
+    "parts": 8,
+    "museParts": 5
+  },
+  "ambrose-akinmusire": {
+    "parts": 7,
+    "museParts": 4
+  },
+  "arturo-ofarrill": {
+    "parts": 8,
+    "museParts": 6
+  },
+  "ayn-inserto": {
+    "parts": 8,
+    "museParts": 5
+  },
+  "ben-allison": {
+    "parts": 6,
+    "museParts": 3
+  },
+  "brian-lynch": {
+    "parts": 7,
+    "museParts": 5
+  },
+  "christian-mcbride": {
+    "parts": 9,
+    "museParts": 8
+  },
+  "david-weiss": {
+    "parts": 8,
+    "museParts": 7
+  },
+  "guillermo-klein": {
+    "parts": 8,
+    "museParts": 4
+  },
+  "jihye-lee": {
+    "parts": 8,
+    "museParts": 6
+  },
+  "kamasi-washington": {
+    "parts": 8,
+    "museParts": 4
+  },
+  "miguel-zenon": {
+    "parts": 7,
+    "museParts": 4
+  },
+  "orrin-evans": {
+    "parts": 7,
+    "museParts": 6
+  },
+  "satoko-fujii": {
+    "parts": 7,
+    "museParts": 5
+  },
+  "shai-maestro": {
+    "parts": 6,
+    "museParts": 3
+  },
+  "steven-feifke": {
+    "parts": 8,
+    "museParts": 7
+  }
+}
