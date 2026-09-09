@@ -73,12 +73,15 @@ def render(shard,shards):
         key=stem['hash'];source='';license='';verified=False
         if stem['muse'] and stem['notes']:
             xml=out/'scores'/f'{key}.musicxml'; wav=out/f'{key}.wav'; score=out/f'{key}.mscz'
-            job=out/f'{key}-job.json';job.write_text(json.dumps([{'in':str(xml.resolve()),'out':[str(wav.resolve()),str(score.resolve())]}]))
-            run=subprocess.run(['xvfb-run','-a',os.environ['MSCORE'],'-d','--sound-profile','MuseSounds','-j',str(job)],env={**os.environ,'QT_QPA_PLATFORM':'offscreen','MU_QT_QPA_PLATFORM':'offscreen'},capture_output=True,timeout=150)
+            env={**os.environ,'QT_QPA_PLATFORM':'offscreen','MU_QT_QPA_PLATFORM':'offscreen'}
+            command=['xvfb-run','-a',os.environ['MSCORE'],'-d','--sound-profile','MuseSounds']
+            imported=subprocess.run([*command,'-o',str(score),str(xml)],env=env,capture_output=True,timeout=150)
+            assert imported.returncode in (0,139), (key,imported.stderr[-2000:])
+            verify_score(xml,score)
+            run=subprocess.run([*command,'-o',str(wav),str(score)],env=env,capture_output=True,timeout=150)
             (out/f'{key}.log').write_bytes(run.stdout+run.stderr)
             assert run.returncode in (0,139), (key,run.returncode,run.stderr[-2000:])
             assert wav.is_file() and wav.stat().st_size>100000, key
-            verify_score(xml,score)
             log=max((Path.home()/'.local/share/MuseScore/MuseScore4/logs').glob('*.log'),key=lambda p:p.stat().st_mtime)
             verified=log.read_text().count('Start offline mode')>=1
             if stem['instrument'] in ('trumpet','alto_sax','tenor_sax','baritone_sax','trombone','acoustic_grand_piano'):
