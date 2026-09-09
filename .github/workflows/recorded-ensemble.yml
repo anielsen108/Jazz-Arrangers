@@ -1,0 +1,67 @@
+name: Render recorded ensemble
+on:
+  push:
+    branches: [audio/recorded-ensemble]
+    paths: ['scripts/*recorded-ensemble*', 'scripts/install-musesounds.sh', '.github/workflows/recorded-ensemble.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: recorded-ensemble
+  cancel-in-progress: true
+jobs:
+  render:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5, 6, 7]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: node scripts/prepare-recorded-ensemble.mjs
+      - run: bash scripts/install-musesounds.sh
+      - run: sudo apt-get install -y python3-numpy
+      - run: python3 scripts/render-recorded-ensemble.py ${{ matrix.shard }} 8
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ensemble-stems-${{ matrix.shard }}
+          path: public/audio/performances/v1/
+          retention-days: 2
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: ensemble-diagnostics-${{ matrix.shard }}
+          path: output/tooling/ensemble-render/
+          retention-days: 1
+  package:
+    needs: render
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: npm ci
+      - run: node scripts/prepare-recorded-ensemble.mjs
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: ensemble-stems-*
+          path: public/audio/performances/v1/
+          merge-multiple: true
+      - run: sudo apt-get update -qq && sudo apt-get install -y ffmpeg python3-numpy
+      - run: python3 scripts/render-recorded-ensemble.py finalize
+      - uses: actions/upload-artifact@v4
+        with:
+          name: recorded-ensemble-catalogue
+          path: public/audio/performances/v1/
+          retention-days: 7
